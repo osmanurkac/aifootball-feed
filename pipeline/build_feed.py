@@ -14,6 +14,7 @@ import argparse
 import datetime
 import json
 import random
+import shutil
 from pathlib import Path
 
 import basketball_model as bb
@@ -51,8 +52,11 @@ DEMO_BASKETBALL = {
 }
 
 
-def _team_id(name: str) -> str:
-    return team_mark(name)[0].lower()
+def _team_id(name: str, sport: str) -> str:
+    # Namespace by sport so clubs that exist in both a football league and a
+    # basketball league (Barcelona, Real Madrid, ...) don't collide on one id.
+    prefix = "fb" if sport == "football" else "bb"
+    return f"{prefix}-{team_mark(name)[0].lower()}"
 
 
 def build_demo() -> None:
@@ -62,7 +66,7 @@ def build_demo() -> None:
     all_backtest_matches: list = []
 
     def register(name: str, league: str, sport: str) -> str:
-        tid = _team_id(name)
+        tid = _team_id(name, sport)
         if tid not in teams_out:
             code, c1, c2, c3 = team_mark(name)
             teams_out[tid] = {"id": tid, "name": name, "shortCode": code,
@@ -104,6 +108,10 @@ def build_demo() -> None:
 
     write_json(OUT_DIR / "teams.json", {"schemaVersion": 1, "teams": list(teams_out.values())})
     write_json(OUT_DIR / "fixtures.json", {"schemaVersion": 1, "fixtures": all_fixtures})
+    demo_slugs = set(DEMO_FOOTBALL) | set(DEMO_BASKETBALL)
+    available = [{"slug": l.slug, "name": l.name, "sport": l.sport}
+                 for l in LEAGUES if l.slug in demo_slugs]
+    write_json(OUT_DIR / "leagues.json", {"schemaVersion": 1, "leagues": available})
 
 
 def _football_season(rng, ids):
@@ -172,11 +180,36 @@ def _emit_fixtures(out, rng, league, ids, sport):
 # API feed — fetch, fit, write (needs APISPORTS_KEY; validate live).
 # ---------------------------------------------------------------------------
 
+class LeagueUnavailable(Exception):
+    """Raised when a league has no accessible CURRENT-season data (e.g. the plan
+    gates the current season). The league is then HIDDEN from the feed — we never
+    fall back to an old season or to synthesised / projected data."""
+
+
+def _plan_blocked(data) -> bool:
+    """True when the API refused the request (e.g. a Free-plan season gate)."""
+    errs = data.get("errors")
+    if isinstance(errs, dict):
+        return bool(errs)
+    if isinstance(errs, list):
+        return len(errs) > 0
+    return False
+
+
+def _current_basketball_season(style: str, year: int, month: int) -> str:
+    """The in-progress basketball campaign. Campaigns tip off around October."""
+    start = year if month >= 9 else year - 1
+    return str(start) if style == "year" else f"{start}-{start + 1}"
+
+
 def build_from_api() -> None:
-    """Fetch API-Sports data, fit, and write. Per-league failures fall back to
-    demo synthesis so the feed is always complete. The response parsing follows
-    the API-Sports v3 football / v1 basketball schemas; verify field names on the
-    first live run (see pipeline/README.md).
+    """Fetch API-Sports CURRENT-season data, fit, and write.
+
+    A league is included only if its current season is accessible on the plan and
+    has real fixtures/results. Leagues without current-season data are HIDDEN
+    (omitted from the feed, teams.json and leagues.json) — never backfilled with
+    an old season or synthesised/projected data. The app shows exactly the
+    leagues listed in leagues.json.
     """
     from apisports import APISports
     from config import FOOTBALL_BASE, BASKETBALL_BASE, current_season, HISTORY_SEASONS
@@ -188,13 +221,13 @@ def build_from_api() -> None:
 
     client = APISports(APISPORTS_KEY)
     season = current_season()
-    rng = random.Random(7)
     teams_out: dict[str, dict] = {}
     all_fixtures: list[dict] = []
     backtest_matches: list = []
+    available: list[dict] = []
 
     def register(name, league, sport):
-        tid = _team_id(name)
+        tid = _team_id(name, sport)
         if tid not in teams_out:
             code, c1, c2, c3 = team_mark(name)
             teams_out[tid] = {"id": tid, "name": name, "shortCode": code,
@@ -208,14 +241,19 @@ def build_from_api() -> None:
                 _api_football_league(client, FOOTBALL_BASE, league, season, HISTORY_SEASONS,
                                      register, all_fixtures, backtest_matches)
             else:
-                _api_basketball_league(client, BASKETBALL_BASE, league, season, HISTORY_SEASONS,
+                _api_basketball_league(client, BASKETBALL_BASE, league, HISTORY_SEASONS,
                                        register, all_fixtures)
+        except LeagueUnavailable as exc:
+            print(f"  - {league.name}: HIDDEN — {exc}")
+            continue
         except Exception as exc:  # noqa: BLE001 — resilient per-league
-            print(f"  ! {league.name}: {exc}; using demo fallback for this league")
-            _demo_fallback_league(league, rng, register, all_fixtures, backtest_matches)
+            print(f"  ! {league.name}: HIDDEN — error: {exc}")
+            continue
+        available.append({"slug": league.slug, "name": league.name, "sport": league.sport})
 
+    # Backtest from the Premier League model, only if it's actually available.
     pl = OUT_DIR / "football" / "premier_league.json"
-    if pl.exists():
+    if any(a["slug"] == "premier_league" for a in available) and pl.exists():
         model = json.loads(pl.read_text())
         ids = {t["teamId"] for t in model["teams"]}
         record = backtest.run(model, [m for m in backtest_matches if m.home in ids and m.away in ids])
@@ -225,6 +263,8 @@ def build_from_api() -> None:
     write_json(OUT_DIR / "track_record.json", record)
     write_json(OUT_DIR / "teams.json", {"schemaVersion": 1, "teams": list(teams_out.values())})
     write_json(OUT_DIR / "fixtures.json", {"schemaVersion": 1, "fixtures": all_fixtures})
+    write_json(OUT_DIR / "leagues.json", {"schemaVersion": 1, "leagues": available})
+    print(f"Available leagues: {[a['slug'] for a in available] or 'NONE — feed is empty'}")
     print(f"API requests made: {client.requests_made}")
 
 
@@ -238,11 +278,24 @@ def _days_ago(iso_date: str) -> float:
 
 def _api_football_league(client, base, league, season, history_seasons,
                          register, all_fixtures, backtest_matches):
-    name_map, team_ids = {}, []
-    history = []
-    # Finished fixtures over the last few seasons for fitting + backtest.
+    # Gate: the CURRENT season must be accessible (not plan-gated) and have real
+    # fixtures. Otherwise the league is hidden — no old-season backfill.
+    cur = client.get(base, "fixtures", {"league": league.api_id, "season": season})
+    if _plan_blocked(cur):
+        raise LeagueUnavailable(f"current season {season} not available on this plan")
+    cur_items = cur.get("response", []) or []
+    finished = [i for i in cur_items if i["fixture"]["status"]["short"] in ("FT", "AET", "PEN")]
+    upcoming = [i for i in cur_items if i["fixture"]["status"]["short"] == "NS"]
+    if not finished and not upcoming:
+        raise LeagueUnavailable(f"current season {season} has no fixtures/results")
+
+    name_map, team_ids, history = {}, [], []
+    # Fit on accessible seasons up to and including the current one (the current
+    # season's results are already in `cur`); older seasons add rating stability.
     for yr in range(season - history_seasons + 1, season + 1):
-        data = client.get(base, "fixtures", {"league": league.api_id, "season": yr})
+        data = cur if yr == season else client.get(base, "fixtures", {"league": league.api_id, "season": yr})
+        if _plan_blocked(data):
+            continue
         for item in data.get("response", []):
             fx, goals, teams = item["fixture"], item["goals"], item["teams"]
             if fx.get("status", {}).get("short") not in ("FT", "AET", "PEN"):
@@ -255,20 +308,22 @@ def _api_football_league(client, base, league, season, history_seasons,
             history.append(fb.Match(days_ago=_days_ago(fx["date"]), home=hid, away=aid,
                                     home_goals=goals["home"] or 0, away_goals=goals["away"] or 0))
     if not history:
-        raise RuntimeError("no finished fixtures returned")
+        raise LeagueUnavailable("no finished fixtures to fit a model")
     backtest_matches.extend(history)
     model = fb.fit_league(league.name, team_ids, name_map, history)
     write_json(OUT_DIR / "football" / f"{league.slug}.json", model)
 
-    # Standings -> points; upcoming -> remaining + app fixtures.
+    # Current-season standings -> points.
     standings = {t: 0 for t in team_ids}
     st = client.get(base, "standings", {"league": league.api_id, "season": season})
     for grp in st.get("response", []):
         for table in grp.get("league", {}).get("standings", []):
             for row in table:
-                tid = _team_id(row["team"]["name"])
+                tid = _team_id(row["team"]["name"], "football")
                 if tid in standings:
                     standings[tid] = row.get("points", 0)
+
+    # Upcoming current-season fixtures -> remaining + app fixtures.
     remaining = []
     up = client.get(base, "fixtures", {"league": league.api_id, "season": season, "next": "40"})
     for k, item in enumerate(up.get("response", [])):
@@ -285,19 +340,33 @@ def _api_football_league(client, base, league, season, history_seasons,
     write_json(OUT_DIR / "seasons" / f"{league.slug}.json", season_json)
 
 
-def _api_basketball_league(client, base, league, season, history_seasons,
-                           register, all_fixtures):
-    name_map, team_ids, games = {}, [], []
-    wins = {}
-    years = range(season - history_seasons + 1, season + 1)
+def _api_basketball_league(client, base, league, history_seasons, register, all_fixtures):
+    now = datetime.datetime.now(datetime.timezone.utc)
+    cur_season = _current_basketball_season(league.season_style, now.year, now.month)
+
+    # Gate on the current campaign.
+    cur = client.get(base, "games", {"league": league.api_id, "season": cur_season})
+    if _plan_blocked(cur):
+        raise LeagueUnavailable(f"current season {cur_season} not available on this plan")
+    cur_games = cur.get("response", []) or []
+    cur_finished = [g for g in cur_games if g.get("status", {}).get("short") in ("FT", "AOT")]
+    cur_upcoming = [g for g in cur_games if g.get("status", {}).get("short") == "NS"]
+    if not cur_finished and not cur_upcoming:
+        raise LeagueUnavailable(f"current season {cur_season} has no games")
+
+    # Fit window: current campaign + older accessible seasons for stability.
     if league.season_style == "year":
-        # EuroLeague et al. identify a season by its single starting year.
-        seasons = [str(yr) for yr in years]
+        start = int(cur_season)
+        window = [str(start - i) for i in range(history_seasons)]
     else:
-        # NBA et al. use a "YYYY-YYYY" range.
-        seasons = [f"{yr}-{yr+1}" for yr in years]
-    for sv in seasons:
-        data = client.get(base, "games", {"league": league.api_id, "season": sv})
+        start = int(cur_season.split("-")[0])
+        window = [f"{start - i}-{start - i + 1}" for i in range(history_seasons)]
+
+    name_map, team_ids, games_fit, wins = {}, [], [], {}
+    for sv in window:
+        data = cur if sv == cur_season else client.get(base, "games", {"league": league.api_id, "season": sv})
+        if _plan_blocked(data):
+            continue
         for g in data.get("response", []):
             if g.get("status", {}).get("short") not in ("FT", "AOT"):
                 continue
@@ -308,19 +377,19 @@ def _api_basketball_league(client, base, league, season, history_seasons,
             for t in (hid, aid):
                 if t not in team_ids: team_ids.append(t); wins[t] = 0
             hp, ap = scores["home"]["total"] or 0, scores["away"]["total"] or 0
-            games.append(bb.Game(days_ago=_days_ago(g["date"]), home=hid, away=aid,
-                                 home_points=hp, away_points=ap))
-            wins[hid if hp > ap else aid] += 1
-    if not games:
-        raise RuntimeError("no finished games returned")
-    model = bb.fit_league(league.name, team_ids, name_map, games)
+            games_fit.append(bb.Game(days_ago=_days_ago(g["date"]), home=hid, away=aid,
+                                     home_points=hp, away_points=ap))
+            if sv == cur_season:  # standings reflect the CURRENT campaign only
+                wins[hid if hp > ap else aid] += 1
+    if not games_fit:
+        raise LeagueUnavailable("no finished games to fit a model")
+    model = bb.fit_league(league.name, team_ids, name_map, games_fit)
     write_json(OUT_DIR / "basketball" / f"{league.slug}.json", model)
 
+    # Upcoming current-season games -> remaining + app fixtures. No projection:
+    # if there are none, the season race simply has no games left to simulate.
     remaining = []
-    up = client.get(base, "games", {"league": league.api_id, "season": seasons[-1]})
-    for k, g in enumerate(up.get("response", [])):
-        if g.get("status", {}).get("short") not in ("NS",):
-            continue
+    for k, g in enumerate(cur_upcoming):
         teams = g["teams"]
         hid = register(teams["home"]["name"], league.name, "basketball")
         aid = register(teams["away"]["name"], league.name, "basketball")
@@ -330,44 +399,17 @@ def _api_basketball_league(client, base, league, season, history_seasons,
                                  "league": league.name, "round": None, "kickoff": g["date"],
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "nba" and k == 0, "upset": False})
-    if not remaining:
-        # No upcoming fixtures available (e.g. the only populated season is
-        # already complete, as with EuroLeague on some plans). Project a fresh
-        # double round-robin from the fitted model so the title race is a real
-        # simulation rather than a finished table with one team at 100%.
-        remaining = [(h, a) for h in team_ids for a in team_ids if h != a]
-        wins = {t: 0 for t in team_ids}
     season_json = season_sim.simulate_basketball(league.name, league.slug, model, wins, remaining, OUT_DIR)
     write_json(OUT_DIR / "seasons" / f"{league.slug}.json", season_json)
-
-
-def _demo_fallback_league(league, rng, register, all_fixtures, backtest_matches):
-    """Synthesise one league when the API has no usable data for it."""
-    demo_names = DEMO_FOOTBALL.get(league.slug) or DEMO_BASKETBALL.get(league.slug)
-    if not demo_names:
-        demo_names = ["Alpha FC", "Beta United", "Gamma City", "Delta SC"]
-    ids = [register(n, league.name, league.sport) for n in demo_names]
-    name_map = {register(n, league.name, league.sport): n for n in demo_names}
-    if league.sport == "football":
-        history, standings, remaining = _football_season(rng, ids)
-        model = fb.fit_league(league.name, ids, name_map, history)
-        write_json(OUT_DIR / "football" / f"{league.slug}.json", model)
-        write_json(OUT_DIR / "seasons" / f"{league.slug}.json",
-                   season_sim.simulate_football(league.name, league.slug, model, standings, remaining, OUT_DIR))
-        backtest_matches.extend(history)
-    else:
-        games, wins, remaining = _basketball_season(rng, ids)
-        model = bb.fit_league(league.name, ids, name_map, games)
-        write_json(OUT_DIR / "basketball" / f"{league.slug}.json", model)
-        write_json(OUT_DIR / "seasons" / f"{league.slug}.json",
-                   season_sim.simulate_basketball(league.name, league.slug, model, wins, remaining, OUT_DIR))
-    _emit_fixtures(all_fixtures, rng, league, ids, league.sport)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", choices=["demo", "api"], default="demo")
     args = parser.parse_args()
+    # Clean rebuild: a league hidden this run must not leave a stale file behind.
+    if OUT_DIR.exists():
+        shutil.rmtree(OUT_DIR)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f"Building feed ({args.source}) -> {OUT_DIR}")
     if args.source == "demo":
