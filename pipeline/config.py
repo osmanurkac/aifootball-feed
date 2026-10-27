@@ -34,6 +34,10 @@ class League:
     sport: str         # "football" | "basketball"
     api_id: int        # API-Sports league id
     country: str
+    # How this league's seasons are identified in the API-Sports *basketball* API.
+    # NBA uses a "YYYY-YYYY" range (e.g. "2024-2025"); EuroLeague uses the single
+    # starting year (e.g. "2024"). Ignored for football (always a start year).
+    season_style: str = "range"   # "range" | "year"
 
 
 # API-Sports league ids. Football ids are stable on v3; basketball ids can vary
@@ -45,8 +49,8 @@ LEAGUES: list[League] = [
     League("bundesliga", "Bundesliga", "football", 78, "Germany"),
     League("ligue_1", "Ligue 1", "football", 61, "France"),
     League("champions_league", "Champions League", "football", 2, "Europe"),
-    League("nba", "NBA", "basketball", 12, "USA"),
-    League("euroleague", "EuroLeague", "basketball", 120, "Europe"),
+    League("nba", "NBA", "basketball", 12, "USA", season_style="range"),
+    League("euroleague", "EuroLeague", "basketball", 120, "Europe", season_style="year"),
 ]
 
 

@@ -289,7 +289,13 @@ def _api_basketball_league(client, base, league, season, history_seasons,
                            register, all_fixtures):
     name_map, team_ids, games = {}, [], []
     wins = {}
-    seasons = [f"{yr}-{yr+1}" for yr in range(season - history_seasons + 1, season + 1)]
+    years = range(season - history_seasons + 1, season + 1)
+    if league.season_style == "year":
+        # EuroLeague et al. identify a season by its single starting year.
+        seasons = [str(yr) for yr in years]
+    else:
+        # NBA et al. use a "YYYY-YYYY" range.
+        seasons = [f"{yr}-{yr+1}" for yr in years]
     for sv in seasons:
         data = client.get(base, "games", {"league": league.api_id, "season": sv})
         for g in data.get("response", []):
@@ -324,6 +330,13 @@ def _api_basketball_league(client, base, league, season, history_seasons,
                                  "league": league.name, "round": None, "kickoff": g["date"],
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "nba" and k == 0, "upset": False})
+    if not remaining:
+        # No upcoming fixtures available (e.g. the only populated season is
+        # already complete, as with EuroLeague on some plans). Project a fresh
+        # double round-robin from the fitted model so the title race is a real
+        # simulation rather than a finished table with one team at 100%.
+        remaining = [(h, a) for h in team_ids for a in team_ids if h != a]
+        wins = {t: 0 for t in team_ids}
     season_json = season_sim.simulate_basketball(league.name, league.slug, model, wins, remaining, OUT_DIR)
     write_json(OUT_DIR / "seasons" / f"{league.slug}.json", season_json)
 
