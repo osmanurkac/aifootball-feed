@@ -1,0 +1,10 @@
+# Built feed output (published to the gh-pages branch, not committed to main).
+pipeline/out/
+
+# Python
+__pycache__/
+*.pyc
+
+# API response cache (keep the directory).
+pipeline/cache/*
+!pipeline/cache/.gitkeep

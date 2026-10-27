@@ -1,0 +1,49 @@
+name: Build feed
+
+# Builds the static JSON feed daily and publishes it to the gh-pages branch,
+# which GitHub Pages serves at FEED_BASE_URL. A 90-minutes-before-kickoff run is
+# a later improvement, not MVP.
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # daily at 06:00 UTC
+  workflow_dispatch: {}    # allow manual runs
+
+permissions:
+  contents: write          # to push the gh-pages branch
+
+concurrency:
+  group: feed
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Build feed
+        working-directory: pipeline
+        env:
+          APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
+        run: python build_feed.py --source api
+
+      - name: Add .nojekyll
+        run: touch pipeline/out/.nojekyll
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: pipeline/out
+          publish_branch: gh-pages
+          force_orphan: true
