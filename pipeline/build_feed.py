@@ -360,13 +360,18 @@ def _fixture_injuries(client, base, fixture_id) -> list:
     Matches the ids built in _player_models (team_id + api player id), so the
     engine's outReduction removes exactly those players."""
     data = client.get(base, "injuries", {"fixture": fixture_id}, ttl_hours=FRESH)
-    out = []
+    out, seen = [], set()
     for item in data.get("response", []) or []:
-        pid = (item.get("player") or {}).get("id")
+        pl = item.get("player") or {}
+        pid = pl.get("id")
         tname = (item.get("team") or {}).get("name")
         if pid is None or not tname:
             continue
-        out.append(f"{_team_id(tname, 'football')}_{pid}")
+        full = f"{_team_id(tname, 'football')}_{pid}"
+        if full in seen:
+            continue
+        seen.add(full)
+        out.append({"id": full, "name": pl.get("name") or ""})
     return out
 
 
