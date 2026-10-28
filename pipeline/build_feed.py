@@ -53,10 +53,16 @@ DEMO_BASKETBALL = {
 }
 
 
-def _team_id(name: str, sport: str) -> str:
+def _team_id(name: str, sport: str, api_id=None) -> str:
     # Namespace by sport so clubs that exist in both a football league and a
     # basketball league (Barcelona, Real Madrid, ...) don't collide on one id.
+    # Prefer the provider's numeric team id — a 3-letter code collides badly once
+    # hundreds of teams across dozens of leagues are in play (two different clubs
+    # would share one id and swap names/strengths). Fall back to the code for the
+    # demo feed, which has no provider ids.
     prefix = "fb" if sport == "football" else "bb"
+    if api_id is not None:
+        return f"{prefix}-{api_id}"
     return f"{prefix}-{team_mark(name)[0].lower()}"
 
 
@@ -227,8 +233,8 @@ def build_from_api() -> None:
     backtest_matches: list = []
     available: list[dict] = []
 
-    def register(name, league, sport):
-        tid = _team_id(name, sport)
+    def register(name, league, sport, api_id=None):
+        tid = _team_id(name, sport, api_id)
         if tid not in teams_out:
             code, c1, c2, c3 = team_mark(name)
             teams_out[tid] = {"id": tid, "name": name, "shortCode": code,
@@ -333,7 +339,7 @@ def _league_players(client, base, api_id, season, valid_ids):
             tname = (s.get("team") or {}).get("name")
             if not tname:
                 continue
-            tid = _team_id(tname, "football")
+            tid = _team_id(tname, "football", (s.get("team") or {}).get("id"))
             if tid not in valid_ids:
                 continue
             games = s.get("games") or {}
@@ -367,7 +373,7 @@ def _fixture_injuries(client, base, fixture_id) -> list:
         tname = (item.get("team") or {}).get("name")
         if pid is None or not tname:
             continue
-        full = f"{_team_id(tname, 'football')}_{pid}"
+        full = f"{_team_id(tname, 'football', (item.get('team') or {}).get('id'))}_{pid}"
         if full in seen:
             continue
         seen.add(full)
@@ -496,8 +502,8 @@ def _api_football_league(client, base, league, season, history_seasons,
             fx, goals, teams = item["fixture"], item["goals"], item["teams"]
             if fx.get("status", {}).get("short") not in ("FT", "AET", "PEN"):
                 continue
-            hid = register(teams["home"]["name"], league.name, "football")
-            aid = register(teams["away"]["name"], league.name, "football")
+            hid = register(teams["home"]["name"], league.name, "football", teams["home"]["id"])
+            aid = register(teams["away"]["name"], league.name, "football", teams["away"]["id"])
             name_map[hid] = teams["home"]["name"]; name_map[aid] = teams["away"]["name"]
             if hid not in team_ids: team_ids.append(hid)
             if aid not in team_ids: team_ids.append(aid)
@@ -539,8 +545,8 @@ def _api_football_league(client, base, league, season, history_seasons,
     EMIT_CAP = 40
     for k, item in enumerate(ns):
         fx, teams = item["fixture"], item["teams"]
-        hid = register(teams["home"]["name"], league.name, "football")
-        aid = register(teams["away"]["name"], league.name, "football")
+        hid = register(teams["home"]["name"], league.name, "football", teams["home"]["id"])
+        aid = register(teams["away"]["name"], league.name, "football", teams["away"]["id"])
         remaining.append((hid, aid))
         if k < EMIT_CAP:
             all_fixtures.append({"id": f"{league.slug}-{fx['id']}", "sport": "football",
@@ -566,7 +572,7 @@ def _api_football_league(client, base, league, season, history_seasons,
     for grp in st.get("response", []):
         for table in grp.get("league", {}).get("standings", []):
             for row in table:
-                standings[_team_id(row["team"]["name"], "football")] = row.get("points", 0)
+                standings[_team_id(row["team"]["name"], "football", row["team"]["id"])] = row.get("points", 0)
     # Fallback: no standings endpoint data → derive participants + points from the
     # current season's finished results (and upcoming fixtures).
     if not standings:
@@ -613,8 +619,8 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
             # Skip All-Star / Rising Stars exhibition games — not real franchises.
             if _is_exhibition(teams["home"]["name"]) or _is_exhibition(teams["away"]["name"]):
                 continue
-            hid = register(teams["home"]["name"], league.name, "basketball")
-            aid = register(teams["away"]["name"], league.name, "basketball")
+            hid = register(teams["home"]["name"], league.name, "basketball", teams["home"]["id"])
+            aid = register(teams["away"]["name"], league.name, "basketball", teams["away"]["id"])
             name_map[hid] = teams["home"]["name"]; name_map[aid] = teams["away"]["name"]
             for t in (hid, aid):
                 if t not in team_ids: team_ids.append(t); wins[t] = 0
@@ -634,8 +640,8 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
     remaining = []
     for k, g in enumerate(cur_upcoming):
         teams = g["teams"]
-        hid = register(teams["home"]["name"], league.name, "basketball")
-        aid = register(teams["away"]["name"], league.name, "basketball")
+        hid = register(teams["home"]["name"], league.name, "basketball", teams["home"]["id"])
+        aid = register(teams["away"]["name"], league.name, "basketball", teams["away"]["id"])
         remaining.append((hid, aid))
         if len([f for f in all_fixtures if f["league"] == league.name]) < 6:
             all_fixtures.append({"id": f"{league.slug}-{g['id']}", "sport": "basketball",
