@@ -355,6 +355,21 @@ def _league_players(client, base, api_id, season, valid_ids):
     return by_team
 
 
+def _fixture_injuries(client, base, fixture_id) -> list:
+    """Our player ids unavailable (injured/suspended) for one upcoming fixture.
+    Matches the ids built in _player_models (team_id + api player id), so the
+    engine's outReduction removes exactly those players."""
+    data = client.get(base, "injuries", {"fixture": fixture_id}, ttl_hours=FRESH)
+    out = []
+    for item in data.get("response", []) or []:
+        pid = (item.get("player") or {}).get("id")
+        tname = (item.get("team") or {}).get("name")
+        if pid is None or not tname:
+            continue
+        out.append(f"{_team_id(tname, 'football')}_{pid}")
+    return out
+
+
 def _player_models(tid, raws):
     """Convert raw player stats to the feed's player format with goal shares."""
     if not raws:
@@ -529,7 +544,8 @@ def _api_football_league(client, base, league, season, history_seasons,
             all_fixtures.append({"id": f"{league.slug}-{fx['id']}", "sport": "football",
                                  "league": league.name, "round": None, "kickoff": fx["date"],
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
-                                 "featured": league.slug == "premier_league" and k == 0, "upset": False})
+                                 "featured": league.slug == "premier_league" and k == 0, "upset": False,
+                                 "unavailable": _fixture_injuries(client, base, fx["id"])})
     # Test mode: a finished season has no upcoming fixtures. Publish the most recent
     # REAL finished games (real teams + real scores) so Home/Picker can simulate and
     # the result can be checked; leave `remaining` empty so the Explore race shows
