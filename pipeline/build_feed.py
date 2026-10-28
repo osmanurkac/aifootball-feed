@@ -422,9 +422,9 @@ def _emit_real_fixtures(all_fixtures, league, sport, real_finished, featured_slu
     for k, (hid, aid, hs, as_, date) in enumerate(recent):
         all_fixtures.append({"id": f"{league.slug}-real-{k}", "sport": sport,
                              "league": league.name, "round": None,
-                             # Show the REAL game date so test results aren't confused
-                             # with a fake kickoff; the app doesn't filter past dates.
-                             "kickoff": date or iso(1 + k),
+                             # Shift to the near future so they read as genuine
+                             # upcoming games (real date + score kept under `test`).
+                             "kickoff": iso(1 + k),
                              "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                              "featured": league.slug == featured_slug and k == 0, "upset": False,
                              "test": {"homeScore": hs, "awayScore": as_, "date": date}})
@@ -554,10 +554,11 @@ def _api_football_league(client, base, league, season, history_seasons,
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "premier_league" and k == 0, "upset": False,
                                  "unavailable": _fixture_injuries(client, base, fx["id"]) if league.enrich else None})
-    # Test mode: a finished season has no upcoming fixtures. Publish the most recent
-    # REAL finished games so Home/Picker can simulate and the result can be checked.
-    if not ns and FEED_ALLOW_FINISHED:
-        _emit_real_fixtures(all_fixtures, league, "football", real_finished, "premier_league")
+    # Football is Pro → use REAL upcoming fixtures only. A league with no current
+    # not-started fixtures (off-season, e.g. J1 in winter) simply contributes its
+    # model + teams (still simulatable in Custom matchup) and a projection — we
+    # never publish stale finished games into "upcoming" (that put June/2025 dates
+    # in Home's "today").
 
     # Cups are knockout — no league table or title/relegation race. The fixtures and
     # teams above are enough to simulate; skip the projection.
