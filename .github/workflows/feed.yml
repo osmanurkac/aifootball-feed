@@ -7,7 +7,12 @@ name: Build feed
 on:
   schedule:
     - cron: "0 6 * * *"   # daily at 06:00 UTC
-  workflow_dispatch: {}    # allow manual runs
+  workflow_dispatch:       # allow manual runs
+    inputs:
+      allow_finished_season:
+        description: "TEST MODE: fall back to the latest accessible finished season when the current one is gated (Free plan). Leave off for production."
+        type: boolean
+        default: false
 
 permissions:
   contents: write          # to push the gh-pages branch
@@ -35,6 +40,7 @@ jobs:
         working-directory: pipeline
         env:
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
+          FEED_ALLOW_FINISHED: ${{ inputs.allow_finished_season }}
         run: python build_feed.py --source api
 
       - name: Add .nojekyll

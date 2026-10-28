@@ -21,7 +21,7 @@ import basketball_model as bb
 import football_model as fb
 import backtest
 import season_sim
-from config import LEAGUES, OUT_DIR, APISPORTS_KEY
+from config import LEAGUES, OUT_DIR, APISPORTS_KEY, FEED_ALLOW_FINISHED, SEASON_LOOKBACK
 from team_colors import team_mark
 
 
@@ -276,18 +276,72 @@ def _days_ago(iso_date: str) -> float:
         return 180.0
 
 
+def _test_pairs(team_ids, standings=None, n=4):
+    """A handful of real-team pairings for synthesised upcoming fixtures (test
+    mode only), top teams first when standings are known."""
+    order = sorted(team_ids, key=lambda t: (standings or {}).get(t, 0), reverse=True) \
+        if standings else list(team_ids)
+    pairs = []
+    k = 0
+    while k + 1 < len(order) and len(pairs) < n:
+        pairs.append((order[k], order[k + 1]))
+        k += 2
+    return pairs
+
+
+def _resolve_football_season(client, base, league, season):
+    """Return (effective_season, fixtures_data) — normally the current season.
+    In FEED_ALLOW_FINISHED test mode, if the current season is plan-gated or empty,
+    step back to the most recent accessible season that has fixtures/results."""
+    candidates = [season]
+    if FEED_ALLOW_FINISHED:
+        candidates += [season - i for i in range(1, SEASON_LOOKBACK + 1)]
+    last = f"current season {season} not available on this plan"
+    for yr in candidates:
+        data = client.get(base, "fixtures", {"league": league.api_id, "season": yr})
+        if _plan_blocked(data):
+            last = f"season {yr} not available on this plan"
+            continue
+        items = data.get("response", []) or []
+        statuses = {i["fixture"]["status"]["short"] for i in items}
+        if statuses & {"FT", "AET", "PEN", "NS"}:
+            if yr != season:
+                print(f"  - {league.name}: TEST MODE — current {season} gated, using finished season {yr}")
+            return yr, data
+        last = f"season {yr} has no fixtures/results"
+    raise LeagueUnavailable(last)
+
+
+def _resolve_basketball_season(client, base, league):
+    now = datetime.datetime.now(datetime.timezone.utc)
+    cur = _current_basketball_season(league.season_style, now.year, now.month)
+    start_year = int(cur) if league.season_style == "year" else int(cur.split("-")[0])
+    fmt = (lambda s: str(s)) if league.season_style == "year" else (lambda s: f"{s}-{s + 1}")
+    candidates = [cur]
+    if FEED_ALLOW_FINISHED:
+        candidates += [fmt(start_year - i) for i in range(1, SEASON_LOOKBACK + 1)]
+    last = f"current season {cur} not available on this plan"
+    for sv in candidates:
+        data = client.get(base, "games", {"league": league.api_id, "season": sv})
+        if _plan_blocked(data):
+            last = f"season {sv} not available on this plan"
+            continue
+        games = data.get("response", []) or []
+        statuses = {g.get("status", {}).get("short") for g in games}
+        if statuses & {"FT", "AOT", "NS"}:
+            if sv != cur:
+                print(f"  - {league.name}: TEST MODE — current {cur} gated, using finished season {sv}")
+            return sv, data
+        last = f"season {sv} has no games"
+    raise LeagueUnavailable(last)
+
+
 def _api_football_league(client, base, league, season, history_seasons,
                          register, all_fixtures, backtest_matches):
     # Gate: the CURRENT season must be accessible (not plan-gated) and have real
-    # fixtures. Otherwise the league is hidden — no old-season backfill.
-    cur = client.get(base, "fixtures", {"league": league.api_id, "season": season})
-    if _plan_blocked(cur):
-        raise LeagueUnavailable(f"current season {season} not available on this plan")
-    cur_items = cur.get("response", []) or []
-    finished = [i for i in cur_items if i["fixture"]["status"]["short"] in ("FT", "AET", "PEN")]
-    upcoming = [i for i in cur_items if i["fixture"]["status"]["short"] == "NS"]
-    if not finished and not upcoming:
-        raise LeagueUnavailable(f"current season {season} has no fixtures/results")
+    # fixtures. Otherwise the league is hidden — unless FEED_ALLOW_FINISHED test
+    # mode lets us fall back to the most recent accessible finished season.
+    season, cur = _resolve_football_season(client, base, league, season)
 
     name_map, team_ids, history = {}, [], []
     # Fit on accessible seasons up to and including the current one (the current
@@ -336,23 +390,26 @@ def _api_football_league(client, base, league, season, history_seasons,
                                  "league": league.name, "round": None, "kickoff": fx["date"],
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "premier_league" and k == 0, "upset": False})
+    # Test mode: a finished season has no upcoming fixtures. Synthesise a few from
+    # real teams (future kickoffs) so Home/Picker have matches to simulate; leave
+    # `remaining` empty so the Explore race shows the real final table.
+    if not up.get("response") and FEED_ALLOW_FINISHED:
+        for k, (hid, aid) in enumerate(_test_pairs(team_ids, standings)):
+            all_fixtures.append({"id": f"{league.slug}-test-{k}", "sport": "football",
+                                 "league": league.name, "round": None, "kickoff": iso(1 + k),
+                                 "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
+                                 "featured": league.slug == "premier_league" and k == 0, "upset": False})
     season_json = season_sim.simulate_football(league.name, league.slug, model, standings, remaining, OUT_DIR)
     write_json(OUT_DIR / "seasons" / f"{league.slug}.json", season_json)
 
 
 def _api_basketball_league(client, base, league, history_seasons, register, all_fixtures):
-    now = datetime.datetime.now(datetime.timezone.utc)
-    cur_season = _current_basketball_season(league.season_style, now.year, now.month)
-
-    # Gate on the current campaign.
-    cur = client.get(base, "games", {"league": league.api_id, "season": cur_season})
-    if _plan_blocked(cur):
-        raise LeagueUnavailable(f"current season {cur_season} not available on this plan")
+    # Gate on the current campaign — or, in test mode, the most recent accessible
+    # finished campaign.
+    cur_season, cur = _resolve_basketball_season(client, base, league)
     cur_games = cur.get("response", []) or []
     cur_finished = [g for g in cur_games if g.get("status", {}).get("short") in ("FT", "AOT")]
     cur_upcoming = [g for g in cur_games if g.get("status", {}).get("short") == "NS"]
-    if not cur_finished and not cur_upcoming:
-        raise LeagueUnavailable(f"current season {cur_season} has no games")
 
     # Fit window: current campaign + older accessible seasons for stability.
     if league.season_style == "year":
@@ -397,6 +454,14 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
         if len([f for f in all_fixtures if f["league"] == league.name]) < 6:
             all_fixtures.append({"id": f"{league.slug}-{g['id']}", "sport": "basketball",
                                  "league": league.name, "round": None, "kickoff": g["date"],
+                                 "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
+                                 "featured": league.slug == "nba" and k == 0, "upset": False})
+    # Test mode: synthesise a few upcoming games from real teams so the simulate
+    # flow can be exercised; the Explore race keeps the real final standings.
+    if not cur_upcoming and FEED_ALLOW_FINISHED:
+        for k, (hid, aid) in enumerate(_test_pairs(team_ids, wins)):
+            all_fixtures.append({"id": f"{league.slug}-test-{k}", "sport": "basketball",
+                                 "league": league.name, "round": None, "kickoff": iso(1 + k),
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "nba" and k == 0, "upset": False})
     season_json = season_sim.simulate_basketball(league.name, league.slug, model, wins, remaining, OUT_DIR)

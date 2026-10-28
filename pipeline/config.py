@@ -22,6 +22,15 @@ APISPORTS_KEY = os.environ.get("APISPORTS_KEY", "")
 # Daily request budget (free plans are ~100/day). The client stops before this.
 DAILY_REQUEST_BUDGET = int(os.environ.get("APISPORTS_BUDGET", "90"))
 
+# TEST MODE. When the current season is gated (e.g. the Free plan only exposes
+# 2022–2024), fall back to the most recent ACCESSIBLE finished season so the whole
+# app can be exercised with real (if not current) data. Leave this UNSET in
+# production — then only the live current season is ever shown, and gated leagues
+# are hidden. Enabled via the "Build feed" workflow's allow_finished_season input.
+FEED_ALLOW_FINISHED = os.environ.get("FEED_ALLOW_FINISHED", "").strip().lower() in ("1", "true", "yes")
+# How many seasons back to probe when falling back in test mode.
+SEASON_LOOKBACK = int(os.environ.get("FEED_SEASON_LOOKBACK", "4"))
+
 # Time-decay half-life (days) for Dixon-Coles weighting; ~3 seasons of history.
 DECAY_HALF_LIFE_DAYS = 365.0
 HISTORY_SEASONS = 3
