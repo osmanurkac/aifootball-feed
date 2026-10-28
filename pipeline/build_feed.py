@@ -235,8 +235,10 @@ def build_from_api() -> None:
                               "league": league, "sport": sport}
         return tid
 
-    # Test mode fits on a single season to stay well under the Free plan's 100/day.
-    hist = 1 if FEED_ALLOW_FINISHED else HISTORY_SEASONS
+    # History depth is decided per league inside the builders: current-season
+    # (Pro) leagues use the full depth; finished-fallback (Free) leagues use 1
+    # season to stay under the Free plan's 100/day.
+    hist = HISTORY_SEASONS
     for league in LEAGUES:
         try:
             if league.sport == "football":
@@ -326,7 +328,7 @@ def _resolve_football_season(client, base, league, season):
         if statuses & {"FT", "AET", "PEN", "NS"}:
             if yr != season:
                 print(f"  - {league.name}: TEST MODE — current {season} gated, using finished season {yr}")
-            return yr, data
+            return yr, data, (yr != season)
         last = f"season {yr} has no fixtures/results"
     raise LeagueUnavailable(last)
 
@@ -350,7 +352,7 @@ def _resolve_basketball_season(client, base, league):
         if statuses & {"FT", "AOT", "NS"}:
             if sv != cur:
                 print(f"  - {league.name}: TEST MODE — current {cur} gated, using finished season {sv}")
-            return sv, data
+            return sv, data, (sv != cur)
         last = f"season {sv} has no games"
     raise LeagueUnavailable(last)
 
@@ -360,7 +362,10 @@ def _api_football_league(client, base, league, season, history_seasons,
     # Gate: the CURRENT season must be accessible (not plan-gated) and have real
     # fixtures. Otherwise the league is hidden — unless FEED_ALLOW_FINISHED test
     # mode lets us fall back to the most recent accessible finished season.
-    season, cur = _resolve_football_season(client, base, league, season)
+    season, cur, fell_back = _resolve_football_season(client, base, league, season)
+    # Full history for a live current season (Pro); a single season for a
+    # finished-fallback league (Free) to stay under quota.
+    history_seasons = 1 if fell_back else history_seasons
 
     name_map, team_ids, history = {}, [], []
     real_finished = []   # (home, away, home_goals, away_goals, date) — current season
@@ -426,7 +431,8 @@ def _api_football_league(client, base, league, season, history_seasons,
 def _api_basketball_league(client, base, league, history_seasons, register, all_fixtures):
     # Gate on the current campaign — or, in test mode, the most recent accessible
     # finished campaign.
-    cur_season, cur = _resolve_basketball_season(client, base, league)
+    cur_season, cur, fell_back = _resolve_basketball_season(client, base, league)
+    history_seasons = 1 if fell_back else history_seasons
     cur_games = cur.get("response", []) or []
     cur_finished = [g for g in cur_games if g.get("status", {}).get("short") in ("FT", "AOT")]
     cur_upcoming = [g for g in cur_games if g.get("status", {}).get("short") == "NS"]
