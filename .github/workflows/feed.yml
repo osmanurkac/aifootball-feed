@@ -40,9 +40,13 @@ jobs:
         working-directory: pipeline
         env:
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
-          FEED_ALLOW_FINISHED: ${{ inputs.allow_finished_season }}
-          # Free plan ~10 req/min; test mode makes many calls, so throttle harder.
-          APISPORTS_THROTTLE: ${{ inputs.allow_finished_season && '6.5' || '0.5' }}
+          # Football is Pro (current season); basketball is still Free, so keep the
+          # finished-season fallback ON until basketball is Pro too. The daily cron
+          # has no inputs, so default it to true there. When all sports are Pro,
+          # set this to false for strict current-only.
+          FEED_ALLOW_FINISHED: ${{ github.event_name == 'schedule' && 'true' || inputs.allow_finished_season }}
+          # Throttle for the Free-plan per-minute cap whenever the fallback is active.
+          APISPORTS_THROTTLE: ${{ (github.event_name == 'schedule' || inputs.allow_finished_season) && '6.5' || '0.5' }}
         run: python build_feed.py --source api
 
       - name: Add .nojekyll
