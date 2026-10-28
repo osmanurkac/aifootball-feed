@@ -19,8 +19,11 @@ BASKETBALL_BASE = "https://v1.basketball.api-sports.io"
 
 APISPORTS_KEY = os.environ.get("APISPORTS_KEY", "")
 
-# Daily request budget (free plans are ~100/day). The client stops before this.
-DAILY_REQUEST_BUDGET = int(os.environ.get("APISPORTS_BUDGET", "90"))
+# Per-run safety cap on API calls. Football is Pro (7500/day) and the per-fixture
+# statistics calls add up, so this is well above a run's needs; basketball (Free)
+# is rate-limited by the 6.5s throttle and makes few calls. Lower via APISPORTS_BUDGET
+# if a sport is still on Free and you want a hard stop.
+DAILY_REQUEST_BUDGET = int(os.environ.get("APISPORTS_BUDGET", "2000"))
 
 # TEST MODE. When the current season is gated (e.g. the Free plan only exposes
 # 2022–2024), fall back to the most recent ACCESSIBLE finished season so the whole
