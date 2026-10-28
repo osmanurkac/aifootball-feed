@@ -319,9 +319,10 @@ def _league_players(client, base, api_id, season, valid_ids):
         for item in data.get("response", []) or []:
             p = item.get("player") or {}
             stats = item.get("statistics") or []
-            if not stats:
+            # A player's statistics span all their competitions — pick this league's.
+            s = next((x for x in stats if (x.get("league") or {}).get("id") == api_id), None)
+            if s is None:
                 continue
-            s = stats[0]
             tname = (s.get("team") or {}).get("name")
             if not tname:
                 continue
@@ -490,6 +491,7 @@ def _api_football_league(client, base, league, season, history_seasons,
     # Real squads + goal shares from the players endpoint (Pro, current season).
     if not fell_back:
         raw = _league_players(client, base, league.api_id, season, set(team_ids))
+        print(f"  {league.name}: {sum(len(v) for v in raw.values())} real players across {len(raw)} teams")
         for t in model["teams"]:
             pm = _player_models(t["teamId"], raw.get(t["teamId"], []))
             if pm:
