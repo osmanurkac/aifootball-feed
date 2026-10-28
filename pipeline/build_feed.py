@@ -235,13 +235,15 @@ def build_from_api() -> None:
                               "league": league, "sport": sport}
         return tid
 
+    # Test mode fits on a single season to stay well under the Free plan's 100/day.
+    hist = 1 if FEED_ALLOW_FINISHED else HISTORY_SEASONS
     for league in LEAGUES:
         try:
             if league.sport == "football":
-                _api_football_league(client, FOOTBALL_BASE, league, season, HISTORY_SEASONS,
+                _api_football_league(client, FOOTBALL_BASE, league, season, hist,
                                      register, all_fixtures, backtest_matches)
             else:
-                _api_basketball_league(client, BASKETBALL_BASE, league, HISTORY_SEASONS,
+                _api_basketball_league(client, BASKETBALL_BASE, league, hist,
                                        register, all_fixtures)
         except LeagueUnavailable as exc:
             print(f"  - {league.name}: HIDDEN — {exc}")
