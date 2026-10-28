@@ -9,10 +9,11 @@ import hashlib
 import json
 import time
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from config import CACHE_DIR, DAILY_REQUEST_BUDGET
+from config import CACHE_DIR, DAILY_REQUEST_BUDGET, REQUEST_THROTTLE_SEC
 
 
 class BudgetExceeded(RuntimeError):
@@ -20,12 +21,29 @@ class BudgetExceeded(RuntimeError):
 
 
 class APISports:
-    def __init__(self, key: str, cache_dir: Path = CACHE_DIR, budget: int = DAILY_REQUEST_BUDGET):
+    def __init__(self, key: str, cache_dir: Path = CACHE_DIR, budget: int = DAILY_REQUEST_BUDGET,
+                 throttle: float = REQUEST_THROTTLE_SEC):
         self.key = key
         self.cache_dir = cache_dir
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.budget = budget
+        self.throttle = throttle
         self.requests_made = 0
+
+    def _fetch(self, req, attempts: int = 6) -> dict:
+        """Fetch with backoff on HTTP 429 (the Free plan's per-minute limit)."""
+        delay = 8.0
+        for i in range(attempts):
+            try:
+                with urlopen(req, timeout=30) as resp:
+                    return json.loads(resp.read().decode())
+            except HTTPError as exc:
+                if exc.code == 429 and i < attempts - 1:
+                    print(f"    429 rate-limited — waiting {delay:.0f}s (attempt {i + 1})")
+                    time.sleep(delay)
+                    delay = min(delay * 1.5, 30.0)
+                    continue
+                raise
 
     def _cache_path(self, base: str, path: str, params: dict) -> Path:
         raw = f"{base}/{path}?{urlencode(sorted(params.items()))}"
@@ -58,10 +76,9 @@ class APISports:
         if params:
             url += "?" + urlencode(params)
         req = Request(url, headers={"x-apisports-key": self.key})
-        with urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read().decode())
+        data = self._fetch(req)
         self.requests_made += 1
         cache_path.write_text(json.dumps(data))
-        # Be gentle with rate limits.
-        time.sleep(0.5)
+        # Be gentle with rate limits (Free plan ~10/min → set throttle higher).
+        time.sleep(self.throttle)
         return data

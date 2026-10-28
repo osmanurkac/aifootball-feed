@@ -41,6 +41,8 @@ jobs:
         env:
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
           FEED_ALLOW_FINISHED: ${{ inputs.allow_finished_season }}
+          # Free plan ~10 req/min; test mode makes many calls, so throttle harder.
+          APISPORTS_THROTTLE: ${{ inputs.allow_finished_season && '6.5' || '0.5' }}
         run: python build_feed.py --source api
 
       - name: Add .nojekyll

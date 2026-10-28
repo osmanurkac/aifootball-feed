@@ -31,6 +31,11 @@ FEED_ALLOW_FINISHED = os.environ.get("FEED_ALLOW_FINISHED", "").strip().lower() 
 # How many seasons back to probe when falling back in test mode.
 SEASON_LOOKBACK = int(os.environ.get("FEED_SEASON_LOOKBACK", "4"))
 
+# Seconds to wait between API requests. The Free plan is ~10 req/min, so test
+# runs set this higher (via the workflow) to stay under the per-minute cap; Pro
+# allows the fast default.
+REQUEST_THROTTLE_SEC = float(os.environ.get("APISPORTS_THROTTLE", "0.5"))
+
 # Time-decay half-life (days) for Dixon-Coles weighting; ~3 seasons of history.
 DECAY_HALF_LIFE_DAYS = 365.0
 HISTORY_SEASONS = 3
