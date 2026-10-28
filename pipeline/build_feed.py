@@ -287,11 +287,18 @@ def _days_ago(iso_date: str) -> float:
 # each; capped so a daily Pro build stays fast and well under quota.
 STATS_BUDGET_PER_LEAGUE = 140
 
+# Cache TTLs (hours). Immutable data (finished-fixture stats, completed past
+# seasons) is cached ~forever and persisted across runs via actions/cache, so the
+# daily build only fetches it once. Current-season data uses ttl=0 to always
+# refetch (stays fresh even though a restored cache file looks recent).
+IMMUTABLE_TTL = 24 * 3650
+FRESH = 0.0
+
 
 def _fixture_stats(client, base, fixture_id) -> dict:
     """Real per-team corners and cards (yellow+red) for one fixture, keyed by the
     API team id. Defensive: missing/None values -> 0; unknown shapes -> skipped."""
-    data = client.get(base, "fixtures/statistics", {"fixture": fixture_id})
+    data = client.get(base, "fixtures/statistics", {"fixture": fixture_id}, ttl_hours=IMMUTABLE_TTL)
     out: dict = {}
     for entry in data.get("response", []) or []:
         tid = (entry.get("team") or {}).get("id")
@@ -315,7 +322,7 @@ def _league_players(client, base, api_id, season, valid_ids):
     by_team = defaultdict(list)
     page = 1
     while page <= 35:   # safety cap
-        data = client.get(base, "players", {"league": api_id, "season": season, "page": page})
+        data = client.get(base, "players", {"league": api_id, "season": season, "page": page}, ttl_hours=FRESH)
         for item in data.get("response", []) or []:
             p = item.get("player") or {}
             stats = item.get("statistics") or []
@@ -406,7 +413,8 @@ def _resolve_football_season(client, base, league, season):
         candidates += [season - i for i in range(1, SEASON_LOOKBACK + 1)]
     last = f"current season {season} not available on this plan"
     for yr in candidates:
-        data = client.get(base, "fixtures", {"league": league.api_id, "season": yr})
+        data = client.get(base, "fixtures", {"league": league.api_id, "season": yr},
+                          ttl_hours=FRESH if yr == season else IMMUTABLE_TTL)
         if _plan_blocked(data):
             last = f"season {yr} not available on this plan"
             continue
@@ -430,7 +438,8 @@ def _resolve_basketball_season(client, base, league):
         candidates += [fmt(start_year - i) for i in range(1, SEASON_LOOKBACK + 1)]
     last = f"current season {cur} not available on this plan"
     for sv in candidates:
-        data = client.get(base, "games", {"league": league.api_id, "season": sv})
+        data = client.get(base, "games", {"league": league.api_id, "season": sv},
+                          ttl_hours=FRESH if sv == cur else IMMUTABLE_TTL)
         if _plan_blocked(data):
             last = f"season {sv} not available on this plan"
             continue
@@ -460,7 +469,7 @@ def _api_football_league(client, base, league, season, history_seasons,
     # Fit on accessible seasons up to and including the current one (the current
     # season's results are already in `cur`); older seasons add rating stability.
     for yr in range(season - history_seasons + 1, season + 1):
-        data = cur if yr == season else client.get(base, "fixtures", {"league": league.api_id, "season": yr})
+        data = cur if yr == season else client.get(base, "fixtures", {"league": league.api_id, "season": yr}, ttl_hours=IMMUTABLE_TTL)
         if _plan_blocked(data):
             continue
         for item in data.get("response", []):
@@ -500,7 +509,7 @@ def _api_football_league(client, base, league, season, history_seasons,
 
     # Current-season standings -> points.
     standings = {t: 0 for t in team_ids}
-    st = client.get(base, "standings", {"league": league.api_id, "season": season})
+    st = client.get(base, "standings", {"league": league.api_id, "season": season}, ttl_hours=FRESH)
     for grp in st.get("response", []):
         for table in grp.get("league", {}).get("standings", []):
             for row in table:
@@ -510,7 +519,7 @@ def _api_football_league(client, base, league, season, history_seasons,
 
     # Upcoming current-season fixtures -> remaining + app fixtures.
     remaining = []
-    up = client.get(base, "fixtures", {"league": league.api_id, "season": season, "next": "40"})
+    up = client.get(base, "fixtures", {"league": league.api_id, "season": season, "next": "40"}, ttl_hours=FRESH)
     for k, item in enumerate(up.get("response", [])):
         fx, teams = item["fixture"], item["teams"]
         hid = register(teams["home"]["name"], league.name, "football")
@@ -551,7 +560,7 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
     name_map, team_ids, games_fit, wins = {}, [], [], {}
     real_finished = []   # (home, away, home_pts, away_pts, date) — current season
     for sv in window:
-        data = cur if sv == cur_season else client.get(base, "games", {"league": league.api_id, "season": sv})
+        data = cur if sv == cur_season else client.get(base, "games", {"league": league.api_id, "season": sv}, ttl_hours=IMMUTABLE_TTL)
         if _plan_blocked(data):
             continue
         for g in data.get("response", []):

@@ -36,6 +36,18 @@ jobs:
       - name: Install dependencies
         run: pip install -r pipeline/requirements.txt
 
+      # Persist the API response cache across runs. Immutable data (finished-fixture
+      # statistics, completed past seasons) is then fetched once and reused, so the
+      # daily build only pulls the current season. Current-season calls use ttl=0 in
+      # the pipeline, so they always refetch and stay fresh.
+      - name: Restore API cache
+        uses: actions/cache@v4
+        with:
+          path: pipeline/cache
+          key: apisports-cache-${{ github.run_id }}
+          restore-keys: |
+            apisports-cache-
+
       - name: Build feed
         working-directory: pipeline
         env:
