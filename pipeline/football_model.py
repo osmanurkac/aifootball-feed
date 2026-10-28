@@ -99,6 +99,29 @@ def _fit_glm(team_ids: list[str], matches: list[Match]):
     return round(league_avg, 3), round(home_adv, 3), attack, defence
 
 
+# Empirical-Bayes regression constants.
+REG_K = 25.0        # pseudo-matches pulling a team toward the league mean
+PROMO_ATK = 0.14    # up to −14% attack for a no-history (promoted) side
+PROMO_DEF = 0.20    # up to +20% goals conceded for a no-history side
+
+
+def _regress_strengths(team_ids: list[str], atk: dict[str, float],
+                       dfc: dict[str, float], counts: dict[str, int]):
+    """Shrink attack/defence toward the mean by sample size, and bias low-data
+    (newly promoted) teams toward the weaker end. A team with lots of history is
+    unchanged; one with a handful of games is pulled to ~average and then down."""
+    out_a, out_d = {}, {}
+    for tid in team_ids:
+        n = counts.get(tid, 0)
+        rel = n / (n + REG_K)             # 0 (no data) … → 1 (lots of data)
+        promo = 1.0 - rel                 # weakness bias, strongest with little data
+        a = (1.0 + (atk.get(tid, 1.0) - 1.0) * rel) * (1.0 - PROMO_ATK * promo)
+        d = (1.0 + (dfc.get(tid, 1.0) - 1.0) * rel) * (1.0 + PROMO_DEF * promo)
+        out_a[tid] = round(min(3.0, max(0.3, a)), 3)
+        out_d[tid] = round(min(3.0, max(0.3, d)), 3)
+    return out_a, out_d
+
+
 def fit_league(name: str, team_ids: list[str], team_names: dict[str, str],
                matches: list[Match]) -> dict:
     if not matches:
@@ -106,6 +129,18 @@ def fit_league(name: str, team_ids: list[str], team_names: dict[str, str],
 
     # Attack / defence / league average / home advantage via the MLE GLM.
     league_avg, home_adv, atk, dfc = _fit_glm(team_ids, matches)
+
+    # Empirical-Bayes regression (538/Opta-style): a team's strength is only as
+    # trustworthy as the matches behind it. Shrink each team toward the league
+    # mean by how much data informs it, and bias low-data sides (newly promoted,
+    # little/no top-flight history) toward the weaker end — promoted teams are
+    # usually relegation-zone, not mid-table, so a hot 8-game start shouldn't make
+    # them look like title/top-4 contenders.
+    counts = {t: 0 for t in team_ids}
+    for m in matches:
+        if m.home in counts: counts[m.home] += 1
+        if m.away in counts: counts[m.away] += 1
+    atk, dfc = _regress_strengths(team_ids, atk, dfc, counts)
 
     # First-half share.
     fh = [m for m in matches if m.first_half_goals is not None]

@@ -39,13 +39,21 @@ def simulate_football(league_name: str, slug: str, model: dict,
     pts = np.tile(base, (N_RUNS, 1))
     rng = np.random.default_rng(42)
 
+    # Rating uncertainty: our attack/defence are estimates, not the truth. Give
+    # each team a per-run strength draw (held across all its games in that run)
+    # so the simulated table reflects "if this team is really this good". Without
+    # it the leader drifts to a near-certain title and the field looks too settled.
+    SIGMA = 0.13
+    atk_s = {t: attack.get(t, 1.0) * np.exp(rng.normal(0, SIGMA, N_RUNS)) for t in teams}
+    def_s = {t: defence.get(t, 1.0) * np.exp(rng.normal(0, SIGMA, N_RUNS)) for t in teams}
+
     for home, away in remaining:
         if home not in idx or away not in idx:
             continue
-        lh = lam * attack.get(home, 1) * defence.get(away, 1) * hadv
-        la = lam * attack.get(away, 1) * defence.get(home, 1)
-        hg = rng.poisson(lh, N_RUNS)
-        ag = rng.poisson(la, N_RUNS)
+        lh = lam * atk_s[home] * def_s[away] * hadv
+        la = lam * atk_s[away] * def_s[home]
+        hg = rng.poisson(lh)
+        ag = rng.poisson(la)
         pts[hg > ag, idx[home]] += 3
         draw = hg == ag
         pts[draw, idx[home]] += 1
