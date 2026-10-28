@@ -67,6 +67,7 @@ LEAGUES: list[League] = [
     League("serie_a", "Serie A", "football", 135, "Italy"),
     League("bundesliga", "Bundesliga", "football", 78, "Germany"),
     League("ligue_1", "Ligue 1", "football", 61, "France"),
+    League("super_lig", "Süper Lig", "football", 203, "Turkey"),
     League("champions_league", "Champions League", "football", 2, "Europe"),
     League("nba", "NBA", "basketball", 12, "USA", season_style="range"),
     League("euroleague", "EuroLeague", "basketball", 120, "Europe", season_style="year"),
