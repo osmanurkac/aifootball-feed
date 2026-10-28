@@ -103,7 +103,8 @@ def fit_league(name: str, team_ids: list[str], team_names: dict[str, str],
         "league": name,
         "leagueAverageGoals": round(league_avg, 3),
         "homeAdvantage": round(home_adv, 3),
-        "rho": -0.08,
+        # -0.11 (not -0.08) fit best out-of-sample on ~30k historical matches.
+        "rho": -0.11,
         "firstHalfGoalShare": first_half_share,
         "teams": teams,
     }

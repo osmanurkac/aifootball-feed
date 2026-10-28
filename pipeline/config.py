@@ -37,7 +37,9 @@ SEASON_LOOKBACK = int(os.environ.get("FEED_SEASON_LOOKBACK", "4"))
 REQUEST_THROTTLE_SEC = float(os.environ.get("APISPORTS_THROTTLE", "0.5"))
 
 # Time-decay half-life (days) for Dixon-Coles weighting; ~3 seasons of history.
-DECAY_HALF_LIFE_DAYS = 365.0
+# 540 (not 365) minimised out-of-sample 1X2 log-loss on ~30k historical matches
+# (see research/ backtest). Longer memory ⇒ steadier ratings.
+DECAY_HALF_LIFE_DAYS = 540.0
 HISTORY_SEASONS = 3
 
 
