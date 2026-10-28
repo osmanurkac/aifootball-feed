@@ -527,13 +527,17 @@ def _api_football_league(client, base, league, season, history_seasons,
                 t["players"] = pm
     write_json(OUT_DIR / "football" / f"{league.slug}.json", model)
 
-    # Upcoming current-season fixtures -> remaining + app fixtures. Emit plenty so
-    # Home can show ALL of today's matches, not a handful. Injuries only for
-    # enriched leagues (keeps the quota down on the long tail).
+    # Remaining schedule -> the FULL set of not-started current-season fixtures
+    # (reusing `cur`, no extra call), so the projection plays out the whole rest of
+    # the season rather than just the next few rounds (otherwise the current table
+    # barely moves and the leader/2nd look near-certain). Emit the soonest for
+    # Home's "today"; injuries only for enriched leagues (keeps the quota down).
+    ns = [it for it in cur.get("response", [])
+          if it["fixture"].get("status", {}).get("short") == "NS"]
+    ns.sort(key=lambda it: it["fixture"]["date"])
     remaining = []
-    up = client.get(base, "fixtures", {"league": league.api_id, "season": season, "next": "50"}, ttl_hours=FRESH)
     EMIT_CAP = 40
-    for k, item in enumerate(up.get("response", [])):
+    for k, item in enumerate(ns):
         fx, teams = item["fixture"], item["teams"]
         hid = register(teams["home"]["name"], league.name, "football")
         aid = register(teams["away"]["name"], league.name, "football")
@@ -546,7 +550,7 @@ def _api_football_league(client, base, league, season, history_seasons,
                                  "unavailable": _fixture_injuries(client, base, fx["id"]) if league.enrich else None})
     # Test mode: a finished season has no upcoming fixtures. Publish the most recent
     # REAL finished games so Home/Picker can simulate and the result can be checked.
-    if not up.get("response") and FEED_ALLOW_FINISHED:
+    if not ns and FEED_ALLOW_FINISHED:
         _emit_real_fixtures(all_fixtures, league, "football", real_finished, "premier_league")
 
     # Cups are knockout — no league table or title/relegation race. The fixtures and
