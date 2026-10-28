@@ -10,8 +10,13 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
+import numpy as np
+
 from config import DECAY_HALF_LIFE_DAYS
 from team_colors import team_mark
+
+# L2 shrinkage on attack/defence in the MLE fit (toward the league average).
+GLM_RIDGE = 8.0
 
 
 @dataclass
@@ -39,19 +44,68 @@ def _nb_size(mean: float, var: float) -> float:
     return max(1.0, (mean * mean) / (var - mean))
 
 
+def _fit_glm(team_ids: list[str], matches: list[Match]):
+    """Time-weighted ridge Poisson GLM (Dixon-Coles MLE) for attack / defence /
+    home advantage. log λ = μ + home + attack[scorer] + defence[conceder].
+
+    Beats the old scored/conceded-ratio heuristic out-of-sample (1X2 log-loss
+    0.991 → 0.988 on ~28k historical matches; see the feed's research/). Returns
+    (leagueAverageGoals, homeAdvantage, {team: attack}, {team: defence}); each
+    exp()'d so the app engine's multiplicative λ = avg·atk·def·homeAdv is unchanged.
+    """
+    present = [t for t in team_ids if any(m.home == t or m.away == t for m in matches)]
+    index = {t: i for i, t in enumerate(present)}
+    n_teams = len(present)
+    if n_teams < 2:
+        return 1.35, 1.15, {t: 1.0 for t in team_ids}, {t: 1.0 for t in team_ids}
+
+    ncol = 2 + 2 * n_teams          # [intercept, home, attack…, defence…]
+    rows, ys, ws = [], [], []
+    for m in matches:
+        if m.home not in index or m.away not in index:
+            continue
+        w = _decay(m.days_ago)
+        hi, ai = index[m.home], index[m.away]
+        r_home = [0.0] * ncol; r_home[0] = 1; r_home[1] = 1; r_home[2 + hi] = 1; r_home[2 + n_teams + ai] = 1
+        rows.append(r_home); ys.append(m.home_goals); ws.append(w)
+        r_away = [0.0] * ncol; r_away[0] = 1; r_away[2 + ai] = 1; r_away[2 + n_teams + hi] = 1
+        rows.append(r_away); ys.append(m.away_goals); ws.append(w)
+
+    X = np.asarray(rows); y = np.asarray(ys, dtype=float); w = np.asarray(ws)
+    ridge = np.ones(ncol) * GLM_RIDGE; ridge[0] = 0.0; ridge[1] = 0.0
+    R = np.diag(ridge)
+    beta = np.zeros(ncol)
+    for _ in range(15):                 # IRLS
+        eta = np.clip(X @ beta, -5.0, 5.0)
+        mu = np.exp(eta)
+        wd = w * mu
+        A = (X.T * wd) @ X + R
+        z = eta + (y - mu) / np.maximum(mu, 1e-6)
+        b = (X.T * wd) @ z
+        try:
+            beta = np.linalg.solve(A, b)
+        except np.linalg.LinAlgError:
+            beta = np.linalg.lstsq(A, b, rcond=None)[0]
+
+    league_avg = float(math.exp(min(1.5, beta[0])))
+    home_adv = float(max(1.0, math.exp(beta[1])))
+    attack, defence = {}, {}
+    for t in team_ids:
+        if t in index:
+            attack[t] = round(min(3.0, max(0.3, math.exp(beta[2 + index[t]]))), 3)
+            defence[t] = round(min(3.0, max(0.3, math.exp(beta[2 + n_teams + index[t]]))), 3)
+        else:
+            attack[t] = defence[t] = 1.0
+    return round(league_avg, 3), round(home_adv, 3), attack, defence
+
+
 def fit_league(name: str, team_ids: list[str], team_names: dict[str, str],
                matches: list[Match]) -> dict:
     if not matches:
         raise ValueError(f"No matches to fit {name}")
 
-    # League averages (weighted).
-    w_sum = sum(_decay(m.days_ago) for m in matches)
-    total_goals = sum((m.home_goals + m.away_goals) * _decay(m.days_ago) for m in matches)
-    league_avg = (total_goals / w_sum) / 2 if w_sum else 1.4
-
-    home_goals_avg = sum(m.home_goals * _decay(m.days_ago) for m in matches) / w_sum
-    away_goals_avg = sum(m.away_goals * _decay(m.days_ago) for m in matches) / w_sum
-    home_adv = max(1.0, (home_goals_avg / away_goals_avg) ** 0.5) if away_goals_avg else 1.15
+    # Attack / defence / league average / home advantage via the MLE GLM.
+    league_avg, home_adv, atk, dfc = _fit_glm(team_ids, matches)
 
     # First-half share.
     fh = [m for m in matches if m.first_half_goals is not None]
@@ -64,23 +118,15 @@ def fit_league(name: str, team_ids: list[str], team_names: dict[str, str],
 
     teams = []
     for tid in team_ids:
-        scored, conceded, wt = 0.0, 0.0, 0.0
         corners, cards = [], []
         for m in matches:
-            w = _decay(m.days_ago)
             if m.home == tid:
-                scored += m.home_goals * w; conceded += m.away_goals * w; wt += w
                 if m.home_corners is not None: corners.append(m.home_corners)
                 if m.home_cards is not None: cards.append(m.home_cards)
             elif m.away == tid:
-                scored += m.away_goals * w; conceded += m.home_goals * w; wt += w
                 if m.away_corners is not None: corners.append(m.away_corners)
                 if m.away_cards is not None: cards.append(m.away_cards)
-        if wt == 0:
-            attack = defence = 1.0
-        else:
-            attack = max(0.4, (scored / wt) / league_avg)
-            defence = max(0.4, (conceded / wt) / league_avg)
+        attack, defence = atk[tid], dfc[tid]
 
         c_mean = (sum(corners) / len(corners)) if corners else 5.5
         c_var = _variance(corners, c_mean) if len(corners) > 1 else c_mean * 1.4
