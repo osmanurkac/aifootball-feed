@@ -299,7 +299,10 @@ def _emit_real_fixtures(all_fixtures, league, sport, real_finished, featured_slu
     recent = sorted(real_finished, key=lambda r: r[4] or "", reverse=True)[:n]
     for k, (hid, aid, hs, as_, date) in enumerate(recent):
         all_fixtures.append({"id": f"{league.slug}-real-{k}", "sport": sport,
-                             "league": league.name, "round": None, "kickoff": iso(1 + k),
+                             "league": league.name, "round": None,
+                             # Show the REAL game date so test results aren't confused
+                             # with a fake kickoff; the app doesn't filter past dates.
+                             "kickoff": date or iso(1 + k),
                              "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                              "featured": league.slug == featured_slug and k == 0, "upset": False,
                              "test": {"homeScore": hs, "awayScore": as_, "date": date}})
