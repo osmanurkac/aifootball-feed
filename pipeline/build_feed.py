@@ -15,6 +15,7 @@ import datetime
 import json
 import random
 import shutil
+from collections import defaultdict
 from pathlib import Path
 
 import basketball_model as bb
@@ -309,6 +310,62 @@ def _fixture_stats(client, base, fixture_id) -> dict:
     return out
 
 
+def _league_players(client, base, api_id, season, valid_ids):
+    """Real players per team (our id), from the paginated players endpoint."""
+    by_team = defaultdict(list)
+    page = 1
+    while page <= 35:   # safety cap
+        data = client.get(base, "players", {"league": api_id, "season": season, "page": page})
+        for item in data.get("response", []) or []:
+            p = item.get("player") or {}
+            stats = item.get("statistics") or []
+            if not stats:
+                continue
+            s = stats[0]
+            tname = (s.get("team") or {}).get("name")
+            if not tname:
+                continue
+            tid = _team_id(tname, "football")
+            if tid not in valid_ids:
+                continue
+            games = s.get("games") or {}
+            goals = s.get("goals") or {}
+            cards = s.get("cards") or {}
+            mins = games.get("minutes") or 0
+            if mins <= 0:
+                continue
+            by_team[tid].append({
+                "aid": p.get("id"), "name": p.get("name") or "",
+                "goals": goals.get("total") or 0, "minutes": mins,
+                "apps": games.get("appearences") or 0,
+                "cards": (cards.get("yellow") or 0) + (cards.get("red") or 0),
+            })
+        paging = data.get("paging") or {}
+        if paging.get("current", page) >= paging.get("total", page):
+            break
+        page += 1
+    return by_team
+
+
+def _player_models(tid, raws):
+    """Convert raw player stats to the feed's player format with goal shares."""
+    if not raws:
+        return []
+    team_goals = sum(r["goals"] for r in raws)
+    top = sorted(raws, key=lambda r: r["minutes"], reverse=True)[:14]
+    out = []
+    for r in top:
+        gs = (r["goals"] / team_goals) if team_goals > 0 else 0.0
+        apps = max(1, r["apps"])
+        out.append({
+            "id": f"{tid}_{r['aid']}", "name": r["name"],
+            "goalShare": round(gs, 3),
+            "expectedMinutes": round(min(90.0, r["minutes"] / apps)),
+            "cardRate": round(r["cards"] / apps, 3),
+        })
+    return out
+
+
 # All-Star / exhibition "teams" the NBA games endpoint mixes in with real
 # franchises (All-Star weekend, Rising Stars). Never real teams — filter them out.
 _EXHIBITION_MARKERS = ("stars", "ogs", "team ", "rising", "global", "young",
@@ -430,6 +487,13 @@ def _api_football_league(client, base, league, season, history_seasons,
         raise LeagueUnavailable("no finished fixtures to fit a model")
     backtest_matches.extend(history)
     model = fb.fit_league(league.name, team_ids, name_map, history)
+    # Real squads + goal shares from the players endpoint (Pro, current season).
+    if not fell_back:
+        raw = _league_players(client, base, league.api_id, season, set(team_ids))
+        for t in model["teams"]:
+            pm = _player_models(t["teamId"], raw.get(t["teamId"], []))
+            if pm:
+                t["players"] = pm
     write_json(OUT_DIR / "football" / f"{league.slug}.json", model)
 
     # Current-season standings -> points.
