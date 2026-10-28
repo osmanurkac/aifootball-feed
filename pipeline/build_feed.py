@@ -276,17 +276,31 @@ def _days_ago(iso_date: str) -> float:
         return 180.0
 
 
-def _test_pairs(team_ids, standings=None, n=4):
-    """A handful of real-team pairings for synthesised upcoming fixtures (test
-    mode only), top teams first when standings are known."""
-    order = sorted(team_ids, key=lambda t: (standings or {}).get(t, 0), reverse=True) \
-        if standings else list(team_ids)
-    pairs = []
-    k = 0
-    while k + 1 < len(order) and len(pairs) < n:
-        pairs.append((order[k], order[k + 1]))
-        k += 2
-    return pairs
+# All-Star / exhibition "teams" the NBA games endpoint mixes in with real
+# franchises (All-Star weekend, Rising Stars). Never real teams — filter them out.
+_EXHIBITION_MARKERS = ("stars", "ogs", "team ", "rising", "global", "young",
+                       "all star", "all-star", "chuck", "kenny", "shaq", "candace",
+                       "lebron", "durant", "giannis")
+
+
+def _is_exhibition(name: str) -> bool:
+    n = (name or "").strip().lower()
+    return n in ("east", "west") or any(m in n for m in _EXHIBITION_MARKERS)
+
+
+def _emit_real_fixtures(all_fixtures, league, sport, real_finished, featured_slug, n=8):
+    """TEST MODE ONLY. Publish the most recent REAL finished games as simulatable
+    fixtures so sim-vs-reality can be checked: the matchup and teams are real, the
+    kickoff is shifted to the near future so the app shows them as upcoming, and the
+    real final score + date go under a `test` key the app ignores (so the result
+    isn't spoiled in the UI — it's there for verification)."""
+    recent = sorted(real_finished, key=lambda r: r[4] or "", reverse=True)[:n]
+    for k, (hid, aid, hs, as_, date) in enumerate(recent):
+        all_fixtures.append({"id": f"{league.slug}-real-{k}", "sport": sport,
+                             "league": league.name, "round": None, "kickoff": iso(1 + k),
+                             "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
+                             "featured": league.slug == featured_slug and k == 0, "upset": False,
+                             "test": {"homeScore": hs, "awayScore": as_, "date": date}})
 
 
 def _resolve_football_season(client, base, league, season):
@@ -344,6 +358,7 @@ def _api_football_league(client, base, league, season, history_seasons,
     season, cur = _resolve_football_season(client, base, league, season)
 
     name_map, team_ids, history = {}, [], []
+    real_finished = []   # (home, away, home_goals, away_goals, date) — current season
     # Fit on accessible seasons up to and including the current one (the current
     # season's results are already in `cur`); older seasons add rating stability.
     for yr in range(season - history_seasons + 1, season + 1):
@@ -359,8 +374,11 @@ def _api_football_league(client, base, league, season, history_seasons,
             name_map[hid] = teams["home"]["name"]; name_map[aid] = teams["away"]["name"]
             if hid not in team_ids: team_ids.append(hid)
             if aid not in team_ids: team_ids.append(aid)
+            hg, ag = goals["home"] or 0, goals["away"] or 0
             history.append(fb.Match(days_ago=_days_ago(fx["date"]), home=hid, away=aid,
-                                    home_goals=goals["home"] or 0, away_goals=goals["away"] or 0))
+                                    home_goals=hg, away_goals=ag))
+            if yr == season:
+                real_finished.append((hid, aid, hg, ag, fx.get("date")))
     if not history:
         raise LeagueUnavailable("no finished fixtures to fit a model")
     backtest_matches.extend(history)
@@ -390,15 +408,12 @@ def _api_football_league(client, base, league, season, history_seasons,
                                  "league": league.name, "round": None, "kickoff": fx["date"],
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "premier_league" and k == 0, "upset": False})
-    # Test mode: a finished season has no upcoming fixtures. Synthesise a few from
-    # real teams (future kickoffs) so Home/Picker have matches to simulate; leave
-    # `remaining` empty so the Explore race shows the real final table.
+    # Test mode: a finished season has no upcoming fixtures. Publish the most recent
+    # REAL finished games (real teams + real scores) so Home/Picker can simulate and
+    # the result can be checked; leave `remaining` empty so the Explore race shows
+    # the real final table.
     if not up.get("response") and FEED_ALLOW_FINISHED:
-        for k, (hid, aid) in enumerate(_test_pairs(team_ids, standings)):
-            all_fixtures.append({"id": f"{league.slug}-test-{k}", "sport": "football",
-                                 "league": league.name, "round": None, "kickoff": iso(1 + k),
-                                 "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
-                                 "featured": league.slug == "premier_league" and k == 0, "upset": False})
+        _emit_real_fixtures(all_fixtures, league, "football", real_finished, "premier_league")
     season_json = season_sim.simulate_football(league.name, league.slug, model, standings, remaining, OUT_DIR)
     write_json(OUT_DIR / "seasons" / f"{league.slug}.json", season_json)
 
@@ -420,6 +435,7 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
         window = [f"{start - i}-{start - i + 1}" for i in range(history_seasons)]
 
     name_map, team_ids, games_fit, wins = {}, [], [], {}
+    real_finished = []   # (home, away, home_pts, away_pts, date) — current season
     for sv in window:
         data = cur if sv == cur_season else client.get(base, "games", {"league": league.api_id, "season": sv})
         if _plan_blocked(data):
@@ -428,6 +444,9 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
             if g.get("status", {}).get("short") not in ("FT", "AOT"):
                 continue
             teams, scores = g["teams"], g["scores"]
+            # Skip All-Star / Rising Stars exhibition games — not real franchises.
+            if _is_exhibition(teams["home"]["name"]) or _is_exhibition(teams["away"]["name"]):
+                continue
             hid = register(teams["home"]["name"], league.name, "basketball")
             aid = register(teams["away"]["name"], league.name, "basketball")
             name_map[hid] = teams["home"]["name"]; name_map[aid] = teams["away"]["name"]
@@ -438,6 +457,7 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
                                      home_points=hp, away_points=ap))
             if sv == cur_season:  # standings reflect the CURRENT campaign only
                 wins[hid if hp > ap else aid] += 1
+                real_finished.append((hid, aid, hp, ap, g.get("date")))
     if not games_fit:
         raise LeagueUnavailable("no finished games to fit a model")
     model = bb.fit_league(league.name, team_ids, name_map, games_fit)
@@ -456,14 +476,11 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
                                  "league": league.name, "round": None, "kickoff": g["date"],
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "nba" and k == 0, "upset": False})
-    # Test mode: synthesise a few upcoming games from real teams so the simulate
-    # flow can be exercised; the Explore race keeps the real final standings.
+    # Test mode: publish the most recent REAL finished games (real teams + scores)
+    # so the simulate flow can be checked against reality; the Explore race keeps
+    # the real final standings.
     if not cur_upcoming and FEED_ALLOW_FINISHED:
-        for k, (hid, aid) in enumerate(_test_pairs(team_ids, wins)):
-            all_fixtures.append({"id": f"{league.slug}-test-{k}", "sport": "basketball",
-                                 "league": league.name, "round": None, "kickoff": iso(1 + k),
-                                 "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
-                                 "featured": league.slug == "nba" and k == 0, "upset": False})
+        _emit_real_fixtures(all_fixtures, league, "basketball", real_finished, "nba")
     season_json = season_sim.simulate_basketball(league.name, league.slug, model, wins, remaining, OUT_DIR)
     write_json(OUT_DIR / "seasons" / f"{league.slug}.json", season_json)
 
