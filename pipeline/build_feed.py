@@ -485,7 +485,7 @@ def _api_football_league(client, base, league, season, history_seasons,
 
     name_map, team_ids, history = {}, [], []
     real_finished = []   # (home, away, home_goals, away_goals, date) — current season
-    stat_budget = [STATS_BUDGET_PER_LEAGUE] if not fell_back else [0]   # real corners/cards (Pro only)
+    stat_budget = [STATS_BUDGET_PER_LEAGUE] if (not fell_back and league.enrich) else [0]   # real corners/cards (enriched leagues only)
     # Fit on accessible seasons up to and including the current one (the current
     # season's results are already in `cur`); older seasons add rating stability.
     for yr in range(season - history_seasons + 1, season + 1):
@@ -517,8 +517,8 @@ def _api_football_league(client, base, league, season, history_seasons,
         raise LeagueUnavailable("no finished fixtures to fit a model")
     backtest_matches.extend(history)
     model = fb.fit_league(league.name, team_ids, name_map, history)
-    # Real squads + goal shares from the players endpoint (Pro, current season).
-    if not fell_back:
+    # Real squads + goal shares from the players endpoint (enriched leagues only).
+    if not fell_back and league.enrich:
         raw = _league_players(client, base, league.api_id, season, set(team_ids))
         print(f"  {league.name}: {sum(len(v) for v in raw.values())} real players across {len(raw)} teams")
         for t in model["teams"]:
@@ -527,36 +527,54 @@ def _api_football_league(client, base, league, season, history_seasons,
                 t["players"] = pm
     write_json(OUT_DIR / "football" / f"{league.slug}.json", model)
 
-    # Current-season standings -> points.
-    standings = {t: 0 for t in team_ids}
-    st = client.get(base, "standings", {"league": league.api_id, "season": season}, ttl_hours=FRESH)
-    for grp in st.get("response", []):
-        for table in grp.get("league", {}).get("standings", []):
-            for row in table:
-                tid = _team_id(row["team"]["name"], "football")
-                if tid in standings:
-                    standings[tid] = row.get("points", 0)
-
-    # Upcoming current-season fixtures -> remaining + app fixtures.
+    # Upcoming current-season fixtures -> remaining + app fixtures. Emit plenty so
+    # Home can show ALL of today's matches, not a handful. Injuries only for
+    # enriched leagues (keeps the quota down on the long tail).
     remaining = []
-    up = client.get(base, "fixtures", {"league": league.api_id, "season": season, "next": "40"}, ttl_hours=FRESH)
+    up = client.get(base, "fixtures", {"league": league.api_id, "season": season, "next": "50"}, ttl_hours=FRESH)
+    EMIT_CAP = 40
     for k, item in enumerate(up.get("response", [])):
         fx, teams = item["fixture"], item["teams"]
         hid = register(teams["home"]["name"], league.name, "football")
         aid = register(teams["away"]["name"], league.name, "football")
         remaining.append((hid, aid))
-        if k < 6:
+        if k < EMIT_CAP:
             all_fixtures.append({"id": f"{league.slug}-{fx['id']}", "sport": "football",
                                  "league": league.name, "round": None, "kickoff": fx["date"],
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "premier_league" and k == 0, "upset": False,
-                                 "unavailable": _fixture_injuries(client, base, fx["id"])})
+                                 "unavailable": _fixture_injuries(client, base, fx["id"]) if league.enrich else None})
     # Test mode: a finished season has no upcoming fixtures. Publish the most recent
-    # REAL finished games (real teams + real scores) so Home/Picker can simulate and
-    # the result can be checked; leave `remaining` empty so the Explore race shows
-    # the real final table.
+    # REAL finished games so Home/Picker can simulate and the result can be checked.
     if not up.get("response") and FEED_ALLOW_FINISHED:
         _emit_real_fixtures(all_fixtures, league, "football", real_finished, "premier_league")
+
+    # Cups are knockout — no league table or title/relegation race. The fixtures and
+    # teams above are enough to simulate; skip the projection.
+    if league.kind == "cup":
+        return
+
+    # Current-season standings -> points. ONLY teams in the current table (the fit
+    # history spans 3 seasons, so team_ids includes sides that have since been
+    # relegated; including them would pollute the table with 0-point ghosts).
+    standings = {}
+    st = client.get(base, "standings", {"league": league.api_id, "season": season}, ttl_hours=FRESH)
+    for grp in st.get("response", []):
+        for table in grp.get("league", {}).get("standings", []):
+            for row in table:
+                standings[_team_id(row["team"]["name"], "football")] = row.get("points", 0)
+    # Fallback: no standings endpoint data → derive participants + points from the
+    # current season's finished results (and upcoming fixtures).
+    if not standings:
+        for hid, aid, hg, ag, _ in real_finished:
+            standings.setdefault(hid, 0); standings.setdefault(aid, 0)
+            if hg > ag: standings[hid] += 3
+            elif ag > hg: standings[aid] += 3
+            else: standings[hid] += 1; standings[aid] += 1
+        for hid, aid in remaining:
+            standings.setdefault(hid, 0); standings.setdefault(aid, 0)
+    if not standings:
+        return   # nothing to project
     season_json = season_sim.simulate_football(league.name, league.slug, model, standings, remaining, OUT_DIR)
     write_json(OUT_DIR / "seasons" / f"{league.slug}.json", season_json)
 

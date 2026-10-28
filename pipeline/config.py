@@ -57,20 +57,57 @@ class League:
     # NBA uses a "YYYY-YYYY" range (e.g. "2024-2025"); EuroLeague uses the single
     # starting year (e.g. "2024"). Ignored for football (always a start year).
     season_style: str = "range"   # "range" | "year"
+    # Full enrichment (real players + injuries + corner/card statistics) costs a lot
+    # of API calls. Keep it on for the headline leagues; off for the long tail, which
+    # still get the model, standings, fixtures and a projection — just cheaper.
+    enrich: bool = True
+    # "league" gets a table + title/relegation projection; "cup" is knockout, so we
+    # publish its fixtures + teams (simulatable) but no standings/projection.
+    kind: str = "league"          # "league" | "cup"
+    # Priority orders leagues in the app (lower = more prominent in "today").
+    priority: int = 100
 
 
-# API-Sports league ids. Football ids are stable on v3; basketball ids can vary
-# by plan/season — verify in the API-Sports dashboard before the first live run.
+# API-Sports league ids (API-Football v3). The app shows every league that has
+# current-season data; a gated/empty/unknown id is simply skipped at build time.
+# Headline leagues are fully enriched; the wider set is cheaper (no players/injuries)
+# so the daily quota stays well under Pro's budget. Cups add fixtures + teams only.
 LEAGUES: list[League] = [
-    League("premier_league", "Premier League", "football", 39, "England"),
-    League("laliga", "LaLiga", "football", 140, "Spain"),
-    League("serie_a", "Serie A", "football", 135, "Italy"),
-    League("bundesliga", "Bundesliga", "football", 78, "Germany"),
-    League("ligue_1", "Ligue 1", "football", 61, "France"),
-    League("super_lig", "Süper Lig", "football", 203, "Turkey"),
-    League("champions_league", "Champions League", "football", 2, "Europe"),
-    League("nba", "NBA", "basketball", 12, "USA", season_style="range"),
-    League("euroleague", "EuroLeague", "basketball", 120, "Europe", season_style="year"),
+    # ── Headline leagues (fully enriched) ───────────────────────────────
+    League("premier_league", "Premier League", "football", 39, "England", enrich=True, priority=1),
+    League("laliga", "LaLiga", "football", 140, "Spain", enrich=True, priority=2),
+    League("serie_a", "Serie A", "football", 135, "Italy", enrich=True, priority=3),
+    League("bundesliga", "Bundesliga", "football", 78, "Germany", enrich=True, priority=4),
+    League("ligue_1", "Ligue 1", "football", 61, "France", enrich=True, priority=5),
+    League("super_lig", "Süper Lig", "football", 203, "Turkey", enrich=True, priority=6),
+    # ── UEFA club competitions ──────────────────────────────────────────
+    League("champions_league", "Champions League", "football", 2, "Europe", enrich=True, priority=7),
+    League("europa_league", "Europa League", "football", 3, "Europe", enrich=False, priority=8),
+    League("conference_league", "Conference League", "football", 848, "Europe", enrich=False, priority=9),
+    # ── Most-followed leagues worldwide (cheaper, still simulated) ───────
+    League("eredivisie", "Eredivisie", "football", 88, "Netherlands", enrich=False, priority=20),
+    League("primeira_liga", "Primeira Liga", "football", 94, "Portugal", enrich=False, priority=21),
+    League("championship", "Championship", "football", 40, "England", enrich=False, priority=22),
+    League("brasileirao", "Brasileirão", "football", 71, "Brazil", enrich=False, priority=23),
+    League("liga_profesional", "Liga Profesional", "football", 128, "Argentina", enrich=False, priority=24),
+    League("liga_mx", "Liga MX", "football", 262, "Mexico", enrich=False, priority=25),
+    League("mls", "MLS", "football", 253, "USA", enrich=False, priority=26),
+    League("saudi_pro_league", "Saudi Pro League", "football", 307, "Saudi Arabia", enrich=False, priority=27),
+    League("efl_1lig", "TFF 1. Lig", "football", 204, "Turkey", enrich=False, priority=28),
+    League("jupiler", "Pro League", "football", 144, "Belgium", enrich=False, priority=29),
+    League("eredivisie_scot", "Scottish Premiership", "football", 179, "Scotland", enrich=False, priority=30),
+    League("super_league_gr", "Super League", "football", 197, "Greece", enrich=False, priority=31),
+    League("j1_league", "J1 League", "football", 98, "Japan", enrich=False, priority=32),
+    # ── Domestic cups (fixtures + teams only, no table) ─────────────────
+    League("turkiye_kupasi", "Türkiye Kupası", "football", 206, "Turkey", enrich=False, kind="cup", priority=40),
+    League("fa_cup", "FA Cup", "football", 45, "England", enrich=False, kind="cup", priority=41),
+    League("efl_cup", "EFL Cup", "football", 48, "England", enrich=False, kind="cup", priority=42),
+    League("copa_del_rey", "Copa del Rey", "football", 143, "Spain", enrich=False, kind="cup", priority=43),
+    League("coppa_italia", "Coppa Italia", "football", 137, "Italy", enrich=False, kind="cup", priority=44),
+    League("dfb_pokal", "DFB-Pokal", "football", 81, "Germany", enrich=False, kind="cup", priority=45),
+    # ── Basketball ──────────────────────────────────────────────────────
+    League("nba", "NBA", "basketball", 12, "USA", season_style="range", priority=10),
+    League("euroleague", "EuroLeague", "basketball", 120, "Europe", season_style="year", priority=11),
 ]
 
 
