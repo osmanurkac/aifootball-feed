@@ -240,6 +240,8 @@ def build_from_api() -> None:
     # season to stay under the Free plan's 100/day.
     hist = HISTORY_SEASONS
     for league in LEAGUES:
+        # Per-sport throttle: football is Pro (fast); basketball is Free (10/min).
+        client.throttle = 0.4 if league.sport == "football" else 6.5
         try:
             if league.sport == "football":
                 _api_football_league(client, FOOTBALL_BASE, league, season, hist,
@@ -278,6 +280,33 @@ def _days_ago(iso_date: str) -> float:
         return max(0.0, (datetime.datetime.now(datetime.timezone.utc) - dt).days)
     except Exception:
         return 180.0
+
+
+# Max per-fixture statistics calls per league (real corners/cards). One request
+# each; capped so a daily Pro build stays fast and well under quota.
+STATS_BUDGET_PER_LEAGUE = 140
+
+
+def _fixture_stats(client, base, fixture_id) -> dict:
+    """Real per-team corners and cards (yellow+red) for one fixture, keyed by the
+    API team id. Defensive: missing/None values -> 0; unknown shapes -> skipped."""
+    data = client.get(base, "fixtures/statistics", {"fixture": fixture_id})
+    out: dict = {}
+    for entry in data.get("response", []) or []:
+        tid = (entry.get("team") or {}).get("id")
+        if tid is None:
+            continue
+        corners = cards = 0
+        for s in entry.get("statistics", []) or []:
+            label = (s.get("type") or "").lower()
+            val = s.get("value")
+            n = int(val) if isinstance(val, (int, float)) else 0
+            if "corner" in label:
+                corners = n
+            elif "yellow card" in label or "red card" in label:
+                cards += n
+        out[tid] = {"corners": corners, "cards": cards}
+    return out
 
 
 # All-Star / exhibition "teams" the NBA games endpoint mixes in with real
@@ -369,6 +398,7 @@ def _api_football_league(client, base, league, season, history_seasons,
 
     name_map, team_ids, history = {}, [], []
     real_finished = []   # (home, away, home_goals, away_goals, date) — current season
+    stat_budget = [STATS_BUDGET_PER_LEAGUE] if not fell_back else [0]   # real corners/cards (Pro only)
     # Fit on accessible seasons up to and including the current one (the current
     # season's results are already in `cur`); older seasons add rating stability.
     for yr in range(season - history_seasons + 1, season + 1):
@@ -385,8 +415,15 @@ def _api_football_league(client, base, league, season, history_seasons,
             if hid not in team_ids: team_ids.append(hid)
             if aid not in team_ids: team_ids.append(aid)
             hg, ag = goals["home"] or 0, goals["away"] or 0
-            history.append(fb.Match(days_ago=_days_ago(fx["date"]), home=hid, away=aid,
-                                    home_goals=hg, away_goals=ag))
+            m = fb.Match(days_ago=_days_ago(fx["date"]), home=hid, away=aid, home_goals=hg, away_goals=ag)
+            # Real corners/cards from the statistics endpoint (current season, Pro).
+            if yr == season and stat_budget[0] > 0:
+                st = _fixture_stats(client, base, fx["id"])
+                hs, as_ = st.get(teams["home"]["id"]), st.get(teams["away"]["id"])
+                if hs: m.home_corners, m.home_cards = hs["corners"], hs["cards"]
+                if as_: m.away_corners, m.away_cards = as_["corners"], as_["cards"]
+                stat_budget[0] -= 1
+            history.append(m)
             if yr == season:
                 real_finished.append((hid, aid, hg, ag, fx.get("date")))
     if not history:
