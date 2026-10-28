@@ -64,10 +64,11 @@ def simulate_football(league_name: str, slug: str, model: dict,
         "lastWeek": round(prev.get(t, float(title[idx[t]])), 3),
         "topFinish": round(float(top[idx[t]]), 3),
         "relegation": round(float(releg[idx[t]]), 3),
+        "record": str(int(standings[t])),       # current points
     } for t in teams]
     entries.sort(key=lambda e: -e["title"])
     return {"schemaVersion": 1, "league": league_name, "sport": "football",
-            "topFinishLabel": "Top 4", "entries": entries}
+            "topFinishLabel": "Top 4", "recordLabel": "Pts", "entries": entries}
 
 
 def simulate_basketball(league_name: str, slug: str, model: dict,
