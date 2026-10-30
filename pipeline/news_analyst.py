@@ -18,6 +18,7 @@ Degrades gracefully: no ANTHROPIC_API_KEY, no SDK, or a failed/garbled call ->
 the fixture simply gets no aiAnalysis and the app shows the base model result.
 """
 
+import concurrent.futures
 import datetime
 import json
 import os
@@ -32,6 +33,9 @@ ADJ_CAP = 0.15                      # the model's calibration is protected by th
 ADJ_KEYS = ("homeAttack", "homeDefense", "awayAttack", "awayDefense")
 CONGESTION_DAYS = 4                 # another competitive game within ±4 days = load
 MAX_ANALYSES = int(os.environ.get("NEWS_MAX_ANALYSES", "150"))
+# Analyst calls are independent network requests, so run them concurrently to keep
+# the daily build short (the Anthropic client is thread-safe). Tune per rate limit.
+WORKERS = int(os.environ.get("NEWS_WORKERS", "8"))
 
 # Most-recent-first W/D/L per team id, filled by build_feed from finished results.
 FORM_INDEX: dict[str, list[tuple[str, str]]] = {}
@@ -251,18 +255,20 @@ def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
     targets = [fx for fx in all_fixtures
                if fx.get("sport") == "football" and fx.get("unavailable") is not None]
     targets.sort(key=lambda f: f.get("kickoff") or "")
+    targets = targets[:MAX_ANALYSES]
+
+    # Run the independent per-fixture calls concurrently; attach results on the main
+    # thread (futures carry their fixture) so there's no shared-dict race.
+    def work(fx):
+        return fx, analyze(_facts_for(fx, all_fixtures, teams_out, season_by_team), client)
 
     done = 0
-    for fx in targets:
-        if done >= MAX_ANALYSES:
-            print(f"news_analyst: hit MAX_ANALYSES ({MAX_ANALYSES}) — stopping")
-            break
-        facts = _facts_for(fx, all_fixtures, teams_out, season_by_team)
-        res = analyze(facts, client)
-        if res:
-            fx["aiAnalysis"] = res
-            done += 1
-            h = facts["home"]["name"]
-            a = facts["away"]["name"]
-            print(f"    ai ✓ {h} - {a} ({res['confidence']})")
-    print(f"news_analyst: attached {done} analyses (model={MODEL})")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        for fx, res in pool.map(work, targets):
+            if res:
+                fx["aiAnalysis"] = res
+                done += 1
+                h = teams_out.get(fx.get("homeTeamId"), {}).get("name", "?")
+                a = teams_out.get(fx.get("awayTeamId"), {}).get("name", "?")
+                print(f"    ai ✓ {h} - {a} ({res['confidence']})")
+    print(f"news_analyst: attached {done}/{len(targets)} analyses (model={MODEL}, workers={WORKERS})")
