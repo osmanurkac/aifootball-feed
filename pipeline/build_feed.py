@@ -22,6 +22,7 @@ import basketball_model as bb
 import football_model as fb
 import backtest
 import season_sim
+import news_analyst
 from config import LEAGUES, OUT_DIR, APISPORTS_KEY, FEED_ALLOW_FINISHED, SEASON_LOOKBACK
 from team_colors import team_mark
 
@@ -275,6 +276,14 @@ def build_from_api() -> None:
                   "lastUpdated": backtest._now()}
     write_json(OUT_DIR / "track_record.json", record)
     write_json(OUT_DIR / "teams.json", {"schemaVersion": 1, "teams": list(teams_out.values())})
+
+    # Second pass: AI "haber analizi" for enriched upcoming fixtures. Runs here,
+    # after every league's fixtures/seasons exist, so the analyst can see a team's
+    # matches across ALL competitions (fixture congestion / European week) and its
+    # season stakes. Best-effort: skipped cleanly without an ANTHROPIC_API_KEY.
+    slug_by_name = {l.name: l.slug for l in LEAGUES}
+    news_analyst.attach_analyses(all_fixtures, teams_out, OUT_DIR, slug_by_name)
+
     write_json(OUT_DIR / "fixtures.json", {"schemaVersion": 1, "fixtures": all_fixtures})
     write_json(OUT_DIR / "leagues.json", {"schemaVersion": 1, "leagues": available})
     print(f"Available leagues: {[a['slug'] for a in available] or 'NONE — feed is empty'}")
@@ -521,6 +530,12 @@ def _api_football_league(client, base, league, season, history_seasons,
             history.append(m)
             if yr == season:
                 real_finished.append((hid, aid, hg, ag, fx.get("date")))
+                # Recent-form index (most-recent-first W/D/L), fed to the AI analyst.
+                date = fx.get("date")
+                hres = "W" if hg > ag else ("L" if hg < ag else "D")
+                ares = "W" if ag > hg else ("L" if ag < hg else "D")
+                news_analyst.FORM_INDEX.setdefault(hid, []).append((date, hres))
+                news_analyst.FORM_INDEX.setdefault(aid, []).append((date, ares))
     if not history:
         raise LeagueUnavailable("no finished fixtures to fit a model")
     backtest_matches.extend(history)

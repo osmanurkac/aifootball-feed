@@ -52,6 +52,9 @@ jobs:
         working-directory: pipeline
         env:
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
+          # AI "haber analizi" layer (news_analyst.py). Without this secret the
+          # build runs exactly as before and simply attaches no analysis.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           # Football is Pro (current season); basketball is still Free, so keep the
           # finished-season fallback ON until basketball is Pro too. The daily cron
           # has no inputs, so default it to true there. When all sports are Pro,
