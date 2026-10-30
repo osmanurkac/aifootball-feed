@@ -54,7 +54,7 @@ SYSTEM = (
     "tart. Türkçe, akıcı ve maça özel yaz; genel klişe cümleler kurma.\n\n"
     "ÇIKTI: başka hiçbir metin olmadan, YALNIZCA tek bir JSON nesnesi döndür:\n"
     "{\n"
-    '  "headline": "tek cümlelik, maça özel başlık",\n'
+    '  "headline": "KISA, çarpıcı başlık — en fazla 70 karakter, tek satır",\n'
     '  "summary": "2-3 cümlelik analiz",\n'
     '  "factors": ["kısa madde", "kısa madde", "kısa madde"],\n'
     '  "adjustments": {"homeAttack": 0.0, "homeDefense": 0.0, "awayAttack": 0.0, "awayDefense": 0.0},\n'
@@ -176,12 +176,21 @@ def _extract_json(text: str):
     return None
 
 
+def _trim(s: str, n: int) -> str:
+    """Trim to <= n chars at a word boundary (no mid-word cut), add an ellipsis."""
+    s = s.strip()
+    if len(s) <= n:
+        return s
+    cut = s[:n].rsplit(" ", 1)[0].rstrip(" ,.;:—-")
+    return (cut or s[:n]) + "…"
+
+
 def _normalize(data: dict) -> dict:
     adj = data.get("adjustments") or {}
     conf = data.get("confidence")
     return {
         "schemaVersion": 1,
-        "headline": str(data.get("headline", "")).strip()[:120],
+        "headline": _trim(str(data.get("headline", "")), 90),
         "summary": str(data.get("summary", "")).strip()[:600],
         "factors": [str(x).strip()[:120] for x in (data.get("factors") or []) if str(x).strip()][:5],
         "adjustments": {k: _clamp(adj.get(k, 0.0)) for k in ADJ_KEYS},
