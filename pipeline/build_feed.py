@@ -457,11 +457,13 @@ def _resolve_football_season(client, base, league, season):
 def _resolve_basketball_season(client, base, league):
     now = datetime.datetime.now(datetime.timezone.utc)
     cur = _current_basketball_season(league.season_style, now.year, now.month)
-    start_year = int(cur) if league.season_style == "year" else int(cur.split("-")[0])
-    fmt = (lambda s: str(s)) if league.season_style == "year" else (lambda s: f"{s}-{s + 1}")
+    # Basketball stays HIDDEN until a live current season is actually available
+    # (we're still on the API-Basketball Free plan, which only exposes finished
+    # seasons). We deliberately do NOT fall back to a finished season here, even
+    # under FEED_ALLOW_FINISHED: shipping shifted 2024-25 games as "upcoming" is
+    # fake data. The app shows basketball as "coming soon" instead. The moment a
+    # real current season is reachable (Pro), basketball publishes automatically.
     candidates = [cur]
-    if FEED_ALLOW_FINISHED:
-        candidates += [fmt(start_year - i) for i in range(1, SEASON_LOOKBACK + 1)]
     last = f"current season {cur} not available on this plan"
     for sv in candidates:
         data = client.get(base, "games", {"league": league.api_id, "season": sv},
