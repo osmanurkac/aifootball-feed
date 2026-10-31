@@ -1,0 +1,6406 @@
+{
+  "schemaVersion": 1,
+  "league": "Europa League",
+  "leagueAverageGoals": 1.155,
+  "homeAdvantage": 1.328,
+  "rho": -0.11,
+  "firstHalfGoalShare": 0.45,
+  "teams": [
+    {
+      "teamId": "fb-372",
+      "attack": 0.927,
+      "defence": 1.084,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-372_fw",
+          "name": "IFE Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-372_am",
+          "name": "IFE Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-372_wg",
+          "name": "IFE Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-372_df",
+          "name": "IFE Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3403",
+      "attack": 0.881,
+      "defence": 1.202,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3403_fw",
+          "name": "PAF Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3403_am",
+          "name": "PAF Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3403_wg",
+          "name": "PAF Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3403_df",
+          "name": "PAF Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-568",
+      "attack": 0.835,
+      "defence": 1.204,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-568_fw",
+          "name": "SHE Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-568_am",
+          "name": "SHE Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-568_wg",
+          "name": "SHE Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-568_df",
+          "name": "SHE Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-648",
+      "attack": 0.868,
+      "defence": 1.185,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-648_fw",
+          "name": "ZIR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-648_am",
+          "name": "ZIR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-648_wg",
+          "name": "ZIR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-648_df",
+          "name": "ZIR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2390",
+      "attack": 0.864,
+      "defence": 1.186,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2390_fw",
+          "name": "PAK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2390_am",
+          "name": "PAK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2390_wg",
+          "name": "PAK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2390_df",
+          "name": "PAK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-20034",
+      "attack": 0.872,
+      "defence": 1.163,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-20034_fw",
+          "name": "COR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-20034_am",
+          "name": "COR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-20034_wg",
+          "name": "COR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-20034_df",
+          "name": "COR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3549",
+      "attack": 0.876,
+      "defence": 1.18,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3549_fw",
+          "name": "RUŽ Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3549_am",
+          "name": "RUŽ Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3549_wg",
+          "name": "RUŽ Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3549_df",
+          "name": "RUŽ Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2259",
+      "attack": 0.871,
+      "defence": 1.193,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2259_fw",
+          "name": "FKT Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2259_am",
+          "name": "FKT Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2259_wg",
+          "name": "FKT Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2259_df",
+          "name": "FKT Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-634",
+      "attack": 0.879,
+      "defence": 1.195,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-634_fw",
+          "name": "BOT Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-634_am",
+          "name": "BOT Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-634_wg",
+          "name": "BOT Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-634_df",
+          "name": "BOT Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-552",
+      "attack": 0.87,
+      "defence": 1.19,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-552_fw",
+          "name": "MAR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-552_am",
+          "name": "MAR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-552_wg",
+          "name": "MAR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-552_df",
+          "name": "MAR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-338",
+      "attack": 0.882,
+      "defence": 1.192,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-338_fw",
+          "name": "WIS Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-338_am",
+          "name": "WIS Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-338_wg",
+          "name": "WIS Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-338_df",
+          "name": "WIS Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-14395",
+      "attack": 0.866,
+      "defence": 1.189,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-14395_fw",
+          "name": "LLA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-14395_am",
+          "name": "LLA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-14395_wg",
+          "name": "LLA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-14395_df",
+          "name": "LLA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-781",
+      "attack": 0.924,
+      "defence": 1.145,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-781_fw",
+          "name": "RAP Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-781_am",
+          "name": "RAP Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-781_wg",
+          "name": "RAP Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-781_df",
+          "name": "RAP Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-998",
+      "attack": 0.848,
+      "defence": 1.168,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-998_fw",
+          "name": "TRA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-998_am",
+          "name": "TRA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-998_wg",
+          "name": "TRA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-998_df",
+          "name": "TRA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-329",
+      "attack": 0.893,
+      "defence": 1.146,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-329_fw",
+          "name": "MOL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-329_am",
+          "name": "MOL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-329_wg",
+          "name": "MOL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-329_df",
+          "name": "MOL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2073",
+      "attack": 0.874,
+      "defence": 1.193,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2073_fw",
+          "name": "SIL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2073_am",
+          "name": "SIL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2073_wg",
+          "name": "SIL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2073_df",
+          "name": "SIL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-561",
+      "attack": 0.872,
+      "defence": 1.159,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-561_fw",
+          "name": "HNK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-561_am",
+          "name": "HNK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-561_wg",
+          "name": "HNK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-561_df",
+          "name": "HNK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-617",
+      "attack": 0.898,
+      "defence": 1.02,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-617_fw",
+          "name": "PAN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-617_am",
+          "name": "PAN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-617_wg",
+          "name": "PAN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-617_df",
+          "name": "PAN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-194",
+      "attack": 1.002,
+      "defence": 1.054,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-194_fw",
+          "name": "AJA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-194_am",
+          "name": "AJA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-194_wg",
+          "name": "AJA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-194_df",
+          "name": "AJA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-702",
+      "attack": 0.862,
+      "defence": 1.195,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-702_fw",
+          "name": "VOJ Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-702_am",
+          "name": "VOJ Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-702_wg",
+          "name": "VOJ Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-702_df",
+          "name": "VOJ Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-250",
+      "attack": 0.867,
+      "defence": 1.184,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-250_fw",
+          "name": "KIL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-250_am",
+          "name": "KIL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-250_wg",
+          "name": "KIL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-250_df",
+          "name": "KIL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-741",
+      "attack": 0.87,
+      "defence": 1.165,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-741_fw",
+          "name": "CER Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-741_am",
+          "name": "CER Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-741_wg",
+          "name": "CER Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-741_df",
+          "name": "CER Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-217",
+      "attack": 1.103,
+      "defence": 0.932,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-217_fw",
+          "name": "SCB Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-217_am",
+          "name": "SCB Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-217_wg",
+          "name": "SCB Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-217_df",
+          "name": "SCB Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4495",
+      "attack": 0.865,
+      "defence": 1.198,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4495_fw",
+          "name": "MAC Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4495_am",
+          "name": "MAC Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4495_wg",
+          "name": "MAC Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4495_df",
+          "name": "MAC Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3874",
+      "attack": 0.865,
+      "defence": 1.193,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3874_fw",
+          "name": "PAN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3874_am",
+          "name": "PAN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3874_wg",
+          "name": "PAN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3874_df",
+          "name": "PAN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-604",
+      "attack": 0.946,
+      "defence": 1.202,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-604_fw",
+          "name": "MAC Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-604_am",
+          "name": "MAC Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-604_wg",
+          "name": "MAC Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-604_df",
+          "name": "MAC Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2271",
+      "attack": 0.865,
+      "defence": 1.178,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2271_fw",
+          "name": "PET Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2271_am",
+          "name": "PET Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2271_wg",
+          "name": "PET Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2271_df",
+          "name": "PET Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-354",
+      "attack": 0.864,
+      "defence": 1.18,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-354_fw",
+          "name": "THE Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-354_am",
+          "name": "THE Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-354_wg",
+          "name": "THE Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-354_df",
+          "name": "THE Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-701",
+      "attack": 0.854,
+      "defence": 1.214,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-701_fw",
+          "name": "KIK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-701_am",
+          "name": "KIK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-701_wg",
+          "name": "KIK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-701_df",
+          "name": "KIK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3364",
+      "attack": 0.876,
+      "defence": 1.163,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3364_fw",
+          "name": "BOR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3364_am",
+          "name": "BOR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3364_wg",
+          "name": "BOR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3364_df",
+          "name": "BOR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-573",
+      "attack": 0.865,
+      "defence": 1.162,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-573_fw",
+          "name": "FKP Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-573_am",
+          "name": "FKP Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-573_wg",
+          "name": "FKP Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-573_df",
+          "name": "FKP Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-606",
+      "attack": 0.88,
+      "defence": 1.177,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-606_fw",
+          "name": "FCL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-606_am",
+          "name": "FCL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-606_wg",
+          "name": "FCL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-606_df",
+          "name": "FCL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-703",
+      "attack": 0.864,
+      "defence": 1.211,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-703_fw",
+          "name": "UES Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-703_am",
+          "name": "UES Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-703_wg",
+          "name": "UES Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-703_df",
+          "name": "UES Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4160",
+      "attack": 0.889,
+      "defence": 1.127,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4160_fw",
+          "name": "RĪG Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4160_am",
+          "name": "RĪG Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4160_wg",
+          "name": "RĪG Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4160_df",
+          "name": "RĪG Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-6489",
+      "attack": 0.867,
+      "defence": 1.186,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-6489_fw",
+          "name": "KRY Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-6489_am",
+          "name": "KRY Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-6489_wg",
+          "name": "KRY Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-6489_df",
+          "name": "KRY Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-567",
+      "attack": 0.967,
+      "defence": 1.016,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-567_fw",
+          "name": "PLZ Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-567_am",
+          "name": "PLZ Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-567_wg",
+          "name": "PLZ Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-567_df",
+          "name": "PLZ Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4360",
+      "attack": 0.878,
+      "defence": 1.224,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4360_fw",
+          "name": "CEL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4360_am",
+          "name": "CEL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4360_wg",
+          "name": "CEL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4360_df",
+          "name": "CEL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-652",
+      "attack": 0.886,
+      "defence": 1.236,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-652_fw",
+          "name": "SHA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-652_am",
+          "name": "SHA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-652_wg",
+          "name": "SHA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-652_df",
+          "name": "SHA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-394",
+      "attack": 0.87,
+      "defence": 1.164,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-394_fw",
+          "name": "DIN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-394_am",
+          "name": "DIN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-394_wg",
+          "name": "DIN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-394_df",
+          "name": "DIN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-667",
+      "attack": 0.85,
+      "defence": 1.187,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-667_fw",
+          "name": "LIN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-667_am",
+          "name": "LIN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-667_wg",
+          "name": "LIN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-667_df",
+          "name": "LIN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2184",
+      "attack": 0.871,
+      "defence": 1.184,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2184_fw",
+          "name": "SER Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2184_am",
+          "name": "SER Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2184_wg",
+          "name": "SER Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2184_df",
+          "name": "SER Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-254",
+      "attack": 0.869,
+      "defence": 1.191,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-254_fw",
+          "name": "HEA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-254_am",
+          "name": "HEA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-254_wg",
+          "name": "HEA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-254_df",
+          "name": "HEA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1026",
+      "attack": 0.866,
+      "defence": 1.182,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1026_fw",
+          "name": "LAS Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1026_am",
+          "name": "LAS Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1026_wg",
+          "name": "LAS Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1026_df",
+          "name": "LAS Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-559",
+      "attack": 0.955,
+      "defence": 1.145,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-559_fw",
+          "name": "FCS Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-559_am",
+          "name": "FCS Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-559_wg",
+          "name": "FCS Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-559_df",
+          "name": "FCS Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2247",
+      "attack": 0.871,
+      "defence": 1.187,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2247_fw",
+          "name": "APO Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2247_am",
+          "name": "APO Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2247_wg",
+          "name": "APO Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2247_df",
+          "name": "APO Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-619",
+      "attack": 1.042,
+      "defence": 1.061,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-619_fw",
+          "name": "PAO Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-619_am",
+          "name": "PAO Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-619_wg",
+          "name": "PAO Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-619_df",
+          "name": "PAO Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-566",
+      "attack": 0.936,
+      "defence": 1.125,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-566_fw",
+          "name": "LUD Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-566_am",
+          "name": "LUD Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-566_wg",
+          "name": "LUD Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-566_df",
+          "name": "LUD Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2646",
+      "attack": 0.865,
+      "defence": 1.205,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2646_fw",
+          "name": "TSC Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2646_am",
+          "name": "TSC Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2646_wg",
+          "name": "TSC Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2646_df",
+          "name": "TSC Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-549",
+      "attack": 1.045,
+      "defence": 1.062,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-549_fw",
+          "name": "BJK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-549_am",
+          "name": "BJK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-549_wg",
+          "name": "BJK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-549_df",
+          "name": "BJK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-336",
+      "attack": 0.928,
+      "defence": 1.183,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-336_fw",
+          "name": "JAG Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-336_am",
+          "name": "JAG Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-336_wg",
+          "name": "JAG Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-336_df",
+          "name": "JAG Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-554",
+      "attack": 1.022,
+      "defence": 1.002,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-554_fw",
+          "name": "AND Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-554_am",
+          "name": "AND Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-554_wg",
+          "name": "AND Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-554_df",
+          "name": "AND Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-651",
+      "attack": 1.099,
+      "defence": 1.014,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-651_fw",
+          "name": "FER Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-651_am",
+          "name": "FER Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-651_wg",
+          "name": "FER Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-651_df",
+          "name": "FER Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-201",
+      "attack": 0.997,
+      "defence": 1.088,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-201_fw",
+          "name": "AZA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-201_am",
+          "name": "AZA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-201_wg",
+          "name": "AZA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-201_df",
+          "name": "AZA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-327",
+      "attack": 1.007,
+      "defence": 1.132,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-327_fw",
+          "name": "BOD Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-327_am",
+          "name": "BOD Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-327_wg",
+          "name": "BOD Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-327_df",
+          "name": "BOD Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-212",
+      "attack": 0.989,
+      "defence": 1.006,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-212_fw",
+          "name": "FCP Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-212_am",
+          "name": "FCP Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-212_wg",
+          "name": "FCP Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-212_df",
+          "name": "FCP Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-33",
+      "attack": 1.092,
+      "defence": 1.071,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-33_fw",
+          "name": "MUN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-33_am",
+          "name": "MUN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-33_wg",
+          "name": "MUN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-33_df",
+          "name": "MUN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-415",
+      "attack": 0.915,
+      "defence": 1.146,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-415_fw",
+          "name": "TWE Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-415_am",
+          "name": "TWE Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-415_wg",
+          "name": "TWE Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-415_df",
+          "name": "TWE Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-84",
+      "attack": 0.862,
+      "defence": 1.192,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-84_fw",
+          "name": "NIC Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-84_am",
+          "name": "NIC Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-84_wg",
+          "name": "NIC Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-84_df",
+          "name": "NIC Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-548",
+      "attack": 1.074,
+      "defence": 1.079,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-548_fw",
+          "name": "REA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-548_am",
+          "name": "REA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-548_wg",
+          "name": "REA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-548_df",
+          "name": "REA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-397",
+      "attack": 1.023,
+      "defence": 0.993,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-397_fw",
+          "name": "FCM Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-397_am",
+          "name": "FCM Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-397_wg",
+          "name": "FCM Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-397_df",
+          "name": "FCM Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-167",
+      "attack": 0.941,
+      "defence": 1.156,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-167_fw",
+          "name": "HOF Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-167_am",
+          "name": "HOF Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-167_wg",
+          "name": "HOF Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-167_df",
+          "name": "HOF Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-560",
+      "attack": 0.873,
+      "defence": 1.145,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-560_fw",
+          "name": "SLA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-560_am",
+          "name": "SLA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-560_wg",
+          "name": "SLA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-560_df",
+          "name": "SLA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-572",
+      "attack": 0.825,
+      "defence": 1.166,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-572_fw",
+          "name": "DYN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-572_am",
+          "name": "DYN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-572_wg",
+          "name": "DYN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-572_df",
+          "name": "DYN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-487",
+      "attack": 0.97,
+      "defence": 1.062,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-487_fw",
+          "name": "LAZ Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-487_am",
+          "name": "LAZ Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-487_wg",
+          "name": "LAZ Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-487_df",
+          "name": "LAZ Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-645",
+      "attack": 0.978,
+      "defence": 1.219,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-645_fw",
+          "name": "GAL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-645_am",
+          "name": "GAL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-645_wg",
+          "name": "GAL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-645_df",
+          "name": "GAL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-375",
+      "attack": 0.866,
+      "defence": 1.186,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-375_fw",
+          "name": "MAL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-375_am",
+          "name": "MAL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-375_wg",
+          "name": "MAL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-375_df",
+          "name": "MAL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-257",
+      "attack": 0.886,
+      "defence": 1.108,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-257_fw",
+          "name": "RAN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-257_am",
+          "name": "RAN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-257_wg",
+          "name": "RAN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-257_df",
+          "name": "RAN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-611",
+      "attack": 0.945,
+      "defence": 1.034,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-611_fw",
+          "name": "FEN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-611_am",
+          "name": "FEN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-611_wg",
+          "name": "FEN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-611_df",
+          "name": "FEN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1393",
+      "attack": 0.965,
+      "defence": 1.038,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1393_fw",
+          "name": "UNI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1393_am",
+          "name": "UNI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1393_wg",
+          "name": "UNI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1393_df",
+          "name": "UNI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-47",
+      "attack": 0.995,
+      "defence": 1.017,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-47_fw",
+          "name": "TOT Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-47_am",
+          "name": "TOT Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-47_wg",
+          "name": "TOT Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-47_df",
+          "name": "TOT Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-556",
+      "attack": 0.874,
+      "defence": 1.119,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-556_fw",
+          "name": "QAR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-556_am",
+          "name": "QAR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-556_wg",
+          "name": "QAR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-556_df",
+          "name": "QAR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-80",
+      "attack": 1.127,
+      "defence": 1.032,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-80_fw",
+          "name": "OL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-80_am",
+          "name": "OL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-80_wg",
+          "name": "OL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-80_df",
+          "name": "OL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-553",
+      "attack": 0.885,
+      "defence": 1.013,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-553_fw",
+          "name": "OLY Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-553_am",
+          "name": "OLY Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-553_wg",
+          "name": "OLY Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-553_df",
+          "name": "OLY Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-169",
+      "attack": 0.969,
+      "defence": 1.084,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-169_fw",
+          "name": "EIN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-169_am",
+          "name": "EIN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-169_wg",
+          "name": "EIN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-169_df",
+          "name": "EIN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-497",
+      "attack": 1.014,
+      "defence": 1.026,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-497_fw",
+          "name": "ASR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-497_am",
+          "name": "ASR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-497_wg",
+          "name": "ASR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-497_df",
+          "name": "ASR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-531",
+      "attack": 0.952,
+      "defence": 1.09,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-531_fw",
+          "name": "ATH Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-531_am",
+          "name": "ATH Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-531_wg",
+          "name": "ATH Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-531_df",
+          "name": "ATH Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-13976",
+      "attack": 0.876,
+      "defence": 1.205,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-13976_fw",
+          "name": "SAB Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-13976_am",
+          "name": "SAB Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-13976_wg",
+          "name": "SAB Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-13976_df",
+          "name": "SAB Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-614",
+      "attack": 0.885,
+      "defence": 1.174,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-614_fw",
+          "name": "AEK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-614_am",
+          "name": "AEK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-614_wg",
+          "name": "AEK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-614_df",
+          "name": "AEK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-680",
+      "attack": 0.866,
+      "defence": 1.202,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-680_fw",
+          "name": "PRI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-680_am",
+          "name": "PRI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-680_wg",
+          "name": "PRI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-680_df",
+          "name": "PRI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2246",
+      "attack": 0.866,
+      "defence": 1.121,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2246_fw",
+          "name": "CFR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2246_am",
+          "name": "CFR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2246_wg",
+          "name": "CFR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2246_df",
+          "name": "CFR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-646",
+      "attack": 0.851,
+      "defence": 1.103,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-646_fw",
+          "name": "LEV Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-646_am",
+          "name": "LEV Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-646_wg",
+          "name": "LEV Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-646_df",
+          "name": "LEV Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-563",
+      "attack": 0.848,
+      "defence": 1.174,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-563_fw",
+          "name": "HAP Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-563_am",
+          "name": "HAP Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-563_wg",
+          "name": "HAP Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-563_df",
+          "name": "HAP Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-550",
+      "attack": 0.921,
+      "defence": 1.104,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-550_fw",
+          "name": "SHA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-550_am",
+          "name": "SHA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-550_wg",
+          "name": "SHA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-550_df",
+          "name": "SHA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1163",
+      "attack": 0.863,
+      "defence": 1.2,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1163_fw",
+          "name": "ILV Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1163_am",
+          "name": "ILV Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1163_wg",
+          "name": "ILV Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1163_df",
+          "name": "ILV Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1120",
+      "attack": 0.869,
+      "defence": 1.188,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1120_fw",
+          "name": "SPA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1120_am",
+          "name": "SPA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1120_wg",
+          "name": "SPA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1120_df",
+          "name": "SPA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-367",
+      "attack": 0.877,
+      "defence": 1.138,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-367_fw",
+          "name": "BKH Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-367_am",
+          "name": "BKH Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-367_wg",
+          "name": "BKH Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-367_df",
+          "name": "BKH Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-339",
+      "attack": 0.892,
+      "defence": 1.166,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-339_fw",
+          "name": "LEG Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-339_am",
+          "name": "LEG Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-339_wg",
+          "name": "LEG Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-339_df",
+          "name": "LEG Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4563",
+      "attack": 0.861,
+      "defence": 1.181,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4563_fw",
+          "name": "AKT Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4563_am",
+          "name": "AKT Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4563_wg",
+          "name": "AKT Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4563_df",
+          "name": "AKT Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-207",
+      "attack": 0.913,
+      "defence": 1.131,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-207_fw",
+          "name": "UTR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-207_am",
+          "name": "UTR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-207_wg",
+          "name": "UTR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-207_df",
+          "name": "UTR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3713",
+      "attack": 0.871,
+      "defence": 1.192,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3713_fw",
+          "name": "BAN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3713_am",
+          "name": "BAN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3713_wg",
+          "name": "BAN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3713_df",
+          "name": "BAN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-249",
+      "attack": 0.87,
+      "defence": 1.184,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-249_fw",
+          "name": "HIB Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-249_am",
+          "name": "HIB Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-249_wg",
+          "name": "HIB Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-249_df",
+          "name": "HIB Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4626",
+      "attack": 0.866,
+      "defence": 1.197,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4626_fw",
+          "name": "HAM Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4626_am",
+          "name": "HAM Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4626_wg",
+          "name": "HAM Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4626_df",
+          "name": "HAM Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1165",
+      "attack": 0.867,
+      "defence": 1.187,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1165_fw",
+          "name": "KUP Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1165_am",
+          "name": "KUP Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1165_wg",
+          "name": "KUP Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1165_df",
+          "name": "KUP Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3854",
+      "attack": 0.871,
+      "defence": 1.194,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3854_fw",
+          "name": "SHE Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3854_am",
+          "name": "SHE Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3854_wg",
+          "name": "SHE Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3854_df",
+          "name": "SHE Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3684",
+      "attack": 0.863,
+      "defence": 1.179,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3684_fw",
+          "name": "FCN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3684_am",
+          "name": "FCN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3684_wg",
+          "name": "FCN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3684_df",
+          "name": "FCN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2149",
+      "attack": 0.866,
+      "defence": 1.195,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2149_fw",
+          "name": "FRE Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2149_am",
+          "name": "FRE Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2149_wg",
+          "name": "FRE Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2149_df",
+          "name": "FRE Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-319",
+      "attack": 0.897,
+      "defence": 1.08,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-319_fw",
+          "name": "BRA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-319_am",
+          "name": "BRA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-319_wg",
+          "name": "BRA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-319_df",
+          "name": "BRA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1025",
+      "attack": 0.861,
+      "defence": 1.174,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1025_fw",
+          "name": "WOL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1025_am",
+          "name": "WOL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1025_wg",
+          "name": "WOL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1025_df",
+          "name": "WOL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-588",
+      "attack": 0.864,
+      "defence": 1.162,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-588_fw",
+          "name": "ZRI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-588_am",
+          "name": "ZRI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-588_wg",
+          "name": "ZRI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-588_df",
+          "name": "ZRI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-276",
+      "attack": 0.868,
+      "defence": 1.189,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-276_fw",
+          "name": "BRE Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-276_am",
+          "name": "BRE Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-276_wg",
+          "name": "BRE Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-276_df",
+          "name": "BRE Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-14281",
+      "attack": 0.871,
+      "defence": 1.203,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-14281_fw",
+          "name": "DRI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-14281_am",
+          "name": "DRI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-14281_wg",
+          "name": "DRI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-14281_df",
+          "name": "DRI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2250",
+      "attack": 0.859,
+      "defence": 1.201,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2250_fw",
+          "name": "SIG Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2250_am",
+          "name": "SIG Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2250_wg",
+          "name": "SIG Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2250_df",
+          "name": "SIG Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-609",
+      "attack": 0.871,
+      "defence": 1.198,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-609_fw",
+          "name": "SHK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-609_am",
+          "name": "SHK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-609_wg",
+          "name": "SHK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-609_df",
+          "name": "SHK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3603",
+      "attack": 0.866,
+      "defence": 1.182,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3603_fw",
+          "name": "SAM Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3603_am",
+          "name": "SAM Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3603_wg",
+          "name": "SAM Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3603_df",
+          "name": "SAM Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-656",
+      "attack": 0.867,
+      "defence": 1.192,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-656_fw",
+          "name": "SLO Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-656_am",
+          "name": "SLO Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-656_wg",
+          "name": "SLO Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-656_df",
+          "name": "SLO Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-565",
+      "attack": 0.914,
+      "defence": 1.179,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-565_fw",
+          "name": "BSC Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-565_am",
+          "name": "BSC Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-565_wg",
+          "name": "BSC Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-565_df",
+          "name": "BSC Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-347",
+      "attack": 0.961,
+      "defence": 1.196,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-347_fw",
+          "name": "LEC Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-347_am",
+          "name": "LEC Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-347_wg",
+          "name": "LEC Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-347_df",
+          "name": "LEC Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-742",
+      "attack": 0.981,
+      "defence": 1.108,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-742_fw",
+          "name": "GEN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-742_am",
+          "name": "GEN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-742_wg",
+          "name": "GEN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-742_df",
+          "name": "GEN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-252",
+      "attack": 0.867,
+      "defence": 1.197,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-252_fw",
+          "name": "ABE Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-252_am",
+          "name": "ABE Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-252_wg",
+          "name": "ABE Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-252_df",
+          "name": "ABE Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-637",
+      "attack": 0.816,
+      "defence": 1.116,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-637_fw",
+          "name": "STU Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-637_am",
+          "name": "STU Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-637_wg",
+          "name": "STU Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-637_df",
+          "name": "STU Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-160",
+      "attack": 0.99,
+      "defence": 1.02,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-160_fw",
+          "name": "SCF Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-160_am",
+          "name": "SCF Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-160_wg",
+          "name": "SCF Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-160_df",
+          "name": "SCF Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-551",
+      "attack": 0.886,
+      "defence": 1.154,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-551_fw",
+          "name": "FCB Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-551_am",
+          "name": "FCB Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-551_wg",
+          "name": "FCB Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-551_df",
+          "name": "FCB Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-209",
+      "attack": 0.908,
+      "defence": 1.188,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-209_fw",
+          "name": "FEY Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-209_am",
+          "name": "FEY Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-209_wg",
+          "name": "FEY Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-209_df",
+          "name": "FEY Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-543",
+      "attack": 0.966,
+      "defence": 1.078,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-543_fw",
+          "name": "REA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-543_am",
+          "name": "REA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-543_wg",
+          "name": "REA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-543_df",
+          "name": "REA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-65",
+      "attack": 0.984,
+      "defence": 1.02,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-65_fw",
+          "name": "NOT Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-65_am",
+          "name": "NOT Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-65_wg",
+          "name": "NOT Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-65_df",
+          "name": "NOT Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-598",
+      "attack": 0.88,
+      "defence": 1.103,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-598_fw",
+          "name": "FKC Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-598_am",
+          "name": "FKC Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-598_wg",
+          "name": "FKC Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-598_df",
+          "name": "FKC Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-247",
+      "attack": 0.927,
+      "defence": 1.243,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-247_fw",
+          "name": "CEL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-247_am",
+          "name": "CEL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-247_wg",
+          "name": "CEL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-247_df",
+          "name": "CEL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-620",
+      "attack": 0.92,
+      "defence": 1.231,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-620_fw",
+          "name": "DIN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-620_am",
+          "name": "DIN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-620_wg",
+          "name": "DIN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-620_df",
+          "name": "DIN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-79",
+      "attack": 0.897,
+      "defence": 1.073,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-79_fw",
+          "name": "LIL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-79_am",
+          "name": "LIL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-79_wg",
+          "name": "LIL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-79_df",
+          "name": "LIL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-410",
+      "attack": 0.858,
+      "defence": 1.172,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-410_fw",
+          "name": "GOA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-410_am",
+          "name": "GOA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-410_wg",
+          "name": "GOA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-410_df",
+          "name": "GOA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-66",
+      "attack": 1.072,
+      "defence": 0.96,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-66_fw",
+          "name": "AVL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-66_am",
+          "name": "AVL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-66_wg",
+          "name": "AVL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-66_df",
+          "name": "AVL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-500",
+      "attack": 0.974,
+      "defence": 1.091,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-500_fw",
+          "name": "BOL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-500_am",
+          "name": "BOL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-500_wg",
+          "name": "BOL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-500_df",
+          "name": "BOL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-172",
+      "attack": 0.939,
+      "defence": 1.112,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-172_fw",
+          "name": "VFB Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-172_am",
+          "name": "VFB Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-172_wg",
+          "name": "VFB Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-172_df",
+          "name": "VFB Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-538",
+      "attack": 0.946,
+      "defence": 1.077,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-538_fw",
+          "name": "CEL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-538_am",
+          "name": "CEL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-538_wg",
+          "name": "CEL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-538_df",
+          "name": "CEL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-571",
+      "attack": 0.935,
+      "defence": 1.158,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-571_fw",
+          "name": "RED Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-571_am",
+          "name": "RED Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-571_wg",
+          "name": "RED Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-571_df",
+          "name": "RED Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4165",
+      "attack": 0.857,
+      "defence": 1.216,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4165_fw",
+          "name": "VES Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4165_am",
+          "name": "VES Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4165_wg",
+          "name": "VES Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4165_df",
+          "name": "VES Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4358",
+      "attack": 0.855,
+      "defence": 1.177,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4358_fw",
+          "name": "ALU Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4358_am",
+          "name": "ALU Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4358_wg",
+          "name": "ALU Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4358_df",
+          "name": "ALU Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2599",
+      "attack": 0.856,
+      "defence": 1.171,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2599_fw",
+          "name": "UNI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2599_am",
+          "name": "UNI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2599_wg",
+          "name": "UNI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2599_df",
+          "name": "UNI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-608",
+      "attack": 0.871,
+      "defence": 1.16,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-608_fw",
+          "name": "HNK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-608_am",
+          "name": "HNK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-608_wg",
+          "name": "HNK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-608_df",
+          "name": "HNK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3554",
+      "attack": 0.868,
+      "defence": 1.189,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3554_fw",
+          "name": "ŽIL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3554_am",
+          "name": "ŽIL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3554_wg",
+          "name": "ŽIL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3554_df",
+          "name": "ŽIL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-853",
+      "attack": 0.869,
+      "defence": 1.154,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-853_fw",
+          "name": "CSK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-853_am",
+          "name": "CSK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-853_wg",
+          "name": "CSK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-853_df",
+          "name": "CSK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-670",
+      "attack": 0.872,
+      "defence": 1.207,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-670_fw",
+          "name": "DER Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-670_am",
+          "name": "DER Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-670_wg",
+          "name": "DER Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-670_df",
+          "name": "DER Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-325",
+      "attack": 0.864,
+      "defence": 1.198,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-325_fw",
+          "name": "TRO Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-325_am",
+          "name": "TRO Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-325_wg",
+          "name": "TRO Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-325_df",
+          "name": "TRO Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3723",
+      "attack": 0.867,
+      "defence": 1.143,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3723_fw",
+          "name": "HRA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3723_am",
+          "name": "HRA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3723_wg",
+          "name": "HRA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3723_df",
+          "name": "HRA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-363",
+      "attack": 0.869,
+      "defence": 1.191,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-363_fw",
+          "name": "HAM Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-363_am",
+          "name": "HAM Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-363_wg",
+          "name": "HAM Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-363_df",
+          "name": "HAM Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1011",
+      "attack": 0.869,
+      "defence": 1.192,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1011_fw",
+          "name": "FCS Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1011_am",
+          "name": "FCS Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1011_wg",
+          "name": "FCS Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1011_df",
+          "name": "FCS Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-211",
+      "attack": 1.097,
+      "defence": 1.088,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-211_fw",
+          "name": "BEN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-211_am",
+          "name": "BEN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-211_wg",
+          "name": "BEN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-211_df",
+          "name": "BEN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3327",
+      "attack": 0.881,
+      "defence": 1.186,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3327_fw",
+          "name": "EGN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3327_am",
+          "name": "EGN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3327_wg",
+          "name": "EGN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3327_df",
+          "name": "EGN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-5354",
+      "attack": 0.86,
+      "defence": 1.184,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-5354_fw",
+          "name": "LAR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-5354_am",
+          "name": "LAR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-5354_wg",
+          "name": "LAR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-5354_df",
+          "name": "LAR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3502",
+      "attack": 0.858,
+      "defence": 1.193,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3502_fw",
+          "name": "FCI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3502_am",
+          "name": "FCI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3502_wg",
+          "name": "FCI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3502_df",
+          "name": "FCI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-340",
+      "attack": 0.863,
+      "defence": 1.175,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-340_fw",
+          "name": "GOR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-340_am",
+          "name": "GOR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-340_wg",
+          "name": "GOR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-340_df",
+          "name": "GOR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-632",
+      "attack": 0.859,
+      "defence": 1.165,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-632_fw",
+          "name": "UNI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-632_am",
+          "name": "UNI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-632_wg",
+          "name": "UNI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-632_df",
+          "name": "UNI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3402",
+      "attack": 0.901,
+      "defence": 1.133,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3402_fw",
+          "name": "OMO Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3402_am",
+          "name": "OMO Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3402_wg",
+          "name": "OMO Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3402_df",
+          "name": "OMO Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1012",
+      "attack": 0.884,
+      "defence": 1.248,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1012_fw",
+          "name": "FCT Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1012_am",
+          "name": "FCT Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1012_wg",
+          "name": "FCT Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1012_df",
+          "name": "FCT Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-278",
+      "attack": 0.866,
+      "defence": 1.203,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-278_fw",
+          "name": "VIK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-278_am",
+          "name": "VIK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-278_wg",
+          "name": "VIK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-278_df",
+          "name": "VIK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-664",
+      "attack": 0.859,
+      "defence": 1.207,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-664_fw",
+          "name": "KAI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-664_am",
+          "name": "KAI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-664_wg",
+          "name": "KAI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-664_df",
+          "name": "KAI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-2240",
+      "attack": 0.856,
+      "defence": 1.194,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-2240_fw",
+          "name": "MJA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-2240_am",
+          "name": "MJA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-2240_wg",
+          "name": "MJA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-2240_df",
+          "name": "MJA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3872",
+      "attack": 0.863,
+      "defence": 1.182,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3872_fw",
+          "name": "KAU Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3872_am",
+          "name": "KAU Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3872_wg",
+          "name": "KAU Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3872_df",
+          "name": "KAU Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-3683",
+      "attack": 0.858,
+      "defence": 1.245,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-3683_fw",
+          "name": "ARA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-3683_am",
+          "name": "ARA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-3683_wg",
+          "name": "ARA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-3683_df",
+          "name": "ARA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-321",
+      "attack": 0.854,
+      "defence": 1.206,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-321_fw",
+          "name": "LIL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-321_am",
+          "name": "LIL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-321_wg",
+          "name": "LIL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-321_df",
+          "name": "LIL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-735",
+      "attack": 0.874,
+      "defence": 1.194,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-735_fw",
+          "name": "STT Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-735_am",
+          "name": "STT Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-735_wg",
+          "name": "STT Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-735_df",
+          "name": "STT Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1124",
+      "attack": 0.898,
+      "defence": 1.134,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1124_fw",
+          "name": "OFI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1124_am",
+          "name": "OFI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1124_wg",
+          "name": "OFI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1124_df",
+          "name": "OFI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-406",
+      "attack": 0.869,
+      "defence": 1.192,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-406_fw",
+          "name": "AAR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-406_am",
+          "name": "AAR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-406_wg",
+          "name": "AAR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-406_df",
+          "name": "AAR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-628",
+      "attack": 0.88,
+      "defence": 1.172,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-628_fw",
+          "name": "SPA Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-628_am",
+          "name": "SPA Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-628_wg",
+          "name": "SPA Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-628_df",
+          "name": "SPA Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-168",
+      "attack": 0.907,
+      "defence": 1.138,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-168_fw",
+          "name": "BAY Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-168_am",
+          "name": "BAY Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-168_wg",
+          "name": "BAY Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-168_df",
+          "name": "BAY Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-489",
+      "attack": 0.881,
+      "defence": 1.171,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-489_fw",
+          "name": "MIL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-489_am",
+          "name": "MIL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-489_wg",
+          "name": "MIL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-489_df",
+          "name": "MIL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-94",
+      "attack": 0.88,
+      "defence": 1.165,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-94_fw",
+          "name": "REN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-94_am",
+          "name": "REN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-94_wg",
+          "name": "REN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-94_df",
+          "name": "REN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-746",
+      "attack": 0.874,
+      "defence": 1.152,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-746_fw",
+          "name": "SUN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-746_am",
+          "name": "SUN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-746_wg",
+          "name": "SUN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-746_df",
+          "name": "SUN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-52",
+      "attack": 0.911,
+      "defence": 1.173,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-52_fw",
+          "name": "CRY Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-52_am",
+          "name": "CRY Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-52_wg",
+          "name": "CRY Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-52_df",
+          "name": "CRY Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4799",
+      "attack": 0.878,
+      "defence": 1.208,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4799_fw",
+          "name": "TOR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4799_am",
+          "name": "TOR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4799_wg",
+          "name": "TOR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4799_df",
+          "name": "TOR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-496",
+      "attack": 0.913,
+      "defence": 1.167,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-496_fw",
+          "name": "JUV Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-496_am",
+          "name": "JUV Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-496_wg",
+          "name": "JUV Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-496_df",
+          "name": "JUV Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-413",
+      "attack": 0.886,
+      "defence": 1.213,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-413_fw",
+          "name": "NEC Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-413_am",
+          "name": "NEC Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-413_wg",
+          "name": "NEC Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-413_df",
+          "name": "NEC Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-35",
+      "attack": 0.91,
+      "defence": 1.148,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-35_fw",
+          "name": "BOU Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-35_am",
+          "name": "BOU Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-35_wg",
+          "name": "BOU Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-35_df",
+          "name": "BOU Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-81",
+      "attack": 0.858,
+      "defence": 1.199,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-81_fw",
+          "name": "OM Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-81_am",
+          "name": "OM Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-81_wg",
+          "name": "OM Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-81_df",
+          "name": "OM Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    }
+  ]
+}

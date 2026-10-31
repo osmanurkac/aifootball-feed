@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "league": "Saudi Pro League",
+  "sport": "football",
+  "topFinishLabel": "Top 4",
+  "recordLabel": "Pts",
+  "entries": [
+    {
+      "teamId": "fb-2932",
+      "title": 0.553,
+      "lastWeek": 0.553,
+      "topFinish": 0.984,
+      "relegation": 0.0,
+      "record": "27"
+    },
+    {
+      "teamId": "fb-2939",
+      "title": 0.243,
+      "lastWeek": 0.243,
+      "topFinish": 0.93,
+      "relegation": 0.0,
+      "record": "28"
+    },
+    {
+      "teamId": "fb-2933",
+      "title": 0.158,
+      "lastWeek": 0.158,
+      "topFinish": 0.9,
+      "relegation": 0.0,
+      "record": "28"
+    },
+    {
+      "teamId": "fb-2929",
+      "title": 0.023,
+      "lastWeek": 0.023,
+      "topFinish": 0.556,
+      "relegation": 0.0,
+      "record": "21"
+    },
+    {
+      "teamId": "fb-2938",
+      "title": 0.022,
+      "lastWeek": 0.022,
+      "topFinish": 0.512,
+      "relegation": 0.0,
+      "record": "24"
+    },
+    {
+      "teamId": "fb-10513",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.063,
+      "relegation": 0.002,
+      "record": "22"
+    },
+    {
+      "teamId": "fb-2934",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.031,
+      "relegation": 0.01,
+      "record": "18"
+    },
+    {
+      "teamId": "fb-26738",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.001,
+      "relegation": 0.099,
+      "record": "15"
+    },
+    {
+      "teamId": "fb-2928",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.003,
+      "relegation": 0.07,
+      "record": "15"
+    },
+    {
+      "teamId": "fb-2940",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.018,
+      "relegation": 0.022,
+      "record": "14"
+    },
+    {
+      "teamId": "fb-10509",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.001,
+      "relegation": 0.183,
+      "record": "12"
+    },
+    {
+      "teamId": "fb-10511",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.243,
+      "record": "12"
+    },
+    {
+      "teamId": "fb-2945",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.316,
+      "record": "10"
+    },
+    {
+      "teamId": "fb-2930",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.247,
+      "record": "10"
+    },
+    {
+      "teamId": "fb-2944",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.345,
+      "record": "8"
+    },
+    {
+      "teamId": "fb-2931",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.436,
+      "record": "6"
+    },
+    {
+      "teamId": "fb-2936",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.335,
+      "record": "4"
+    },
+    {
+      "teamId": "fb-2951",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.692,
+      "record": "3"
+    }
+  ]
+}

@@ -1,0 +1,2424 @@
+{
+  "schemaVersion": 1,
+  "league": "LaLiga",
+  "leagueAverageGoals": 1.126,
+  "homeAdvantage": 1.33,
+  "rho": -0.11,
+  "firstHalfGoalShare": 0.45,
+  "teams": [
+    {
+      "teamId": "fb-531",
+      "attack": 0.967,
+      "defence": 0.932,
+      "cornersMean": 6.0,
+      "cornersSize": 48.0,
+      "cardsMean": 2.11,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-531_47270",
+          "name": "Unai Simón",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-531_622",
+          "name": "Aymeric Laporte",
+          "goalShare": 0.0,
+          "expectedMinutes": 81,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-531_47294",
+          "name": "I. Williams",
+          "goalShare": 0.167,
+          "expectedMinutes": 63,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-531_30510",
+          "name": "Álex Berenguer",
+          "goalShare": 0.25,
+          "expectedMinutes": 60,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-531_47273",
+          "name": "Yuri",
+          "goalShare": 0.083,
+          "expectedMinutes": 74,
+          "cardRate": 0.5
+        },
+        {
+          "id": "fb-531_332307",
+          "name": "Beñat Gerenabarrena",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.5
+        },
+        {
+          "id": "fb-531_84086",
+          "name": "Robert Navarro",
+          "goalShare": 0.167,
+          "expectedMinutes": 67,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-531_183849",
+          "name": "Aitor Paredes",
+          "goalShare": 0.167,
+          "expectedMinutes": 67,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-531_128398",
+          "name": "Oihan Sancet",
+          "goalShare": 0.083,
+          "expectedMinutes": 86,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-531_47007",
+          "name": "Ruíz de Galarreta",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-531_437643",
+          "name": "Peio Canales",
+          "goalShare": 0.0,
+          "expectedMinutes": 60,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-531_47271",
+          "name": "Yeray",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-531_183799",
+          "name": "Nico Williams",
+          "goalShare": 0.083,
+          "expectedMinutes": 55,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-531_182181",
+          "name": "Jesús Areso",
+          "goalShare": 0.0,
+          "expectedMinutes": 59,
+          "cardRate": 0.143
+        }
+      ]
+    },
+    {
+      "teamId": "fb-546",
+      "attack": 0.722,
+      "defence": 0.875,
+      "cornersMean": 4.2,
+      "cornersSize": 41.78,
+      "cardsMean": 4.2,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-546_47247",
+          "name": "David Soria",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-546_195512",
+          "name": "M. Satriano",
+          "goalShare": 0.4,
+          "expectedMinutes": 75,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-546_187987",
+          "name": "Ramón Terrats",
+          "goalShare": 0.2,
+          "expectedMinutes": 81,
+          "cardRate": 0.444
+        },
+        {
+          "id": "fb-546_64268",
+          "name": "J. Mojica",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.556
+        },
+        {
+          "id": "fb-546_47250",
+          "name": "D. Dakonam",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.444
+        },
+        {
+          "id": "fb-546_47499",
+          "name": "E. Ünal",
+          "goalShare": 0.2,
+          "expectedMinutes": 72,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-546_1489",
+          "name": "N. Gudelj",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-546_388013",
+          "name": "Andrés García",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-546_24882",
+          "name": "O. Mangala",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-546_180927",
+          "name": "Z. Romero",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-546_343205",
+          "name": "Mario Martín",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.571
+        },
+        {
+          "id": "fb-546_162249",
+          "name": "Francho Serrano",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-546_161590",
+          "name": "Iván Azón",
+          "goalShare": 0.2,
+          "expectedMinutes": 68,
+          "cardRate": 0.167
+        },
+        {
+          "id": "fb-546_18794",
+          "name": "Kiko Femenía",
+          "goalShare": 0.0,
+          "expectedMinutes": 52,
+          "cardRate": 0.5
+        }
+      ]
+    },
+    {
+      "teamId": "fb-543",
+      "attack": 1.134,
+      "defence": 0.99,
+      "cornersMean": 4.7,
+      "cornersSize": 8.0,
+      "cardsMean": 1.7,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-543_46990",
+          "name": "Álvaro Vallés",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-543_195100",
+          "name": "Natan",
+          "goalShare": 0.067,
+          "expectedMinutes": 90,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-543_1439",
+          "name": "Héctor Bellerín",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.222
+        },
+        {
+          "id": "fb-543_736",
+          "name": "Fran García",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-543_1697",
+          "name": "Pablo Fornals",
+          "goalShare": 0.0,
+          "expectedMinutes": 71,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-543_9971",
+          "name": "Antony",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-543_47341",
+          "name": "Marc Roca",
+          "goalShare": 0.0,
+          "expectedMinutes": 85,
+          "cardRate": 0.286
+        },
+        {
+          "id": "fb-543_47582",
+          "name": "C. Hernández",
+          "goalShare": 0.133,
+          "expectedMinutes": 65,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-543_181421",
+          "name": "A. Ezzalzouli",
+          "goalShare": 0.2,
+          "expectedMinutes": 73,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-543_316519",
+          "name": "F. Bernal",
+          "goalShare": 0.0,
+          "expectedMinutes": 59,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-543_745",
+          "name": "Isco",
+          "goalShare": 0.133,
+          "expectedMinutes": 52,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-543_355004",
+          "name": "V. Gómez",
+          "goalShare": 0.067,
+          "expectedMinutes": 88,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-543_300885",
+          "name": "N. Deossa",
+          "goalShare": 0.0,
+          "expectedMinutes": 43,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-543_136117",
+          "name": "Rodrigo Riquelme",
+          "goalShare": 0.133,
+          "expectedMinutes": 45,
+          "cardRate": 0.0
+        }
+      ]
+    },
+    {
+      "teamId": "fb-547",
+      "attack": 0.875,
+      "defence": 1.079,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-547_fw",
+          "name": "GIR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-547_am",
+          "name": "GIR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-547_wg",
+          "name": "GIR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-547_df",
+          "name": "GIR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-538",
+      "attack": 1.016,
+      "defence": 0.968,
+      "cornersMean": 2.8,
+      "cornersSize": 8.0,
+      "cardsMean": 1.9,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-538_30765",
+          "name": "I. Radu",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-538_329722",
+          "name": "Yoel Lago",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.4
+        },
+        {
+          "id": "fb-538_162123",
+          "name": "I. Moriba",
+          "goalShare": 0.1,
+          "expectedMinutes": 72,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-538_2278",
+          "name": "Marcos Alonso",
+          "goalShare": 0.0,
+          "expectedMinutes": 76,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-538_122734",
+          "name": "Ferran Jutglà",
+          "goalShare": 0.2,
+          "expectedMinutes": 59,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-538_157988",
+          "name": "Sergio Carreira",
+          "goalShare": 0.0,
+          "expectedMinutes": 59,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-538_333502",
+          "name": "Miguel Román",
+          "goalShare": 0.1,
+          "expectedMinutes": 83,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-538_179955",
+          "name": "Javi Rueda",
+          "goalShare": 0.0,
+          "expectedMinutes": 58,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-538_329720",
+          "name": "Hugo Álvarez",
+          "goalShare": 0.0,
+          "expectedMinutes": 62,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-538_384135",
+          "name": "Javi Rodríguez",
+          "goalShare": 0.1,
+          "expectedMinutes": 70,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-538_269163",
+          "name": "W. Swedberg",
+          "goalShare": 0.0,
+          "expectedMinutes": 45,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-538_47566",
+          "name": "Javi Galán",
+          "goalShare": 0.0,
+          "expectedMinutes": 50,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-538_46711",
+          "name": "Aleix Febas",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-538_320517",
+          "name": "Pablo Durán",
+          "goalShare": 0.2,
+          "expectedMinutes": 53,
+          "cardRate": 0.0
+        }
+      ]
+    },
+    {
+      "teamId": "fb-542",
+      "attack": 0.908,
+      "defence": 1.018,
+      "cornersMean": 4.1,
+      "cornersSize": 9.46,
+      "cardsMean": 1.9,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-542_47353",
+          "name": "Sivera",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-542_6233",
+          "name": "N. Tenaglia",
+          "goalShare": 0.071,
+          "expectedMinutes": 86,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-542_139001",
+          "name": "Pablo Ibáñez",
+          "goalShare": 0.071,
+          "expectedMinutes": 85,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-542_106759",
+          "name": "V. Koski",
+          "goalShare": 0.071,
+          "expectedMinutes": 82,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-542_183751",
+          "name": "A. Rebbach",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-542_162686",
+          "name": "Antonio Blanco",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-542_608",
+          "name": "L. Boyé",
+          "goalShare": 0.357,
+          "expectedMinutes": 81,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-542_18740",
+          "name": "Jonny",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-542_331369",
+          "name": "Angel Pérez",
+          "goalShare": 0.0,
+          "expectedMinutes": 71,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-542_47181",
+          "name": "Toni Martínez",
+          "goalShare": 0.0,
+          "expectedMinutes": 55,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-542_311071",
+          "name": "N. Valentini",
+          "goalShare": 0.0,
+          "expectedMinutes": 64,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-542_760",
+          "name": "M. Díaz",
+          "goalShare": 0.214,
+          "expectedMinutes": 44,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-542_1461",
+          "name": "Denis Suárez",
+          "goalShare": 0.0,
+          "expectedMinutes": 47,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-542_143",
+          "name": "Carles Aleñá",
+          "goalShare": 0.0,
+          "expectedMinutes": 29,
+          "cardRate": 0.0
+        }
+      ]
+    },
+    {
+      "teamId": "fb-534",
+      "attack": 0.869,
+      "defence": 1.147,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-534_fw",
+          "name": "LAS Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-534_am",
+          "name": "LAS Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-534_wg",
+          "name": "LAS Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-534_df",
+          "name": "LAS Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-536",
+      "attack": 0.967,
+      "defence": 1.099,
+      "cornersMean": 3.4,
+      "cornersSize": 17.94,
+      "cardsMean": 3.0,
+      "cardsSize": 5.4,
+      "players": [
+        {
+          "id": "fb-536_557",
+          "name": "O. Vlachodimos",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-536_11421",
+          "name": "G. Suazo",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-536_21004",
+          "name": "L. Agoumé",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-536_119742",
+          "name": "Juan Iglesias",
+          "goalShare": 0.062,
+          "expectedMinutes": 88,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-536_338902",
+          "name": "Andrés Castrín",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-536_297311",
+          "name": "Kike Salas",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-536_438263",
+          "name": "Miguel Ángel",
+          "goalShare": 0.125,
+          "expectedMinutes": 70,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-536_327536",
+          "name": "R. Ure",
+          "goalShare": 0.062,
+          "expectedMinutes": 55,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-536_22254",
+          "name": "Y. Fofana",
+          "goalShare": 0.062,
+          "expectedMinutes": 78,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-536_135749",
+          "name": "Félix Correia",
+          "goalShare": 0.125,
+          "expectedMinutes": 76,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-536_104821",
+          "name": "Jon Guridi",
+          "goalShare": 0.062,
+          "expectedMinutes": 47,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-536_39121",
+          "name": "C. Ejuke",
+          "goalShare": 0.062,
+          "expectedMinutes": 41,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-536_185398",
+          "name": "Isaac",
+          "goalShare": 0.188,
+          "expectedMinutes": 39,
+          "cardRate": 0.75
+        },
+        {
+          "id": "fb-536_322560",
+          "name": "L. Stassin",
+          "goalShare": 0.062,
+          "expectedMinutes": 58,
+          "cardRate": 0.0
+        }
+      ]
+    },
+    {
+      "teamId": "fb-727",
+      "attack": 0.918,
+      "defence": 1.075,
+      "cornersMean": 3.6,
+      "cornersSize": 3.24,
+      "cardsMean": 2.6,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-727_47533",
+          "name": "Catena",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.222
+        },
+        {
+          "id": "fb-727_181259",
+          "name": "Abel Bretones",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-727_46746",
+          "name": "A. Budimir",
+          "goalShare": 0.7,
+          "expectedMinutes": 77,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-727_46662",
+          "name": "Moncayola",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-727_421044",
+          "name": "Íñigo Arguibide",
+          "goalShare": 0.0,
+          "expectedMinutes": 65,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-727_46658",
+          "name": "Rubén García",
+          "goalShare": 0.0,
+          "expectedMinutes": 60,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-727_182621",
+          "name": "Iker Muñoz",
+          "goalShare": 0.0,
+          "expectedMinutes": 69,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-727_47574",
+          "name": "Moi Gómez",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-727_146751",
+          "name": "Raúl García",
+          "goalShare": 0.1,
+          "expectedMinutes": 46,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-727_46646",
+          "name": "Sergio Herrera",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.6
+        },
+        {
+          "id": "fb-727_47448",
+          "name": "Aitor Fernández",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-727_1825",
+          "name": "Lucas Torró",
+          "goalShare": 0.0,
+          "expectedMinutes": 53,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-727_183931",
+          "name": "Jonathan Dubasin",
+          "goalShare": 0.0,
+          "expectedMinutes": 41,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-727_279822",
+          "name": "F. Boyomo",
+          "goalShare": 0.0,
+          "expectedMinutes": 76,
+          "cardRate": 0.0
+        }
+      ]
+    },
+    {
+      "teamId": "fb-537",
+      "attack": 0.873,
+      "defence": 1.103,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-537_fw",
+          "name": "LEG Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-537_am",
+          "name": "LEG Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-537_wg",
+          "name": "LEG Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-537_df",
+          "name": "LEG Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-532",
+      "attack": 0.893,
+      "defence": 1.064,
+      "cornersMean": 4.2,
+      "cornersSize": 10.05,
+      "cardsMean": 2.6,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-532_47527",
+          "name": "S. Dimitrievski",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-532_47463",
+          "name": "Pepelu",
+          "goalShare": 0.167,
+          "expectedMinutes": 84,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-532_315699",
+          "name": "Javi Guerra",
+          "goalShare": 0.0,
+          "expectedMinutes": 81,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-532_83",
+          "name": "A. Danjuma",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-532_918",
+          "name": "José Gayà",
+          "goalShare": 0.0,
+          "expectedMinutes": 78,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-532_48465",
+          "name": "F. Ugrinic",
+          "goalShare": 0.0,
+          "expectedMinutes": 59,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-532_2476",
+          "name": "G. Rodríguez",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.429
+        },
+        {
+          "id": "fb-532_26302",
+          "name": "Pablo Maffeo",
+          "goalShare": 0.0,
+          "expectedMinutes": 65,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-532_333672",
+          "name": "César Tárrega",
+          "goalShare": 0.0,
+          "expectedMinutes": 73,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-532_36884",
+          "name": "J. de Haas",
+          "goalShare": 0.0,
+          "expectedMinutes": 76,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-532_47264",
+          "name": "Hugo Duro",
+          "goalShare": 0.0,
+          "expectedMinutes": 43,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-532_162175",
+          "name": "Jesús Vázquez",
+          "goalShare": 0.0,
+          "expectedMinutes": 46,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-532_439578",
+          "name": "David Otorbi",
+          "goalShare": 0.167,
+          "expectedMinutes": 39,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-532_916",
+          "name": "M. Diakhaby",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.4
+        }
+      ]
+    },
+    {
+      "teamId": "fb-529",
+      "attack": 1.797,
+      "defence": 0.86,
+      "cornersMean": 7.2,
+      "cornersSize": 2.94,
+      "cardsMean": 1.5,
+      "cardsSize": 20.25,
+      "players": [
+        {
+          "id": "fb-529_386828",
+          "name": "Lamine Yamal",
+          "goalShare": 0.211,
+          "expectedMinutes": 83,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-529_182718",
+          "name": "Joan García",
+          "goalShare": 0.0,
+          "expectedMinutes": 85,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-529_133609",
+          "name": "Pedri",
+          "goalShare": 0.026,
+          "expectedMinutes": 71,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-529_1496",
+          "name": "Raphinha",
+          "goalShare": 0.342,
+          "expectedMinutes": 73,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-529_181701",
+          "name": "Gerard Martín",
+          "goalShare": 0.0,
+          "expectedMinutes": 73,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-529_568001",
+          "name": "X. Espart",
+          "goalShare": 0.026,
+          "expectedMinutes": 81,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-529_340626",
+          "name": "Fermín",
+          "goalShare": 0.105,
+          "expectedMinutes": 68,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-529_44",
+          "name": "Rodri",
+          "goalShare": 0.026,
+          "expectedMinutes": 67,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-529_619",
+          "name": "Eric García",
+          "goalShare": 0.026,
+          "expectedMinutes": 76,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-529_396623",
+          "name": "Pau Cubarsí Paredes",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-529_138787",
+          "name": "A. Gordon",
+          "goalShare": 0.026,
+          "expectedMinutes": 65,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-529_2282",
+          "name": "A. Christensen",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-529_1257",
+          "name": "J. Koundé",
+          "goalShare": 0.026,
+          "expectedMinutes": 58,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-529_1323",
+          "name": "Dani Olmo",
+          "goalShare": 0.026,
+          "expectedMinutes": 39,
+          "cardRate": 0.111
+        }
+      ]
+    },
+    {
+      "teamId": "fb-548",
+      "attack": 1.067,
+      "defence": 1.115,
+      "cornersMean": 6.5,
+      "cornersSize": 8.0,
+      "cardsMean": 2.1,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-548_47269",
+          "name": "Álex Remiro",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-548_23",
+          "name": "Sergio Gómez",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-548_405073",
+          "name": "Jon Martín",
+          "goalShare": 0.053,
+          "expectedMinutes": 81,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-548_7332",
+          "name": "L. Sučić",
+          "goalShare": 0.158,
+          "expectedMinutes": 78,
+          "cardRate": 0.222
+        },
+        {
+          "id": "fb-548_47323",
+          "name": "Mikel Oyarzabal",
+          "goalShare": 0.105,
+          "expectedMinutes": 69,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-548_930",
+          "name": "Carlos Soler",
+          "goalShare": 0.053,
+          "expectedMinutes": 70,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-548_199044",
+          "name": "J. Aramburu",
+          "goalShare": 0.0,
+          "expectedMinutes": 78,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-548_2449",
+          "name": "Y. Herrera",
+          "goalShare": 0.053,
+          "expectedMinutes": 57,
+          "cardRate": 0.444
+        },
+        {
+          "id": "fb-548_47317",
+          "name": "Barrenetxea",
+          "goalShare": 0.105,
+          "expectedMinutes": 55,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-548_61774",
+          "name": "O. Óskarsson",
+          "goalShare": 0.158,
+          "expectedMinutes": 60,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-548_47314",
+          "name": "Zubeldia",
+          "goalShare": 0.0,
+          "expectedMinutes": 63,
+          "cardRate": 0.286
+        },
+        {
+          "id": "fb-548_925",
+          "name": "Gonçalo Guedes",
+          "goalShare": 0.105,
+          "expectedMinutes": 49,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-548_276184",
+          "name": "M. Sarr",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-548_183744",
+          "name": "Beñat Turrientes",
+          "goalShare": 0.053,
+          "expectedMinutes": 66,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-728",
+      "attack": 0.896,
+      "defence": 0.998,
+      "cornersMean": 5.33,
+      "cornersSize": 14.84,
+      "cardsMean": 2.78,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-728_18895",
+          "name": "F. Lejeune",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-728_41552",
+          "name": "P. Ciss",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.6
+        },
+        {
+          "id": "fb-728_47285",
+          "name": "Unai López",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-728_47543",
+          "name": "Álvaro García",
+          "goalShare": 0.25,
+          "expectedMinutes": 74,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-728_52",
+          "name": "Sergio Camello",
+          "goalShare": 0.583,
+          "expectedMinutes": 65,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-728_47329",
+          "name": "Adrià Pedrosa",
+          "goalShare": 0.083,
+          "expectedMinutes": 74,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-728_1703",
+          "name": "A. Rațiu",
+          "goalShare": 0.083,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-728_128582",
+          "name": "Jorge de Frutos",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-728_30441",
+          "name": "E. Audero",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-728_46887",
+          "name": "Pedro Díaz",
+          "goalShare": 0.0,
+          "expectedMinutes": 51,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-728_47109",
+          "name": "Óscar Valentín",
+          "goalShare": 0.0,
+          "expectedMinutes": 50,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-728_20520",
+          "name": "I. Balliu",
+          "goalShare": 0.0,
+          "expectedMinutes": 44,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-728_104795",
+          "name": "Mujaid Sadick",
+          "goalShare": 0.0,
+          "expectedMinutes": 65,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-728_2181",
+          "name": "G. Tsitaishvili",
+          "goalShare": 0.0,
+          "expectedMinutes": 45,
+          "cardRate": 0.167
+        }
+      ]
+    },
+    {
+      "teamId": "fb-798",
+      "attack": 0.898,
+      "defence": 1.025,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-798_fw",
+          "name": "MAL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-798_am",
+          "name": "MAL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-798_wg",
+          "name": "MAL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-798_df",
+          "name": "MAL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-541",
+      "attack": 1.416,
+      "defence": 0.818,
+      "cornersMean": 6.4,
+      "cornersSize": 6.27,
+      "cardsMean": 2.4,
+      "cardsSize": 5.89,
+      "players": [
+        {
+          "id": "fb-541_278",
+          "name": "Kylian Mbappé",
+          "goalShare": 0.478,
+          "expectedMinutes": 89,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-541_730",
+          "name": "T. Courtois",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-541_1145",
+          "name": "I. Konaté",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.444
+        },
+        {
+          "id": "fb-541_756",
+          "name": "F. Valverde",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-541_129718",
+          "name": "J. Bellingham",
+          "goalShare": 0.13,
+          "expectedMinutes": 78,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-541_361497",
+          "name": "D. Huijsen",
+          "goalShare": 0.0,
+          "expectedMinutes": 85,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-541_47380",
+          "name": "Marc Cucurella",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-541_291964",
+          "name": "A. Güler",
+          "goalShare": 0.087,
+          "expectedMinutes": 60,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-541_762",
+          "name": "Vinícius Júnior",
+          "goalShare": 0.043,
+          "expectedMinutes": 73,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-541_513776",
+          "name": "Y. Diomande",
+          "goalShare": 0.087,
+          "expectedMinutes": 55,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-541_226",
+          "name": "D. Dumfries",
+          "goalShare": 0.0,
+          "expectedMinutes": 57,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-541_1271",
+          "name": "A. Tchouaméni",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-541_636",
+          "name": "Bernardo Silva",
+          "goalShare": 0.0,
+          "expectedMinutes": 48,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-541_2285",
+          "name": "A. Rüdiger",
+          "goalShare": 0.043,
+          "expectedMinutes": 76,
+          "cardRate": 0.25
+        }
+      ]
+    },
+    {
+      "teamId": "fb-720",
+      "attack": 0.772,
+      "defence": 1.434,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-720_fw",
+          "name": "VAL Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-720_am",
+          "name": "VAL Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-720_wg",
+          "name": "VAL Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-720_df",
+          "name": "VAL Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-540",
+      "attack": 0.884,
+      "defence": 1.018,
+      "cornersMean": 2.55,
+      "cornersSize": 8.91,
+      "cardsMean": 3.18,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-540_312990",
+          "name": "Roberto Fernández",
+          "goalShare": 0.545,
+          "expectedMinutes": 87,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-540_46799",
+          "name": "Edu Expósito",
+          "goalShare": 0.091,
+          "expectedMinutes": 80,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-540_286601",
+          "name": "O. El Hilali",
+          "goalShare": 0.0,
+          "expectedMinutes": 88,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-540_388495",
+          "name": "Javier Hernandez",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-540_450716",
+          "name": "Roger Hinojo",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.444
+        },
+        {
+          "id": "fb-540_2813",
+          "name": "M. Dmitrović",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-540_47249",
+          "name": "L. Cabrera",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-540_282054",
+          "name": "C. Riedel",
+          "goalShare": 0.0,
+          "expectedMinutes": 69,
+          "cardRate": 0.5
+        },
+        {
+          "id": "fb-540_273732",
+          "name": "T. Dolan",
+          "goalShare": 0.091,
+          "expectedMinutes": 66,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-540_286038",
+          "name": "Álex Calatrava",
+          "goalShare": 0.091,
+          "expectedMinutes": 51,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-540_183699",
+          "name": "Urko González",
+          "goalShare": 0.0,
+          "expectedMinutes": 54,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-540_47277",
+          "name": "Unai Núñez",
+          "goalShare": 0.0,
+          "expectedMinutes": 64,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-540_286639",
+          "name": "Bryan Zaragoza",
+          "goalShare": 0.091,
+          "expectedMinutes": 53,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-540_375915",
+          "name": "Q. Hartman",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.0
+        }
+      ]
+    },
+    {
+      "teamId": "fb-533",
+      "attack": 1.241,
+      "defence": 0.985,
+      "cornersMean": 7.27,
+      "cornersSize": 8.0,
+      "cardsMean": 2.09,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-533_336671",
+          "name": "Renato Veiga",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-533_20696",
+          "name": "P. Gueye",
+          "goalShare": 0.214,
+          "expectedMinutes": 72,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-533_18906",
+          "name": "Ayoze Pérez",
+          "goalShare": 0.071,
+          "expectedMinutes": 57,
+          "cardRate": 0.091
+        },
+        {
+          "id": "fb-533_182519",
+          "name": "Alberto Moleiro",
+          "goalShare": 0.143,
+          "expectedMinutes": 61,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-533_355994",
+          "name": "A. Freeman",
+          "goalShare": 0.071,
+          "expectedMinutes": 65,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-533_1139",
+          "name": "P. Gulácsi",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-533_311773",
+          "name": "S. Mouriño",
+          "goalShare": 0.0,
+          "expectedMinutes": 65,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-533_180496",
+          "name": "G. Mikautadze",
+          "goalShare": 0.214,
+          "expectedMinutes": 49,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-533_47541",
+          "name": "Santi Comesaña",
+          "goalShare": 0.0,
+          "expectedMinutes": 54,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-533_166",
+          "name": "J. Foyth",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.5
+        },
+        {
+          "id": "fb-533_51016",
+          "name": "T. Buchanan",
+          "goalShare": 0.0,
+          "expectedMinutes": 58,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-533_70500",
+          "name": "Sergi Cardona",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-533_3246",
+          "name": "N. Pépé",
+          "goalShare": 0.143,
+          "expectedMinutes": 70,
+          "cardRate": 0.167
+        },
+        {
+          "id": "fb-533_184420",
+          "name": "Carlos Romero",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.167
+        }
+      ]
+    },
+    {
+      "teamId": "fb-530",
+      "attack": 1.221,
+      "defence": 0.843,
+      "cornersMean": 6.0,
+      "cornersSize": 6.48,
+      "cardsMean": 2.5,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-530_29",
+          "name": "J. Oblak",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-530_563",
+          "name": "Álex Grimaldo",
+          "goalShare": 0.15,
+          "expectedMinutes": 84,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-530_30399",
+          "name": "D. Hancko",
+          "goalShare": 0.0,
+          "expectedMinutes": 76,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-530_323935",
+          "name": "G. Simeone",
+          "goalShare": 0.1,
+          "expectedMinutes": 68,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-530_753",
+          "name": "Marcos Llorente",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-530_927",
+          "name": "Lee Kang-In",
+          "goalShare": 0.1,
+          "expectedMinutes": 63,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-530_182219",
+          "name": "Álex Baena",
+          "goalShare": 0.25,
+          "expectedMinutes": 62,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-530_18767",
+          "name": "A. Lookman",
+          "goalShare": 0.05,
+          "expectedMinutes": 60,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-530_295793",
+          "name": "Marc Pubill",
+          "goalShare": 0.05,
+          "expectedMinutes": 73,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-530_7712",
+          "name": "M. Hjulmand",
+          "goalShare": 0.0,
+          "expectedMinutes": 58,
+          "cardRate": 0.222
+        },
+        {
+          "id": "fb-530_336594",
+          "name": "Pablo Barrios",
+          "goalShare": 0.0,
+          "expectedMinutes": 64,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-530_50",
+          "name": "Koke",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-530_30776",
+          "name": "C. Romero",
+          "goalShare": 0.05,
+          "expectedMinutes": 72,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-530_47301",
+          "name": "Robin Le Normand",
+          "goalShare": 0.05,
+          "expectedMinutes": 62,
+          "cardRate": 0.333
+        }
+      ]
+    },
+    {
+      "teamId": "fb-718",
+      "attack": 0.752,
+      "defence": 1.129,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-718_fw",
+          "name": "OVI Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-718_am",
+          "name": "OVI Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-718_wg",
+          "name": "OVI Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-718_df",
+          "name": "OVI Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-539",
+      "attack": 0.998,
+      "defence": 1.168,
+      "cornersMean": 3.4,
+      "cornersSize": 8.0,
+      "cardsMean": 1.6,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-539_2741",
+          "name": "M. Ryan",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-539_64309",
+          "name": "Manu Sánchez",
+          "goalShare": 0.0,
+          "expectedMinutes": 88,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-539_182603",
+          "name": "Jon Ander Olasagasti",
+          "goalShare": 0.062,
+          "expectedMinutes": 80,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-539_47225",
+          "name": "Brugui",
+          "goalShare": 0.312,
+          "expectedMinutes": 82,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-539_734",
+          "name": "Dela",
+          "goalShare": 0.125,
+          "expectedMinutes": 88,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-539_1567",
+          "name": "A. Mandi",
+          "goalShare": 0.0,
+          "expectedMinutes": 87,
+          "cardRate": 0.375
+        },
+        {
+          "id": "fb-539_192032",
+          "name": "Iván Romero",
+          "goalShare": 0.188,
+          "expectedMinutes": 69,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-539_106727",
+          "name": "Oriol Rey",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-539_362750",
+          "name": "T. Fernández",
+          "goalShare": 0.0,
+          "expectedMinutes": 72,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-539_504605",
+          "name": "Nacho Pérez",
+          "goalShare": 0.062,
+          "expectedMinutes": 55,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-539_1118",
+          "name": "J. Toljan",
+          "goalShare": 0.0,
+          "expectedMinutes": 50,
+          "cardRate": 0.222
+        },
+        {
+          "id": "fb-539_161893",
+          "name": "E. Bardeli",
+          "goalShare": 0.062,
+          "expectedMinutes": 64,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-539_511971",
+          "name": "Ifeanyi Ndukwe",
+          "goalShare": 0.062,
+          "expectedMinutes": 68,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-539_391131",
+          "name": "Reque",
+          "goalShare": 0.062,
+          "expectedMinutes": 57,
+          "cardRate": 0.143
+        }
+      ]
+    },
+    {
+      "teamId": "fb-797",
+      "attack": 0.99,
+      "defence": 1.107,
+      "cornersMean": 4.4,
+      "cornersSize": 8.38,
+      "cardsMean": 2.6,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-797_11346",
+          "name": "M. Dituro",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-797_162058",
+          "name": "Víctor Chust",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-797_161963",
+          "name": "Germán Valera",
+          "goalShare": 0.143,
+          "expectedMinutes": 84,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-797_46982",
+          "name": "Gonzalo Villar",
+          "goalShare": 0.0,
+          "expectedMinutes": 78,
+          "cardRate": 0.4
+        },
+        {
+          "id": "fb-797_446067",
+          "name": "Buba Sangaré",
+          "goalShare": 0.071,
+          "expectedMinutes": 79,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-797_184277",
+          "name": "Fer Niño",
+          "goalShare": 0.429,
+          "expectedMinutes": 63,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-797_548704",
+          "name": "J. Morcillo",
+          "goalShare": 0.0,
+          "expectedMinutes": 72,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-797_315127",
+          "name": "R. Revivo",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-797_47182",
+          "name": "Tete Morente",
+          "goalShare": 0.0,
+          "expectedMinutes": 50,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-797_311345",
+          "name": "F. Redondo",
+          "goalShare": 0.071,
+          "expectedMinutes": 67,
+          "cardRate": 0.429
+        },
+        {
+          "id": "fb-797_45",
+          "name": "T. Lemar",
+          "goalShare": 0.071,
+          "expectedMinutes": 56,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-797_318592",
+          "name": "L. Cepeda",
+          "goalShare": 0.0,
+          "expectedMinutes": 38,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-797_187318",
+          "name": "Marc Aguado",
+          "goalShare": 0.071,
+          "expectedMinutes": 62,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-797_358600",
+          "name": "A. Osorio",
+          "goalShare": 0.071,
+          "expectedMinutes": 43,
+          "cardRate": 0.143
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4665",
+      "attack": 0.932,
+      "defence": 1.325,
+      "cornersMean": 5.1,
+      "cornersSize": 18.01,
+      "cardsMean": 2.8,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-4665_183848",
+          "name": "Julen Agirrezabala",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-4665_47293",
+          "name": "Iñigo Vicente",
+          "goalShare": 0.0,
+          "expectedMinutes": 81,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-4665_482469",
+          "name": "Jorge Salinas",
+          "goalShare": 0.0,
+          "expectedMinutes": 81,
+          "cardRate": 0.5
+        },
+        {
+          "id": "fb-4665_181685",
+          "name": "Álvaro Mantilla",
+          "goalShare": 0.0,
+          "expectedMinutes": 87,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-4665_1570",
+          "name": "Sergio Canales",
+          "goalShare": 0.071,
+          "expectedMinutes": 73,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4665_1700",
+          "name": "Iván Martín",
+          "goalShare": 0.071,
+          "expectedMinutes": 83,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-4665_457101",
+          "name": "M. Zabiri",
+          "goalShare": 0.571,
+          "expectedMinutes": 65,
+          "cardRate": 0.4
+        },
+        {
+          "id": "fb-4665_46734",
+          "name": "Pablo Ramón",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.5
+        },
+        {
+          "id": "fb-4665_309388",
+          "name": "M. Prati",
+          "goalShare": 0.0,
+          "expectedMinutes": 72,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-4665_343316",
+          "name": "J. Belocian",
+          "goalShare": 0.071,
+          "expectedMinutes": 81,
+          "cardRate": 0.167
+        },
+        {
+          "id": "fb-4665_165713",
+          "name": "Manu Hernando",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-4665_47209",
+          "name": "Andrés Martín",
+          "goalShare": 0.071,
+          "expectedMinutes": 63,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-4665_104853",
+          "name": "Asier Villalibre",
+          "goalShare": 0.0,
+          "expectedMinutes": 34,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-4665_324034",
+          "name": "G. Puerta",
+          "goalShare": 0.0,
+          "expectedMinutes": 89,
+          "cardRate": 0.333
+        }
+      ]
+    },
+    {
+      "teamId": "fb-544",
+      "attack": 0.897,
+      "defence": 1.131,
+      "cornersMean": 5.1,
+      "cornersSize": 4.59,
+      "cardsMean": 2.3,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-544_179139",
+          "name": "Leo Román",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-544_127025",
+          "name": "G. Quagliata",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-544_161965",
+          "name": "Mario Soriano",
+          "goalShare": 0.091,
+          "expectedMinutes": 78,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-544_574733",
+          "name": "B. Nsongo",
+          "goalShare": 0.091,
+          "expectedMinutes": 67,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-544_346865",
+          "name": "L. Amatucci",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.5
+        },
+        {
+          "id": "fb-544_47360",
+          "name": "Ximo Navarro",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.25
+        },
+        {
+          "id": "fb-544_1465",
+          "name": "P. Aubameyang",
+          "goalShare": 0.455,
+          "expectedMinutes": 80,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-544_188445",
+          "name": "Luismi Cruz",
+          "goalShare": 0.091,
+          "expectedMinutes": 55,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-544_497393",
+          "name": "B. Ede",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.167
+        },
+        {
+          "id": "fb-544_319512",
+          "name": "L. Noubi",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        },
+        {
+          "id": "fb-544_295880",
+          "name": "Peke",
+          "goalShare": 0.091,
+          "expectedMinutes": 47,
+          "cardRate": 0.222
+        },
+        {
+          "id": "fb-544_162122",
+          "name": "Adrià Alti",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.286
+        },
+        {
+          "id": "fb-544_107210",
+          "name": "Riki Rodríguez",
+          "goalShare": 0.0,
+          "expectedMinutes": 54,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-544_182988",
+          "name": "Diego Villares",
+          "goalShare": 0.091,
+          "expectedMinutes": 53,
+          "cardRate": 0.0
+        }
+      ]
+    },
+    {
+      "teamId": "fb-535",
+      "attack": 0.839,
+      "defence": 1.211,
+      "cornersMean": 5.2,
+      "cornersSize": 22.53,
+      "cardsMean": 2.4,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-535_46843",
+          "name": "Alfonso Herrero",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-535_316115",
+          "name": "Ángel Recio",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-535_551403",
+          "name": "Rafita",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-535_190253",
+          "name": "David Larrubia",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-535_376401",
+          "name": "Chupe",
+          "goalShare": 0.143,
+          "expectedMinutes": 76,
+          "cardRate": 0.3
+        },
+        {
+          "id": "fb-535_162034",
+          "name": "Carlos Dotor",
+          "goalShare": 0.143,
+          "expectedMinutes": 72,
+          "cardRate": 0.222
+        },
+        {
+          "id": "fb-535_337523",
+          "name": "Dani Lorenzo",
+          "goalShare": 0.0,
+          "expectedMinutes": 69,
+          "cardRate": 0.111
+        },
+        {
+          "id": "fb-535_14470",
+          "name": "Einar Galilea",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.286
+        },
+        {
+          "id": "fb-535_185096",
+          "name": "Puga",
+          "goalShare": 0.0,
+          "expectedMinutes": 54,
+          "cardRate": 0.333
+        },
+        {
+          "id": "fb-535_394372",
+          "name": "Izan Merino",
+          "goalShare": 0.0,
+          "expectedMinutes": 60,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-535_104949",
+          "name": "Pablo Martínez",
+          "goalShare": 0.143,
+          "expectedMinutes": 68,
+          "cardRate": 0.143
+        },
+        {
+          "id": "fb-535_60",
+          "name": "Joaquín Muñoz",
+          "goalShare": 0.0,
+          "expectedMinutes": 53,
+          "cardRate": 0.0
+        },
+        {
+          "id": "fb-535_184407",
+          "name": "José Salinas",
+          "goalShare": 0.0,
+          "expectedMinutes": 53,
+          "cardRate": 0.125
+        },
+        {
+          "id": "fb-535_386850",
+          "name": "Adrián Niño Heredia",
+          "goalShare": 0.571,
+          "expectedMinutes": 47,
+          "cardRate": 0.0
+        }
+      ]
+    }
+  ]
+}
