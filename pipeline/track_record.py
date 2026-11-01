@@ -170,18 +170,31 @@ def _evaluate(graded: list[dict]) -> dict:
     }
 
 
-def _recent(graded: list[dict], limit: int = 20) -> list[dict]:
-    """Newest-first graded picks for the 'son tahminler' list (teams by id; the app
-    resolves names from teams.json)."""
+def _recent(graded: list[dict], limit: int = 24) -> list[dict]:
+    """Newest-first graded picks for the 'son tahminler' list and Home's 'modelin
+    tutturdukları' rail (teams by id; the app resolves names from teams.json). Each
+    row carries the per-market call + whether it hit, so the UI can show how many of
+    the three markets the model nailed."""
     rows = sorted(graded, key=lambda g: g.get("date") or "", reverse=True)[:limit]
     out = []
     for g in rows:
+        probs = g["probs"]
         hg, ag = g["actual"]["home"], g["actual"]["away"]
-        pick = _pick_1x2(g["probs"])
+        pick = _pick_1x2(probs)
+        result_hit = pick == _actual_1x2(hg, ag)
+        ou_pick = "over" if probs["o25"] >= 0.5 else "under"
+        ou_hit = (probs["o25"] >= 0.5) == ((hg + ag) >= 3)
+        btts_pick = "yes" if probs["btts"] >= 0.5 else "no"
+        btts_hit = (probs["btts"] >= 0.5) == (hg >= 1 and ag >= 1)
         out.append({
             "home": g["home"], "away": g["away"], "league": g.get("league"),
             "pick": pick, "actualHome": hg, "actualAway": ag,
-            "hit": pick == _actual_1x2(hg, ag), "date": g.get("date"),
+            "hit": result_hit, "date": g.get("date"),
+            # Confidence the model gave its 1X2 pick (for "model %72 ile dedi").
+            "pickConfidence": round(max(probs["h"], probs["d"], probs["a"]), 3),
+            "ouPick": ou_pick, "ouHit": ou_hit,
+            "bttsPick": btts_pick, "bttsHit": btts_hit,
+            "marketsHit": int(result_hit) + int(ou_hit) + int(btts_hit),
         })
     return out
 
