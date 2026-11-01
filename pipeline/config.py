@@ -19,6 +19,13 @@ BASKETBALL_BASE = "https://v1.basketball.api-sports.io"
 
 APISPORTS_KEY = os.environ.get("APISPORTS_KEY", "")
 
+# Where the built feed is published (GitHub Pages). The track-record step reads the
+# PREVIOUS run's prediction log back from here so the live sicil accumulates across
+# daily builds (the gh-pages output itself is rebuilt fresh each run, force_orphan).
+FEED_BASE_URL = os.environ.get(
+    "FEED_BASE_URL", "https://osmanurkac.github.io/aifootball-feed"
+).rstrip("/")
+
 # Per-run safety cap on API calls. Football is Pro (7500/day) and the per-fixture
 # statistics calls add up, so this is well above a run's needs; basketball (Free)
 # is rate-limited by the 6.5s throttle and makes few calls. Lower via APISPORTS_BUDGET

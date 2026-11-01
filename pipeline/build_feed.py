@@ -23,6 +23,7 @@ import football_model as fb
 import backtest
 import season_sim
 import news_analyst
+import track_record
 from config import LEAGUES, OUT_DIR, APISPORTS_KEY, FEED_ALLOW_FINISHED, SEASON_LOOKBACK
 from team_colors import team_mark
 
@@ -233,6 +234,11 @@ def build_from_api() -> None:
     all_fixtures: list[dict] = []
     backtest_matches: list = []
     available: list[dict] = []
+    # Track-record inputs: each league's fitted model (to lock predictions and to
+    # validate) and every finished current-season football result keyed by the feed
+    # fixture id (to grade locked predictions when matches finish).
+    models_by_slug: dict[str, dict] = {}
+    finished_by_id: dict[str, dict] = {}
 
     def register(name, league, sport, api_id=None):
         tid = _team_id(name, sport, api_id)
@@ -253,7 +259,8 @@ def build_from_api() -> None:
         try:
             if league.sport == "football":
                 _api_football_league(client, FOOTBALL_BASE, league, season, hist,
-                                     register, all_fixtures, backtest_matches)
+                                     register, all_fixtures, backtest_matches,
+                                     models_by_slug, finished_by_id)
             else:
                 _api_basketball_league(client, BASKETBALL_BASE, league, hist,
                                        register, all_fixtures)
@@ -265,23 +272,26 @@ def build_from_api() -> None:
             continue
         available.append({"slug": league.slug, "name": league.name, "sport": league.sport})
 
-    # Backtest from the Premier League model, only if it's actually available.
-    pl = OUT_DIR / "football" / "premier_league.json"
-    if any(a["slug"] == "premier_league" for a in available) and pl.exists():
-        model = json.loads(pl.read_text())
-        ids = {t["teamId"] for t in model["teams"]}
-        record = backtest.run(model, [m for m in backtest_matches if m.home in ids and m.away in ids])
-    else:
+    write_json(OUT_DIR / "teams.json", {"schemaVersion": 1, "teams": list(teams_out.values())})
+
+    # Model track record — the credibility layer. Locks a prediction for every
+    # upcoming fixture, grades the ones that have finished since the last run (the
+    # live sicil), and publishes a validation baseline from the backtest. Round-trips
+    # the prediction log through the live feed; best-effort, never fails the build.
+    slug_by_name = {l.name: l.slug for l in LEAGUES}
+    try:
+        record = track_record.build_record(OUT_DIR, all_fixtures, finished_by_id,
+                                            models_by_slug, backtest_matches, slug_by_name)
+    except Exception as exc:  # noqa: BLE001 — resilient: a bad log never blocks the feed
+        print(f"  ! track record skipped: {exc}")
         record = {"schemaVersion": 1, "hitRate": 0.0, "sampleSize": 0, "brierScore": 0.0,
                   "lastUpdated": backtest._now()}
     write_json(OUT_DIR / "track_record.json", record)
-    write_json(OUT_DIR / "teams.json", {"schemaVersion": 1, "teams": list(teams_out.values())})
 
     # Second pass: AI "haber analizi" for enriched upcoming fixtures. Runs here,
     # after every league's fixtures/seasons exist, so the analyst can see a team's
     # matches across ALL competitions (fixture congestion / European week) and its
     # season stakes. Best-effort: skipped cleanly without an ANTHROPIC_API_KEY.
-    slug_by_name = {l.name: l.slug for l in LEAGUES}
     news_analyst.attach_analyses(all_fixtures, teams_out, OUT_DIR, slug_by_name)
 
     write_json(OUT_DIR / "fixtures.json", {"schemaVersion": 1, "fixtures": all_fixtures})
@@ -491,7 +501,8 @@ def _resolve_basketball_season(client, base, league):
 
 
 def _api_football_league(client, base, league, season, history_seasons,
-                         register, all_fixtures, backtest_matches):
+                         register, all_fixtures, backtest_matches,
+                         models_out=None, finished_out=None):
     # Gate: the CURRENT season must be accessible (not plan-gated) and have real
     # fixtures. Otherwise the league is hidden — unless FEED_ALLOW_FINISHED test
     # mode lets us fall back to the most recent accessible finished season.
@@ -530,6 +541,12 @@ def _api_football_league(client, base, league, season, history_seasons,
             history.append(m)
             if yr == season:
                 real_finished.append((hid, aid, hg, ag, fx.get("date")))
+                # Grade store: a finished current-season result keyed by the SAME
+                # feed fixture id we emit for upcoming games, so a locked prediction
+                # is graded once its match finishes.
+                if finished_out is not None:
+                    finished_out[f"{league.slug}-{fx['id']}"] = {
+                        "home": hg, "away": ag, "date": fx.get("date")}
                 # Recent-form index (most-recent-first W/D/L), fed to the AI analyst.
                 date = fx.get("date")
                 hres = "W" if hg > ag else ("L" if hg < ag else "D")
@@ -540,6 +557,8 @@ def _api_football_league(client, base, league, season, history_seasons,
         raise LeagueUnavailable("no finished fixtures to fit a model")
     backtest_matches.extend(history)
     model = fb.fit_league(league.name, team_ids, name_map, history)
+    if models_out is not None:
+        models_out[league.slug] = model
     # Real squads + goal shares from the players endpoint (enriched leagues only).
     if not fell_back and league.enrich:
         raw = _league_players(client, base, league.api_id, season, set(team_ids))
