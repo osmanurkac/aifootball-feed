@@ -47,11 +47,17 @@ MAX_ANALYSES = int(os.environ.get("NEWS_MAX_ANALYSES", "40"))
 # lineups / late news are reflected) rather than re-paying every single build.
 REFRESH_HOURS = float(os.environ.get("NEWS_REFRESH_HOURS", "48"))
 FIXTURES_FILE = "fixtures.json"
-# Web search is the dominant cost, so grant it to only the few highest-priority
-# matches per build (featured + soonest); everyone else gets a grounded preview
-# from the structured facts (standings, form, congestion, REAL injuries) for free.
-# Set to 0 to turn web search off entirely; raise it to spend more on live news.
-WEB_SEARCH_MATCHES = int(os.environ.get("NEWS_WEB_SEARCH_MATCHES", "6"))
+# Web search is the dominant cost, so grant it to only the top priority matches
+# per build; everyone else gets a grounded preview from the structured facts
+# (standings, form, congestion, REAL injuries) for free. ~$0.01/search, so 12 ≈
+# $0.12/day cap. Set to 0 to turn web search off entirely.
+WEB_SEARCH_MATCHES = int(os.environ.get("NEWS_WEB_SEARCH_MATCHES", "12"))
+# League priority: the leagues a (Turkish) audience is most likely to open get
+# first claim on both the per-build analysis budget and the web-search slots —
+# Süper Lig, then the Champions League and the big five. Any other enriched league
+# falls to the back. Fixtures carry the league NAME, mapped to slug via slug_by_name.
+LEAGUE_PRIORITY = ("super_lig", "champions_league", "premier_league",
+                   "laliga", "serie_a", "bundesliga", "ligue_1")
 # Analyst calls are independent network requests, so run them concurrently to keep
 # the daily build short (the Anthropic client is thread-safe). Tune per rate limit.
 WORKERS = int(os.environ.get("NEWS_WORKERS", "8"))
@@ -293,6 +299,16 @@ def _load_prior_analyses() -> dict:
         return {}
 
 
+def _priority_rank(fx, slug_by_name) -> int:
+    """Lower = higher priority. Ranks a fixture by its league (LEAGUE_PRIORITY),
+    so Süper Lig / big-league matches get the budget and web-search slots first."""
+    slug = slug_by_name.get(fx.get("league"))
+    try:
+        return LEAGUE_PRIORITY.index(slug)
+    except ValueError:
+        return len(LEAGUE_PRIORITY)
+
+
 def _needs_analysis(fx, prior) -> bool:
     """True when we must (re)analyse this fixture rather than reuse the stored one:
     it has no stored analysis, or it's within REFRESH_HOURS of kick-off and the
@@ -331,10 +347,10 @@ def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
             fx["aiAnalysis"] = stored
     reused = sum(1 for fx in targets if fx.get("aiAnalysis"))
 
-    # 2) What still needs a fresh/refreshed analysis — featured + soonest first, so
-    #    the budget lands on the matches people actually open.
+    # 2) What still needs a fresh/refreshed analysis — priority leagues first, then
+    #    soonest kick-off, so the budget lands on the matches people actually open.
     todo = [fx for fx in targets if _needs_analysis(fx, prior)]
-    todo.sort(key=lambda f: (not f.get("featured"), f.get("kickoff") or ""))
+    todo.sort(key=lambda f: (_priority_rank(f, slug_by_name), f.get("kickoff") or ""))
     todo = todo[:MAX_ANALYSES]
 
     key = os.environ.get("ANTHROPIC_API_KEY")
