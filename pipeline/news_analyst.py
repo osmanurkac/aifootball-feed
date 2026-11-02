@@ -22,17 +22,31 @@ import concurrent.futures
 import datetime
 import json
 import os
+import urllib.request
+
+from config import FEED_BASE_URL
 
 # Haiku is cheap and, fed rich structured facts, produces grounded previews; bump
 # to a stronger model via NEWS_MODEL if preview quality isn't enough.
 MODEL = os.environ.get("NEWS_MODEL", "claude-haiku-5-5")
 # Basic web-search variant (the dynamic-filtering _20260209 one needs Opus/Sonnet).
-WEB_SEARCH_TOOL = {"type": "web_search_20250305", "name": "web_search", "max_uses": 4}
+# Web search is billed separately (~$10 / 1000 searches) and its results inflate
+# input tokens, so it dominates cost — one search per match is plenty.
+WEB_SEARCH_TOOL = {"type": "web_search_20250305", "name": "web_search",
+                   "max_uses": int(os.environ.get("NEWS_WEB_SEARCH_USES", "1"))}
 
 ADJ_CAP = 0.15                      # the model's calibration is protected by this
 ADJ_KEYS = ("homeAttack", "homeDefense", "awayAttack", "awayDefense")
 CONGESTION_DAYS = 4                 # another competitive game within ±4 days = load
-MAX_ANALYSES = int(os.environ.get("NEWS_MAX_ANALYSES", "150"))
+# Per-build budget of NEW/refreshed analyses. Because previous analyses are reused
+# from the live feed (see _load_prior_analyses), this caps only what we PAY for
+# each run — featured + soonest matches first; the long tail gets no AI layer and
+# simulates on the base model (the user can still run those matches themselves).
+MAX_ANALYSES = int(os.environ.get("NEWS_MAX_ANALYSES", "40"))
+# Reuse last run's analysis until a match nears kick-off; then refresh once (so
+# lineups / late news are reflected) rather than re-paying every single build.
+REFRESH_HOURS = float(os.environ.get("NEWS_REFRESH_HOURS", "48"))
+FIXTURES_FILE = "fixtures.json"
 # Analyst calls are independent network requests, so run them concurrently to keep
 # the daily build short (the Anthropic client is thread-safe). Tune per rate limit.
 WORKERS = int(os.environ.get("NEWS_WORKERS", "8"))
@@ -196,6 +210,9 @@ def _normalize(data: dict) -> dict:
         "adjustments": {k: _clamp(adj.get(k, 0.0)) for k in ADJ_KEYS},
         "confidence": conf if conf in ("low", "medium", "high") else "medium",
         "model": MODEL,
+        # When this analysis was written — used next build to decide whether to
+        # reuse it or refresh it as kick-off nears. The app ignores unknown keys.
+        "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
 
 
@@ -245,26 +262,84 @@ def _load_seasons(out_dir, slug_by_name):
     return by_team
 
 
-def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
-    """Attach `aiAnalysis` to each enriched upcoming football fixture, in place."""
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
-        print("news_analyst: no ANTHROPIC_API_KEY — skipping AI analysis")
-        return
-    try:
-        import anthropic
-    except Exception:
-        print("news_analyst: anthropic SDK not installed — skipping AI analysis")
-        return
+def _load_prior_analyses() -> dict:
+    """fixtureId -> aiAnalysis from the LAST published feed.
 
-    client = anthropic.Anthropic(api_key=key)
-    season_by_team = _load_seasons(out_dir, slug_by_name)
+    gh-pages is rebuilt fresh every run (force_orphan), so the live feed is the
+    only carrier of state. Reusing yesterday's analysis for matches that haven't
+    changed is the main cost saver — otherwise every daily build re-pays to
+    analyse the same upcoming games. Best-effort: empty on first run / 404 / net
+    error (then everything is analysed fresh, within the budget)."""
+    url = f"{FEED_BASE_URL}/{FIXTURES_FILE}"
+    try:
+        req = urllib.request.Request(url, headers={"Cache-Control": "no-cache"})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        prior = {fx["id"]: fx["aiAnalysis"] for fx in data.get("fixtures", [])
+                 if fx.get("id") and fx.get("aiAnalysis")}
+        print(f"news_analyst: loaded {len(prior)} prior analyses from live feed")
+        return prior
+    except Exception as exc:  # noqa: BLE001 — first run / 404 / network
+        print(f"news_analyst: no prior analyses ({exc}); analysing fresh")
+        return {}
+
+
+def _needs_analysis(fx, prior) -> bool:
+    """True when we must (re)analyse this fixture rather than reuse the stored one:
+    it has no stored analysis, or it's within REFRESH_HOURS of kick-off and the
+    stored analysis was written while it was still outside that window (so we
+    refresh exactly once as the match nears)."""
+    stored = prior.get(fx.get("id"))
+    if not stored:
+        return True
+    kdt = _iso(fx.get("kickoff"))
+    if kdt is None:
+        return False
+    now = datetime.datetime.now(datetime.timezone.utc)
+    if (kdt - now).total_seconds() / 3600.0 > REFRESH_HOURS:
+        return False  # far out — keep the stored preview
+    gen = _iso(stored.get("generatedAt"))
+    if gen is None:
+        return True   # legacy stored analysis (no stamp) — refresh once in-window
+    return (kdt - gen).total_seconds() / 3600.0 > REFRESH_HOURS
+
+
+def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
+    """Attach `aiAnalysis` to enriched upcoming football fixtures, in place.
+
+    Reuses the previous build's analyses from the live feed and only pays to
+    (re)analyse what's new or near kick-off, up to MAX_ANALYSES per run."""
+    prior = _load_prior_analyses()
 
     # Enriched upcoming fixtures only (these carry injuries) — the headline leagues.
     targets = [fx for fx in all_fixtures
                if fx.get("sport") == "football" and fx.get("unavailable") is not None]
-    targets.sort(key=lambda f: f.get("kickoff") or "")
-    targets = targets[:MAX_ANALYSES]
+
+    # 1) Reuse last run's analysis wherever a refresh isn't due (the main saver).
+    for fx in targets:
+        stored = prior.get(fx.get("id"))
+        if stored and not _needs_analysis(fx, prior):
+            fx["aiAnalysis"] = stored
+    reused = sum(1 for fx in targets if fx.get("aiAnalysis"))
+
+    # 2) What still needs a fresh/refreshed analysis — featured + soonest first, so
+    #    the budget lands on the matches people actually open.
+    todo = [fx for fx in targets if _needs_analysis(fx, prior)]
+    todo.sort(key=lambda f: (not f.get("featured"), f.get("kickoff") or ""))
+    todo = todo[:MAX_ANALYSES]
+
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        print(f"news_analyst: no ANTHROPIC_API_KEY — reused {reused}, skipping {len(todo)} new")
+        return
+    try:
+        import anthropic
+    except Exception:
+        print(f"news_analyst: anthropic SDK not installed — reused {reused}, skipping {len(todo)} new")
+        return
+
+    client = anthropic.Anthropic(api_key=key)
+    season_by_team = _load_seasons(out_dir, slug_by_name)
 
     # Run the independent per-fixture calls concurrently; attach results on the main
     # thread (futures carry their fixture) so there's no shared-dict race.
@@ -273,11 +348,18 @@ def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
 
     done = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
-        for fx, res in pool.map(work, targets):
+        for fx, res in pool.map(work, todo):
             if res:
                 fx["aiAnalysis"] = res
                 done += 1
                 h = teams_out.get(fx.get("homeTeamId"), {}).get("name", "?")
                 a = teams_out.get(fx.get("awayTeamId"), {}).get("name", "?")
                 print(f"    ai ✓ {h} - {a} ({res['confidence']})")
-    print(f"news_analyst: attached {done}/{len(targets)} analyses (model={MODEL}, workers={WORKERS})")
+
+    # A refresh that failed shouldn't drop the existing preview — fall back to it.
+    for fx in todo:
+        if not fx.get("aiAnalysis") and prior.get(fx.get("id")):
+            fx["aiAnalysis"] = prior[fx["id"]]
+
+    print(f"news_analyst: {done} new + {reused} reused analyses "
+          f"(model={MODEL}, max_uses={WEB_SEARCH_TOOL['max_uses']}, budget={MAX_ANALYSES})")
