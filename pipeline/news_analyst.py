@@ -47,6 +47,11 @@ MAX_ANALYSES = int(os.environ.get("NEWS_MAX_ANALYSES", "40"))
 # lineups / late news are reflected) rather than re-paying every single build.
 REFRESH_HOURS = float(os.environ.get("NEWS_REFRESH_HOURS", "48"))
 FIXTURES_FILE = "fixtures.json"
+# Web search is the dominant cost, so grant it to only the few highest-priority
+# matches per build (featured + soonest); everyone else gets a grounded preview
+# from the structured facts (standings, form, congestion, REAL injuries) for free.
+# Set to 0 to turn web search off entirely; raise it to spend more on live news.
+WEB_SEARCH_MATCHES = int(os.environ.get("NEWS_WEB_SEARCH_MATCHES", "6"))
 # Analyst calls are independent network requests, so run them concurrently to keep
 # the daily build short (the Anthropic client is thread-safe). Tune per rate limit.
 WORKERS = int(os.environ.get("NEWS_WORKERS", "8"))
@@ -216,16 +221,20 @@ def _normalize(data: dict) -> dict:
     }
 
 
-def analyze(facts: dict, client) -> dict | None:
+def analyze(facts: dict, client, use_search: bool = True) -> dict | None:
     prompt = (
         "Aşağıdaki maçı analiz et. Yapısal veriler (JSON):\n\n"
         + json.dumps(facts, ensure_ascii=False, indent=2)
-        + "\n\nÖnce web'de bu maça dair güncel haberleri araştır, sonra yalnızca "
-          "istenen JSON nesnesini döndür."
+        + ("\n\nÖnce web'de bu maça dair güncel haberleri araştır, sonra yalnızca "
+           "istenen JSON nesnesini döndür."
+           if use_search else
+           "\n\nVerilen yapısal verilere dayanarak analiz et ve yalnızca istenen "
+           "JSON nesnesini döndür.")
     )
-    # Try with web search; if that fails for any reason, fall back to a
-    # structured-only pass so we still get a grounded preview.
-    for tools in ([WEB_SEARCH_TOOL], []):
+    # Web search only for the priority matches; otherwise structured-only (free).
+    # With search on, fall back to a no-tools pass if the search call fails.
+    tool_options = ([WEB_SEARCH_TOOL], []) if use_search else ([],)
+    for tools in tool_options:
         try:
             resp = client.messages.create(
                 model=MODEL,
@@ -341,17 +350,24 @@ def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
     client = anthropic.Anthropic(api_key=key)
     season_by_team = _load_seasons(out_dir, slug_by_name)
 
+    # Only the top few matches (already featured + soonest first) get web search;
+    # the rest run structured-only, so the paid-search spend is hard-capped per run.
+    search_ids = {fx.get("id") for fx in todo[:WEB_SEARCH_MATCHES]}
+
     # Run the independent per-fixture calls concurrently; attach results on the main
     # thread (futures carry their fixture) so there's no shared-dict race.
     def work(fx):
-        return fx, analyze(_facts_for(fx, all_fixtures, teams_out, season_by_team), client)
+        facts = _facts_for(fx, all_fixtures, teams_out, season_by_team)
+        return fx, analyze(facts, client, use_search=fx.get("id") in search_ids)
 
-    done = 0
+    done = searched = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
         for fx, res in pool.map(work, todo):
             if res:
                 fx["aiAnalysis"] = res
                 done += 1
+                if fx.get("id") in search_ids:
+                    searched += 1
                 h = teams_out.get(fx.get("homeTeamId"), {}).get("name", "?")
                 a = teams_out.get(fx.get("awayTeamId"), {}).get("name", "?")
                 print(f"    ai ✓ {h} - {a} ({res['confidence']})")
@@ -361,5 +377,6 @@ def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
         if not fx.get("aiAnalysis") and prior.get(fx.get("id")):
             fx["aiAnalysis"] = prior[fx["id"]]
 
-    print(f"news_analyst: {done} new + {reused} reused analyses "
-          f"(model={MODEL}, max_uses={WEB_SEARCH_TOOL['max_uses']}, budget={MAX_ANALYSES})")
+    print(f"news_analyst: {done} new ({searched} w/ web search) + {reused} reused "
+          f"(model={MODEL}, search_uses={WEB_SEARCH_TOOL['max_uses']}, "
+          f"search_matches={WEB_SEARCH_MATCHES}, budget={MAX_ANALYSES})")
