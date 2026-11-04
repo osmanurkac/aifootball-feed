@@ -67,6 +67,11 @@ jobs:
       - name: Add .nojekyll
         run: touch pipeline/out/.nojekyll
 
+      # Static pages (e.g. privacy.html) served alongside the feed. gh-pages is
+      # force-orphan rebuilt each run, so copy these in every time or they vanish.
+      - name: Copy static pages
+        run: cp -R pipeline/static/. pipeline/out/
+
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
