@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "league": "Super League",
+  "sport": "football",
+  "topFinishLabel": "Top 4",
+  "recordLabel": "Pts",
+  "entries": [
+    {
+      "teamId": "fb-617",
+      "title": 0.395,
+      "lastWeek": 0.395,
+      "topFinish": 0.965,
+      "relegation": 0.0,
+      "record": "24"
+    },
+    {
+      "teamId": "fb-553",
+      "title": 0.382,
+      "lastWeek": 0.382,
+      "topFinish": 0.969,
+      "relegation": 0.0,
+      "record": "22"
+    },
+    {
+      "teamId": "fb-575",
+      "title": 0.118,
+      "lastWeek": 0.118,
+      "topFinish": 0.873,
+      "relegation": 0.0,
+      "record": "17"
+    },
+    {
+      "teamId": "fb-619",
+      "title": 0.099,
+      "lastWeek": 0.099,
+      "topFinish": 0.832,
+      "relegation": 0.0,
+      "record": "18"
+    },
+    {
+      "teamId": "fb-1124",
+      "title": 0.003,
+      "lastWeek": 0.003,
+      "topFinish": 0.145,
+      "relegation": 0.023,
+      "record": "16"
+    },
+    {
+      "teamId": "fb-1123",
+      "title": 0.002,
+      "lastWeek": 0.002,
+      "topFinish": 0.128,
+      "relegation": 0.02,
+      "record": "16"
+    },
+    {
+      "teamId": "fb-5050",
+      "title": 0.001,
+      "lastWeek": 0.001,
+      "topFinish": 0.042,
+      "relegation": 0.073,
+      "record": "14"
+    },
+    {
+      "teamId": "fb-5046",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.015,
+      "relegation": 0.205,
+      "record": "11"
+    },
+    {
+      "teamId": "fb-17991",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.011,
+      "relegation": 0.245,
+      "record": "10"
+    },
+    {
+      "teamId": "fb-949",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.004,
+      "relegation": 0.393,
+      "record": "9"
+    },
+    {
+      "teamId": "fb-957",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.01,
+      "relegation": 0.278,
+      "record": "6"
+    },
+    {
+      "teamId": "fb-955",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.003,
+      "relegation": 0.44,
+      "record": "6"
+    },
+    {
+      "teamId": "fb-12260",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.005,
+      "relegation": 0.383,
+      "record": "5"
+    },
+    {
+      "teamId": "fb-2110",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.941,
+      "record": "0"
+    }
+  ]
+}
