@@ -331,6 +331,8 @@ def _needs_analysis(fx, prior) -> bool:
     stored = prior.get(fx.get("id"))
     if not stored:
         return True
+    if not stored.get("en"):
+        return True   # TR-only (pre-English) analysis — regenerate to add the en block
     kdt = _iso(fx.get("kickoff"))
     if kdt is None:
         return False
