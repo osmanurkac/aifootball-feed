@@ -77,11 +77,17 @@ SYSTEM = (
     "hedefleri, haftanın yükünü (bu hafta Avrupa/kupa maçı varsa rotasyon ve "
     "yorgunluk), ev sahibi avantajını, momentumu, rekabeti ve motivasyonu birlikte "
     "tart. Türkçe, akıcı ve maça özel yaz; genel klişe cümleler kurma.\n\n"
+    "Analizi önce Türkçe yaz, SONRA aynı başlık/özet/maddelerin doğal ve akıcı bir "
+    "İNGİLİZCE karşılığını da ver (çeviri gibi değil, İngilizce bir analist nasıl "
+    "yazarsa öyle). İngilizce alanlar boş kalmasın.\n\n"
     "ÇIKTI: başka hiçbir metin olmadan, YALNIZCA tek bir JSON nesnesi döndür:\n"
     "{\n"
-    '  "headline": "KISA, çarpıcı başlık — en fazla 70 karakter, tek satır",\n'
-    '  "summary": "2-3 cümlelik analiz",\n'
+    '  "headline": "KISA, çarpıcı başlık (Türkçe) — en fazla 70 karakter, tek satır",\n'
+    '  "summary": "2-3 cümlelik analiz (Türkçe)",\n'
     '  "factors": ["kısa madde", "kısa madde", "kısa madde"],\n'
+    '  "headline_en": "SHORT, punchy English headline — max 70 chars, one line",\n'
+    '  "summary_en": "2-3 sentence English analysis",\n'
+    '  "factors_en": ["short point", "short point", "short point"],\n'
     '  "adjustments": {"homeAttack": 0.0, "homeDefense": 0.0, "awayAttack": 0.0, "awayDefense": 0.0},\n'
     '  "confidence": "low | medium | high"\n'
     "}\n"
@@ -213,11 +219,19 @@ def _trim(s: str, n: int) -> str:
 def _normalize(data: dict) -> dict:
     adj = data.get("adjustments") or {}
     conf = data.get("confidence")
+    en_headline = _trim(str(data.get("headline_en", "")), 90)
+    en_summary = str(data.get("summary_en", "")).strip()[:600]
+    en_factors = [str(x).strip()[:120] for x in (data.get("factors_en") or []) if str(x).strip()][:5]
+    en = ({"headline": en_headline, "summary": en_summary, "factors": en_factors}
+          if (en_headline or en_summary or en_factors) else None)
     return {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "headline": _trim(str(data.get("headline", "")), 90),
         "summary": str(data.get("summary", "")).strip()[:600],
         "factors": [str(x).strip()[:120] for x in (data.get("factors") or []) if str(x).strip()][:5],
+        # English variant of headline/summary/factors (the app picks by locale;
+        # adjustments/confidence are language-neutral and stay top-level).
+        "en": en,
         "adjustments": {k: _clamp(adj.get(k, 0.0)) for k in ADJ_KEYS},
         "confidence": conf if conf in ("low", "medium", "high") else "medium",
         "model": MODEL,
@@ -244,7 +258,7 @@ def analyze(facts: dict, client, use_search: bool = True) -> dict | None:
         try:
             resp = client.messages.create(
                 model=MODEL,
-                max_tokens=1600,
+                max_tokens=2400,
                 system=SYSTEM,
                 tools=tools,
                 messages=[{"role": "user", "content": prompt}],
