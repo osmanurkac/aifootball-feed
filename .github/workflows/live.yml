@@ -1,0 +1,56 @@
+name: Live scores
+
+# Keeps in-play scores and fresh results up to date BETWEEN the daily full builds
+# (feed.yml). Runs live_update.py every few minutes during match hours: it only
+# patches status / finalScore / liveClock of today's live + just-finished fixtures
+# straight into the already-published fixtures.json — no model refit, no AI, a
+# couple of cheap API calls. Everything else in the feed is left untouched.
+
+on:
+  schedule:
+    - cron: "*/5 11-23 * * *"   # every 5 minutes, ~match hours (UTC)
+  workflow_dispatch:            # manual trigger for testing
+
+permissions:
+  contents: write               # to push the gh-pages branch
+
+concurrency:
+  group: feed                   # serialise with the daily build (feed.yml)
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pipeline code
+        uses: actions/checkout@v4
+
+      - name: Checkout published feed (gh-pages)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: published
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Patch live scores
+        working-directory: pipeline
+        env:
+          APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
+        run: python live_update.py --fixtures ../published/fixtures.json
+
+      # Republish the (patched) feed. keep_files + no force_orphan: only the
+      # changed fixtures.json is updated; the daily build still owns the rest.
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: published
+          publish_branch: gh-pages
+          keep_files: true

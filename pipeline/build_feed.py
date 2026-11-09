@@ -26,6 +26,7 @@ import news_analyst
 import track_record
 from config import LEAGUES, OUT_DIR, APISPORTS_KEY, FEED_ALLOW_FINISHED, SEASON_LOOKBACK
 from team_colors import team_mark
+import status_map
 
 
 def write_json(path: Path, obj) -> None:
@@ -590,6 +591,31 @@ def _api_football_league(client, base, league, season, history_seasons,
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "premier_league" and k == 0, "upset": False,
                                  "unavailable": _fixture_injuries(client, base, fx["id"]) if league.enrich else None})
+
+    # Today's LIVE + recently-finished fixtures (same `cur` data — no extra API
+    # call) so Home shows in-play scores/minute and fresh results, not only the
+    # pre-kickoff schedule. The daily build captures them once; the live_update
+    # job refreshes them in-match.
+    emitted = {f["id"] for f in all_fixtures}
+    for item in cur.get("response", []):
+        fx, goals, teams = item["fixture"], item.get("goals") or {}, item["teams"]
+        st = status_map.feed_status((fx.get("status") or {}).get("short"))
+        if st == "scheduled":
+            continue
+        if st == "finished" and status_map.hours_since(fx.get("date")) > status_map.FINISHED_FEED_WINDOW_H:
+            continue
+        fid = f"{league.slug}-{fx['id']}"
+        if fid in emitted:
+            continue
+        hid = register(teams["home"]["name"], league.name, "football", teams["home"]["id"])
+        aid = register(teams["away"]["name"], league.name, "football", teams["away"]["id"])
+        row = {"id": fid, "sport": "football", "league": league.name, "round": None,
+               "kickoff": fx["date"], "homeTeamId": hid, "awayTeamId": aid,
+               "featured": False, "upset": False, "unavailable": None}
+        row.update(status_map.live_fields(st, goals.get("home"), goals.get("away"),
+                                          (fx.get("status") or {}).get("elapsed")))
+        all_fixtures.append(row)
+        emitted.add(fid)
     # Football is Pro → use REAL upcoming fixtures only. A league with no current
     # not-started fixtures (off-season, e.g. J1 in winter) simply contributes its
     # model + teams (still simulatable in Custom matchup) and a projection — we
@@ -685,6 +711,34 @@ def _api_basketball_league(client, base, league, history_seasons, register, all_
                                  "league": league.name, "round": None, "kickoff": g["date"],
                                  "homeTeamId": hid, "awayTeamId": aid, "status": "scheduled",
                                  "featured": league.slug == "nba" and k == 0, "upset": False})
+    # Today's LIVE + recently-finished games (same `cur` data — no extra call).
+    emitted = {f["id"] for f in all_fixtures}
+    for g in cur_games:
+        st = status_map.feed_status((g.get("status") or {}).get("short"), basketball=True)
+        if st == "scheduled":
+            continue
+        if st == "finished" and status_map.hours_since(g.get("date")) > status_map.FINISHED_FEED_WINDOW_H:
+            continue
+        teams = g["teams"]
+        if _is_exhibition(teams["home"]["name"]) or _is_exhibition(teams["away"]["name"]):
+            continue
+        fid = f"{league.slug}-{g['id']}"
+        if fid in emitted:
+            continue
+        hid = register(teams["home"]["name"], league.name, "basketball", teams["home"]["id"])
+        aid = register(teams["away"]["name"], league.name, "basketball", teams["away"]["id"])
+        sc = g.get("scores") or {}
+        hp = ((sc.get("home") or {}).get("total"))
+        ap = ((sc.get("away") or {}).get("total"))
+        row = {"id": fid, "sport": "basketball", "league": league.name, "round": None,
+               "kickoff": g["date"], "homeTeamId": hid, "awayTeamId": aid,
+               "featured": False, "upset": False}
+        row.update(status_map.live_fields(st, hp, ap))
+        if st == "live":
+            row["liveClock"] = (g.get("status") or {}).get("short")   # e.g. "Q3"
+        all_fixtures.append(row)
+        emitted.add(fid)
+
     # Test mode: publish the most recent REAL finished games (real teams + scores)
     # so the simulate flow can be checked against reality; the Explore race keeps
     # the real final standings.
