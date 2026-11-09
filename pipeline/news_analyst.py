@@ -417,11 +417,20 @@ def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
     headline leagues go to Claude (+ web search for the top few), every other league
     to Gemini Flash-Lite — so no in-window match is left without a preview."""
     prior = _load_prior_analyses()
+    season_by_team = _load_seasons(out_dir, slug_by_name)
 
-    # Enriched upcoming football fixtures (these carry injuries + resolvable season
-    # data — covers all configured leagues, not just the headline ones).
+    # Analyse any upcoming football fixture we have REAL data for — so non-headline
+    # leagues count too (the injuries endpoint only covers the big leagues, so an
+    # "unavailable"-only gate would silently drop everything else). A fixture
+    # qualifies if it carries injuries OR both teams have real standings/form.
+    # Amateur ties with no data for either side are skipped (nothing to analyse).
+    def _has_data(tid) -> bool:
+        return tid in season_by_team or bool(FORM_INDEX.get(tid))
+
     targets = [fx for fx in all_fixtures
-               if fx.get("sport") == "football" and fx.get("unavailable") is not None]
+               if fx.get("sport") == "football"
+               and (fx.get("unavailable") is not None
+                    or (_has_data(fx.get("homeTeamId")) and _has_data(fx.get("awayTeamId"))))]
 
     # 1) Reuse last run's analysis wherever a refresh isn't due (the main saver).
     #    Reuse is free, so it's NOT gated by the horizon.
@@ -455,7 +464,6 @@ def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
     headline = headline[:MAX_ANALYSES]
     other = other[:FLASH_MAX]
 
-    season_by_team = _load_seasons(out_dir, slug_by_name)
     done = searched = flash_done = 0
 
     # --- Headline tier: Claude (+ web search for the top few) ---
