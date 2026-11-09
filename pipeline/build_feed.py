@@ -420,6 +420,94 @@ def _player_models(tid, raws):
     return out
 
 
+def _fixture_events(client, base, fixture_id, *, finished: bool) -> list:
+    """Goal / card / substitution timeline for one fixture (fixtures/events).
+    teamId uses the same fb-<api_id> scheme as the rest of the feed. Finished games
+    are immutable (cached ~forever); live games refetch each run."""
+    data = client.get(base, "fixtures/events", {"fixture": fixture_id},
+                      ttl_hours=IMMUTABLE_TTL if finished else FRESH)
+    out = []
+    for e in data.get("response", []) or []:
+        aid = (e.get("team") or {}).get("id")
+        if aid is None:
+            continue
+        t = e.get("time") or {}
+        assist = (e.get("assist") or {}).get("name")
+        out.append({
+            "minute": t.get("elapsed"),
+            "extra": t.get("extra"),
+            "type": e.get("type") or "",
+            "detail": e.get("detail") or "",
+            "teamId": f"fb-{aid}",
+            "player": (e.get("player") or {}).get("name") or "",
+            "assist": assist or None,
+        })
+    return out
+
+
+def _fixture_lineup(client, base, fixture_id, home_aid, away_aid) -> dict | None:
+    """Confirmed starting XI + formation for one fixture (fixtures/lineups), keyed
+    home/away. Player ids match the injuries scheme (fb-<team>_<player>) so the app
+    can cross-reference `unavailable`. Empty until ~40 min before kick-off."""
+    data = client.get(base, "fixtures/lineups", {"fixture": fixture_id}, ttl_hours=FRESH)
+    sides: dict = {}
+    for entry in data.get("response", []) or []:
+        aid = (entry.get("team") or {}).get("id")
+        slot = "home" if aid == home_aid else ("away" if aid == away_aid else None)
+        if slot is None:
+            continue
+        players = []
+        for p in entry.get("startXI", []) or []:
+            pl = p.get("player") or {}
+            pid = pl.get("id")
+            players.append({
+                "id": f"fb-{aid}_{pid}" if pid is not None else None,
+                "name": pl.get("name") or "",
+                "number": pl.get("number"),
+                "grid": pl.get("grid"),
+                "pos": pl.get("pos"),
+            })
+        if players:
+            sides[slot] = {"formation": entry.get("formation"), "players": players}
+    return sides or None
+
+
+def _team_season_stats(client, base, api_team_id, league_api_id, season) -> dict | None:
+    """Real season aggregates for one team (teams/statistics): recent form, goals
+    per game, clean-sheet / failed-to-score rate, most-used formation. Feeds the
+    app's strength comparison + form badge (display only)."""
+    if api_team_id is None:
+        return None
+    data = client.get(base, "teams/statistics",
+                      {"team": api_team_id, "league": league_api_id, "season": season},
+                      ttl_hours=FRESH)
+    r = data.get("response") or {}
+    if not r:
+        return None
+
+    def _f(v):
+        try:
+            return round(float(v), 3)
+        except (TypeError, ValueError):
+            return None
+
+    played = (((r.get("fixtures") or {}).get("played") or {}).get("total")) or 0
+    gf = (((r.get("goals") or {}).get("for") or {}).get("average") or {}).get("total")
+    ga = (((r.get("goals") or {}).get("against") or {}).get("average") or {}).get("total")
+    cs = (r.get("clean_sheet") or {}).get("total") or 0
+    fts = (r.get("failed_to_score") or {}).get("total") or 0
+    lineups = r.get("lineups") or []
+    return {
+        "form": (r.get("form") or "")[-5:],
+        "played": played,
+        "goalsForAvg": _f(gf),
+        "goalsAgainstAvg": _f(ga),
+        "cleanSheetPct": round(cs / played, 3) if played else None,
+        "failedToScorePct": round(fts / played, 3) if played else None,
+        "mostUsedFormation": (lineups[0] or {}).get("formation") if lineups else None,
+    }
+
+
 # All-Star / exhibition "teams" the NBA games endpoint mixes in with real
 # franchises (All-Star weekend, Rising Stars). Never real teams — filter them out.
 _EXHIBITION_MARKERS = ("stars", "ogs", "team ", "rising", "global", "young",
@@ -564,10 +652,23 @@ def _api_football_league(client, base, league, season, history_seasons,
     if not fell_back and league.enrich:
         raw = _league_players(client, base, league.api_id, season, set(team_ids))
         print(f"  {league.name}: {sum(len(v) for v in raw.values())} real players across {len(raw)} teams")
+        # feed team id -> API team id, so per-team teams/statistics can be fetched.
+        api_by_feed = {}
+        for item in cur.get("response", []):
+            for side in ("home", "away"):
+                tm = item["teams"][side]
+                api_by_feed[_team_id(tm["name"], "football", tm["id"])] = tm["id"]
         for t in model["teams"]:
             pm = _player_models(t["teamId"], raw.get(t["teamId"], []))
             if pm:
                 t["players"] = pm
+            # Season aggregates for the strength comparison (league teams only —
+            # cups have no league table). One teams/statistics call per team.
+            if league.kind != "cup":
+                ss = _team_season_stats(client, base, api_by_feed.get(t["teamId"]),
+                                        league.api_id, season)
+                if ss:
+                    t["seasonStats"] = ss
     write_json(OUT_DIR / "football" / f"{league.slug}.json", model)
 
     # Remaining schedule -> the FULL set of not-started current-season fixtures
@@ -614,6 +715,14 @@ def _api_football_league(client, base, league, season, history_seasons,
                "featured": False, "upset": False, "unavailable": None}
         row.update(status_map.live_fields(st, goals.get("home"), goals.get("away"),
                                           (fx.get("status") or {}).get("elapsed")))
+        if league.enrich:
+            ev = _fixture_events(client, base, fx["id"], finished=(st == "finished"))
+            if ev:
+                row["events"] = ev
+            lu = _fixture_lineup(client, base, fx["id"],
+                                 teams["home"]["id"], teams["away"]["id"])
+            if lu:
+                row["lineup"] = lu
         all_fixtures.append(row)
         emitted.add(fid)
     # Football is Pro → use REAL upcoming fixtures only. A league with no current

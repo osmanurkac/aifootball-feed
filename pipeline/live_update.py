@@ -35,6 +35,27 @@ def _today_dates() -> list[str]:
     return [(today - datetime.timedelta(days=d)).isoformat() for d in (0, 1)]
 
 
+def _events(client: APISports, base: str, fixture_id) -> list:
+    """Live goal/card/sub timeline for one fixture (fixtures/events), same shape the
+    daily build emits. ttl=0 so each live run refetches the in-play timeline."""
+    data = client.get(base, "fixtures/events", {"fixture": fixture_id}, ttl_hours=0)
+    out = []
+    for e in data.get("response", []) or []:
+        aid = (e.get("team") or {}).get("id")
+        if aid is None:
+            continue
+        t = e.get("time") or {}
+        assist = (e.get("assist") or {}).get("name")
+        out.append({
+            "minute": t.get("elapsed"), "extra": t.get("extra"),
+            "type": e.get("type") or "", "detail": e.get("detail") or "",
+            "teamId": f"fb-{aid}",
+            "player": (e.get("player") or {}).get("name") or "",
+            "assist": assist or None,
+        })
+    return out
+
+
 def _collect_patches(client: APISports) -> dict[str, dict]:
     """feed fixture id -> {status, finalScore?, liveClock?} for every live or
     recently-finished fixture in one of our football leagues today."""
@@ -54,8 +75,15 @@ def _collect_patches(client: APISports) -> dict[str, dict]:
             if st == "finished" and status_map.hours_since(fx.get("date")) > status_map.FINISHED_FEED_WINDOW_H:
                 continue
             goals = item.get("goals") or {}
-            patches[f"{slug}-{fx.get('id')}"] = status_map.live_fields(
+            fields = status_map.live_fields(
                 st, goals.get("home"), goals.get("away"), (fx.get("status") or {}).get("elapsed"))
+            # Keep a live match's timeline current too; finished events are immutable
+            # and already carried in the feed by the daily build.
+            if st == "live":
+                ev = _events(client, FOOTBALL_BASE, fx.get("id"))
+                if ev:
+                    fields["events"] = ev
+            patches[f"{slug}-{fx.get('id')}"] = fields
     return patches
 
 
@@ -65,10 +93,10 @@ def _apply(fixtures: list[dict], patches: dict[str, dict]) -> int:
         p = patches.get(f.get("id"))
         if not p:
             continue
-        before = (f.get("status"), f.get("finalScore"), f.get("liveClock"))
+        before = (f.get("status"), f.get("finalScore"), f.get("liveClock"), f.get("events"))
         f.pop("liveClock", None)           # cleared on finish; reset while live
         f.update(p)
-        if (f.get("status"), f.get("finalScore"), f.get("liveClock")) != before:
+        if (f.get("status"), f.get("finalScore"), f.get("liveClock"), f.get("events")) != before:
             changed += 1
     return changed
 
