@@ -373,6 +373,7 @@ def _league_players(client, base, api_id, season, valid_ids):
                 "goals": goals.get("total") or 0, "minutes": mins,
                 "apps": games.get("appearences") or 0,
                 "cards": (cards.get("yellow") or 0) + (cards.get("red") or 0),
+                "pos": games.get("position"),
             })
         paging = data.get("paging") or {}
         if paging.get("current", page) >= paging.get("total", page):
@@ -401,12 +402,27 @@ def _fixture_injuries(client, base, fixture_id) -> list:
     return out
 
 
+def _pos_code(position):
+    """API-Football position name → G/D/M/F (so the app can place a model squad on
+    the pitch by role when there is no confirmed line-up)."""
+    p = (position or "").strip().lower()
+    if p.startswith("goal"):
+        return "G"
+    if p.startswith("def"):
+        return "D"
+    if p.startswith("mid"):
+        return "M"
+    if p.startswith("att") or p.startswith("for"):
+        return "F"
+    return None
+
+
 def _player_models(tid, raws):
     """Convert raw player stats to the feed's player format with goal shares."""
     if not raws:
         return []
     team_goals = sum(r["goals"] for r in raws)
-    top = sorted(raws, key=lambda r: r["minutes"], reverse=True)[:14]
+    top = sorted(raws, key=lambda r: r["minutes"], reverse=True)[:18]
     out = []
     for r in top:
         gs = (r["goals"] / team_goals) if team_goals > 0 else 0.0
@@ -416,6 +432,7 @@ def _player_models(tid, raws):
             "goalShare": round(gs, 3),
             "expectedMinutes": round(min(90.0, r["minutes"] / apps)),
             "cardRate": round(r["cards"] / apps, 3),
+            "pos": _pos_code(r.get("pos")),
         })
     return out
 
