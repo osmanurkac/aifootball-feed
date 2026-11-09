@@ -52,9 +52,13 @@ jobs:
         working-directory: pipeline
         env:
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
-          # AI "haber analizi" layer (news_analyst.py). Without this secret the
-          # build runs exactly as before and simply attaches no analysis.
+          # AI "haber analizi" layer (news_analyst.py). Headline leagues use this
+          # (Claude). Without it, headline matches simply get no analysis.
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Cheap second tier: every non-headline league is analysed by Gemini
+          # Flash-Lite from the same structured facts. Without this secret that tier
+          # is skipped (headline still runs on Claude) — nothing else changes.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           # Football is Pro (current season); basketball is still Free, so keep the
           # finished-season fallback ON until basketball is Pro too. The daily cron
           # has no inputs, so default it to true there. When all sports are Pro,

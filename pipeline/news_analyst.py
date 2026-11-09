@@ -62,6 +62,24 @@ LEAGUE_PRIORITY = ("super_lig", "champions_league", "premier_league",
 # the daily build short (the Anthropic client is thread-safe). Tune per rate limit.
 WORKERS = int(os.environ.get("NEWS_WORKERS", "8"))
 
+# Only (re)analyse matches that kick off within this many hours — "~1 day ahead",
+# not 10 days out (lineups/news a week away are worthless and the far-future spend
+# is wasted). The daily cron runs once, so 48h covers the rest of today + all of
+# tomorrow; each day's run then picks up the next day's fixtures. Stored analyses
+# are still REUSED for free regardless of horizon; this gate only bounds what we
+# PAY to newly analyse. 0 disables the gate.
+HORIZON_HOURS = float(os.environ.get("NEWS_HORIZON_HOURS", "48"))
+
+# Two-tier model routing. Headline leagues (LEAGUE_PRIORITY) get the Claude MODEL
+# above (+ web search for the top few) — best quality. EVERY OTHER league gets a
+# cheaper Gemini Flash-Lite preview from the same structured facts (no web search),
+# so no in-window match is left without an analysis. Needs GEMINI_API_KEY; without
+# it the non-headline tier is skipped (headline still runs on Claude).
+FLASH_MODEL = os.environ.get("NEWS_FLASH_MODEL", "gemini-2.5-flash-lite")
+# Safety cap on the cheap tier per build (the horizon window already bounds it; a
+# normal day is well under this). Flash-Lite is ~10× cheaper than Haiku on text.
+FLASH_MAX = int(os.environ.get("NEWS_FLASH_MAX", "200"))
+
 # Most-recent-first W/D/L per team id, filled by build_feed from finished results.
 FORM_INDEX: dict[str, list[tuple[str, str]]] = {}
 
@@ -96,6 +114,21 @@ SYSTEM = (
     "habere/veriye dayandıramıyorsan 0 bırak. Düzeltmeler küçük ve gerekçeli "
     "olmalı; modelin kalibrasyonunu ezme. Örn. kilit golcü sakat -> ilgili takımın "
     "homeAttack/awayAttack'ına küçük negatif; yoğun Avrupa haftası -> hafif negatif."
+)
+
+# Web-search-free variant for the cheap (Gemini Flash-Lite) tier and any Claude
+# structured-only call: same analyst role and output schema, but it works ONLY
+# from the structured facts it's given (no "search the web" instruction, since
+# this tier has no search tool). Built from SYSTEM with the search sentence
+# swapped for a "use only the given data" one, so the schema never drifts apart.
+SYSTEM_STRUCTURED = SYSTEM.replace(
+    "ÖNCE web_search aracıyla maça dair GÜNCEL haberleri araştır: takım "
+    "haberleri, son sakatlık/ceza gelişmeleri, teknik direktör açıklamaları, "
+    "muhtemel 11, moral/motivasyon, Avrupa veya kupa yorgunluğu, derbi havası. "
+    "SONRA maçı bütüncül analiz et",
+    "Yalnızca sana verilen yapısal verilere (sıralama, hedefler, form, fikstür "
+    "yükü, sakat/cezalılar) dayan — web araması yapma, veri dışında bilgi uydurma. "
+    "Maçı bütüncül analiz et",
 )
 
 
@@ -216,7 +249,7 @@ def _trim(s: str, n: int) -> str:
     return (cut or s[:n]) + "…"
 
 
-def _normalize(data: dict) -> dict:
+def _normalize(data: dict, model: str = MODEL) -> dict:
     adj = data.get("adjustments") or {}
     conf = data.get("confidence")
     en_headline = _trim(str(data.get("headline_en", "")), 90)
@@ -234,7 +267,7 @@ def _normalize(data: dict) -> dict:
         "en": en,
         "adjustments": {k: _clamp(adj.get(k, 0.0)) for k in ADJ_KEYS},
         "confidence": conf if conf in ("low", "medium", "high") else "medium",
-        "model": MODEL,
+        "model": model,
         # When this analysis was written — used next build to decide whether to
         # reuse it or refresh it as kick-off nears. The app ignores unknown keys.
         "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -253,13 +286,14 @@ def analyze(facts: dict, client, use_search: bool = True) -> dict | None:
     )
     # Web search only for the priority matches; otherwise structured-only (free).
     # With search on, fall back to a no-tools pass if the search call fails.
+    system = SYSTEM if use_search else SYSTEM_STRUCTURED
     tool_options = ([WEB_SEARCH_TOOL], []) if use_search else ([],)
     for tools in tool_options:
         try:
             resp = client.messages.create(
                 model=MODEL,
                 max_tokens=2400,
-                system=SYSTEM,
+                system=system,
                 tools=tools,
                 messages=[{"role": "user", "content": prompt}],
             )
@@ -267,10 +301,40 @@ def analyze(facts: dict, client, use_search: bool = True) -> dict | None:
                            if getattr(b, "type", "") == "text")
             data = _extract_json(text)
             if data:
-                return _normalize(data)
+                return _normalize(data, MODEL)
         except Exception as exc:  # noqa: BLE001 — resilient per-fixture
             print(f"    ai: attempt failed ({type(exc).__name__}: {exc})")
             continue
+    return None
+
+
+def analyze_gemini(facts: dict, gclient) -> dict | None:
+    """Cheap-tier preview for a non-headline match: Gemini Flash-Lite over the same
+    structured facts, no web search. Same JSON schema as `analyze`, so the app and
+    `_normalize` treat it identically; tagged with the Flash model name."""
+    prompt = (
+        "Aşağıdaki maçı analiz et. Yapısal veriler (JSON):\n\n"
+        + json.dumps(facts, ensure_ascii=False, indent=2)
+        + "\n\nVerilen yapısal verilere dayanarak analiz et ve yalnızca istenen "
+          "JSON nesnesini döndür."
+    )
+    try:
+        from google.genai import types
+        resp = gclient.models.generate_content(
+            model=FLASH_MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_STRUCTURED,
+                temperature=0.7,
+                max_output_tokens=2400,
+                response_mime_type="application/json",
+            ),
+        )
+        data = _extract_json(getattr(resp, "text", "") or "")
+        if data:
+            return _normalize(data, FLASH_MODEL)
+    except Exception as exc:  # noqa: BLE001 — resilient per-fixture
+        print(f"    gemini: attempt failed ({type(exc).__name__}: {exc})")
     return None
 
 
@@ -348,67 +412,108 @@ def _needs_analysis(fx, prior) -> bool:
 def attach_analyses(all_fixtures, teams_out, out_dir, slug_by_name):
     """Attach `aiAnalysis` to enriched upcoming football fixtures, in place.
 
-    Reuses the previous build's analyses from the live feed and only pays to
-    (re)analyse what's new or near kick-off, up to MAX_ANALYSES per run."""
+    Reuses the previous build's analyses from the live feed (free) and only pays to
+    (re)analyse matches kicking off within HORIZON_HOURS (~1 day ahead). Two-tier:
+    headline leagues go to Claude (+ web search for the top few), every other league
+    to Gemini Flash-Lite — so no in-window match is left without a preview."""
     prior = _load_prior_analyses()
 
-    # Enriched upcoming fixtures only (these carry injuries) — the headline leagues.
+    # Enriched upcoming football fixtures (these carry injuries + resolvable season
+    # data — covers all configured leagues, not just the headline ones).
     targets = [fx for fx in all_fixtures
                if fx.get("sport") == "football" and fx.get("unavailable") is not None]
 
     # 1) Reuse last run's analysis wherever a refresh isn't due (the main saver).
+    #    Reuse is free, so it's NOT gated by the horizon.
     for fx in targets:
         stored = prior.get(fx.get("id"))
         if stored and not _needs_analysis(fx, prior):
             fx["aiAnalysis"] = stored
     reused = sum(1 for fx in targets if fx.get("aiAnalysis"))
 
-    # 2) What still needs a fresh/refreshed analysis — priority leagues first, then
-    #    soonest kick-off, so the budget lands on the matches people actually open.
-    todo = [fx for fx in targets if _needs_analysis(fx, prior)]
-    todo.sort(key=lambda f: (_priority_rank(f, slug_by_name), f.get("kickoff") or ""))
-    todo = todo[:MAX_ANALYSES]
+    # 2) What still needs a fresh/refreshed analysis AND kicks off within the
+    #    horizon (~1 day ahead) — we never pay to analyse games a week+ out.
+    now = datetime.datetime.now(datetime.timezone.utc)
 
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
-        print(f"news_analyst: no ANTHROPIC_API_KEY — reused {reused}, skipping {len(todo)} new")
-        return
-    try:
-        import anthropic
-    except Exception:
-        print(f"news_analyst: anthropic SDK not installed — reused {reused}, skipping {len(todo)} new")
-        return
+    def _in_horizon(fx) -> bool:
+        kdt = _iso(fx.get("kickoff"))
+        if kdt is None or kdt < now:
+            return False
+        if HORIZON_HOURS <= 0:
+            return True
+        return (kdt - now).total_seconds() / 3600.0 <= HORIZON_HOURS
 
-    client = anthropic.Anthropic(api_key=key)
+    todo = [fx for fx in targets if _needs_analysis(fx, prior) and _in_horizon(fx)]
+
+    # Route by tier: headline leagues -> Claude (best quality, web search for the
+    # top few); EVERY OTHER league -> Gemini Flash-Lite (cheap) so no in-window
+    # match is left without an analysis.
+    headline = [fx for fx in todo if _priority_rank(fx, slug_by_name) < len(LEAGUE_PRIORITY)]
+    other = [fx for fx in todo if _priority_rank(fx, slug_by_name) >= len(LEAGUE_PRIORITY)]
+    headline.sort(key=lambda f: (_priority_rank(f, slug_by_name), f.get("kickoff") or ""))
+    other.sort(key=lambda f: f.get("kickoff") or "")
+    headline = headline[:MAX_ANALYSES]
+    other = other[:FLASH_MAX]
+
     season_by_team = _load_seasons(out_dir, slug_by_name)
+    done = searched = flash_done = 0
 
-    # Only the top few matches (already featured + soonest first) get web search;
-    # the rest run structured-only, so the paid-search spend is hard-capped per run.
-    search_ids = {fx.get("id") for fx in todo[:WEB_SEARCH_MATCHES]}
+    # --- Headline tier: Claude (+ web search for the top few) ---
+    akey = os.environ.get("ANTHROPIC_API_KEY")
+    if headline and akey:
+        try:
+            import anthropic
+            client = anthropic.Anthropic(api_key=akey)
+            search_ids = {fx.get("id") for fx in headline[:WEB_SEARCH_MATCHES]}
 
-    # Run the independent per-fixture calls concurrently; attach results on the main
-    # thread (futures carry their fixture) so there's no shared-dict race.
-    def work(fx):
-        facts = _facts_for(fx, all_fixtures, teams_out, season_by_team)
-        return fx, analyze(facts, client, use_search=fx.get("id") in search_ids)
+            def cwork(fx):
+                facts = _facts_for(fx, all_fixtures, teams_out, season_by_team)
+                return fx, analyze(facts, client, use_search=fx.get("id") in search_ids)
 
-    done = searched = 0
-    with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
-        for fx, res in pool.map(work, todo):
-            if res:
-                fx["aiAnalysis"] = res
-                done += 1
-                if fx.get("id") in search_ids:
-                    searched += 1
-                h = teams_out.get(fx.get("homeTeamId"), {}).get("name", "?")
-                a = teams_out.get(fx.get("awayTeamId"), {}).get("name", "?")
-                print(f"    ai ✓ {h} - {a} ({res['confidence']})")
+            with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
+                for fx, res in pool.map(cwork, headline):
+                    if res:
+                        fx["aiAnalysis"] = res
+                        done += 1
+                        if fx.get("id") in search_ids:
+                            searched += 1
+                        h = teams_out.get(fx.get("homeTeamId"), {}).get("name", "?")
+                        a = teams_out.get(fx.get("awayTeamId"), {}).get("name", "?")
+                        print(f"    ai ✓ {h} - {a} ({res['confidence']})")
+        except Exception as exc:  # noqa: BLE001
+            print(f"news_analyst: Claude tier unavailable ({type(exc).__name__}: {exc})")
+    elif headline:
+        print(f"news_analyst: no ANTHROPIC_API_KEY — skipping {len(headline)} headline analyses")
+
+    # --- Cheap tier: Gemini Flash-Lite for every other league (structured-only) ---
+    gkey = os.environ.get("GEMINI_API_KEY")
+    if other and gkey:
+        try:
+            from google import genai
+            gclient = genai.Client(api_key=gkey)
+
+            def gwork(fx):
+                facts = _facts_for(fx, all_fixtures, teams_out, season_by_team)
+                return fx, analyze_gemini(facts, gclient)
+
+            with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
+                for fx, res in pool.map(gwork, other):
+                    if res:
+                        fx["aiAnalysis"] = res
+                        flash_done += 1
+                        h = teams_out.get(fx.get("homeTeamId"), {}).get("name", "?")
+                        a = teams_out.get(fx.get("awayTeamId"), {}).get("name", "?")
+                        print(f"    flash ✓ {h} - {a} ({res['confidence']})")
+        except Exception as exc:  # noqa: BLE001
+            print(f"news_analyst: Gemini tier unavailable ({type(exc).__name__}: {exc})")
+    elif other:
+        print(f"news_analyst: no GEMINI_API_KEY — skipping {len(other)} Flash-Lite analyses")
 
     # A refresh that failed shouldn't drop the existing preview — fall back to it.
-    for fx in todo:
+    for fx in headline + other:
         if not fx.get("aiAnalysis") and prior.get(fx.get("id")):
             fx["aiAnalysis"] = prior[fx["id"]]
 
-    print(f"news_analyst: {done} new ({searched} w/ web search) + {reused} reused "
-          f"(model={MODEL}, search_uses={WEB_SEARCH_TOOL['max_uses']}, "
-          f"search_matches={WEB_SEARCH_MATCHES}, budget={MAX_ANALYSES})")
+    print(f"news_analyst: {done} Claude ({searched} w/ web search) + {flash_done} "
+          f"Flash-Lite + {reused} reused "
+          f"(models: {MODEL} / {FLASH_MODEL}, horizon={HORIZON_HOURS}h)")
