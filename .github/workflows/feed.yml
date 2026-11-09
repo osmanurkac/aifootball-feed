@@ -62,6 +62,13 @@ jobs:
           FEED_ALLOW_FINISHED: ${{ github.event_name == 'schedule' && 'true' || inputs.allow_finished_season }}
           # Throttle for the Free-plan per-minute cap whenever the fallback is active.
           APISPORTS_THROTTLE: ${{ (github.event_name == 'schedule' || inputs.allow_finished_season) && '6.5' || '0.5' }}
+          # All 28 football leagues are enriched (real squads + injuries + stats),
+          # so a run makes more calls than the 2000 default per-run safety cap —
+          # especially the one-time COLD build when a newly-enriched league's season
+          # stats/players are fetched for the first time (then cached immutably).
+          # 6000 clears that spike with margin under the Pro plan's 7500/day; steady
+          # state is ~2100/run. Lower again if leagues are pared back.
+          APISPORTS_BUDGET: "6000"
         run: python build_feed.py --source api
 
       - name: Add .nojekyll
