@@ -75,7 +75,7 @@ HORIZON_HOURS = float(os.environ.get("NEWS_HORIZON_HOURS", "48"))
 # cheaper Gemini Flash-Lite preview from the same structured facts (no web search),
 # so no in-window match is left without an analysis. Needs GEMINI_API_KEY; without
 # it the non-headline tier is skipped (headline still runs on Claude).
-FLASH_MODEL = os.environ.get("NEWS_FLASH_MODEL", "gemini-2.5-flash-lite")
+FLASH_MODEL = os.environ.get("NEWS_FLASH_MODEL", "gemini-3.5-flash-lite")
 # Safety cap on the cheap tier per build (the horizon window already bounds it; a
 # normal day is well under this). Flash-Lite is ~10× cheaper than Haiku on text.
 FLASH_MAX = int(os.environ.get("NEWS_FLASH_MAX", "200"))
