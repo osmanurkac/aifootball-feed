@@ -98,6 +98,10 @@ SYSTEM = (
     "Analizi önce Türkçe yaz, SONRA aynı başlık/özet/maddelerin doğal ve akıcı bir "
     "İNGİLİZCE karşılığını da ver (çeviri gibi değil, İngilizce bir analist nasıl "
     "yazarsa öyle). İngilizce alanlar boş kalmasın.\n\n"
+    "DİL KURALI (çok önemli): headline, summary ve factors alanları TAMAMEN "
+    "TÜRKÇE olacak — içlerinde tek bir İngilizce kelime veya cümle bile "
+    "geçmeyecek. headline_en, summary_en ve factors_en alanları ise TAMAMEN "
+    "İNGİLİZCE olacak. Alanların dilini KESİNLİKLE karıştırma.\n\n"
     "ÇIKTI: başka hiçbir metin olmadan, YALNIZCA tek bir JSON nesnesi döndür:\n"
     "{\n"
     '  "headline": "KISA, çarpıcı başlık (Türkçe) — en fazla 70 karakter, tek satır",\n'
