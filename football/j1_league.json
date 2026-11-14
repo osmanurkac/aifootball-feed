@@ -1,0 +1,3524 @@
+{
+  "schemaVersion": 1,
+  "league": "J1 League",
+  "leagueAverageGoals": 1.178,
+  "homeAdvantage": 1.151,
+  "rho": -0.11,
+  "firstHalfGoalShare": 0.45,
+  "teams": [
+    {
+      "teamId": "fb-282",
+      "attack": 1.124,
+      "defence": 0.848,
+      "cornersMean": 6.07,
+      "cornersSize": 8.0,
+      "cardsMean": 0.86,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-282_355998",
+          "name": "S. Nakano",
+          "goalShare": 0.097,
+          "expectedMinutes": 78,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-282_44054",
+          "name": "T. Shiotani",
+          "goalShare": 0.0,
+          "expectedMinutes": 81,
+          "cardRate": 0.056,
+          "pos": "D"
+        },
+        {
+          "id": "fb-282_33045",
+          "name": "H. Kawabe",
+          "goalShare": 0.065,
+          "expectedMinutes": 80,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-282_33034",
+          "name": "K. Osako",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-282_351015",
+          "name": "A. Suzuki",
+          "goalShare": 0.161,
+          "expectedMinutes": 64,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-282_2595",
+          "name": "S. Sasaki",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-282_33047",
+          "name": "T. Matsumoto",
+          "goalShare": 0.032,
+          "expectedMinutes": 69,
+          "cardRate": 0.056,
+          "pos": "M"
+        },
+        {
+          "id": "fb-282_225092",
+          "name": "T. Yamasaki",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.118,
+          "pos": "D"
+        },
+        {
+          "id": "fb-282_33624",
+          "name": "N. Arai",
+          "goalShare": 0.032,
+          "expectedMinutes": 70,
+          "cardRate": 0.294,
+          "pos": "D"
+        },
+        {
+          "id": "fb-282_33042",
+          "name": "S. Higashi",
+          "goalShare": 0.097,
+          "expectedMinutes": 65,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-282_33035",
+          "name": "H. Araki",
+          "goalShare": 0.032,
+          "expectedMinutes": 88,
+          "cardRate": 0.083,
+          "pos": "D"
+        },
+        {
+          "id": "fb-282_508070",
+          "name": "S. Nakamura",
+          "goalShare": 0.161,
+          "expectedMinutes": 60,
+          "cardRate": 0.062,
+          "pos": "F"
+        },
+        {
+          "id": "fb-282_8517",
+          "name": "K. Kinoshita",
+          "goalShare": 0.097,
+          "expectedMinutes": 44,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-282_33638",
+          "name": "M. Kato",
+          "goalShare": 0.129,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-282_33378",
+          "name": "R. Germain",
+          "goalShare": 0.097,
+          "expectedMinutes": 43,
+          "cardRate": 0.062,
+          "pos": "F"
+        },
+        {
+          "id": "fb-282_34496",
+          "name": "Kim Ju-Sung",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-282_33812",
+          "name": "I. Ouchi",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-282_1353",
+          "name": "T. Arslan",
+          "goalShare": 0.0,
+          "expectedMinutes": 35,
+          "cardRate": 0.111,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "WWWWW",
+        "played": 20,
+        "goalsForAvg": 1.7,
+        "goalsAgainstAvg": 1.2,
+        "cleanSheetPct": 0.25,
+        "failedToScorePct": 0.1,
+        "mostUsedFormation": "3-4-2-1"
+      }
+    },
+    {
+      "teamId": "fb-287",
+      "attack": 0.963,
+      "defence": 0.904,
+      "cornersMean": 5.43,
+      "cornersSize": 8.0,
+      "cardsMean": 1.0,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-287_33093",
+          "name": "S. Nishikawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-287_441588",
+          "name": "K. Nemoto",
+          "goalShare": 0.08,
+          "expectedMinutes": 90,
+          "cardRate": 0.05,
+          "pos": "D"
+        },
+        {
+          "id": "fb-287_33643",
+          "name": "R. Watanabe",
+          "goalShare": 0.12,
+          "expectedMinutes": 86,
+          "cardRate": 0.053,
+          "pos": "M"
+        },
+        {
+          "id": "fb-287_351538",
+          "name": "K. Yasui",
+          "goalShare": 0.08,
+          "expectedMinutes": 84,
+          "cardRate": 0.056,
+          "pos": "M"
+        },
+        {
+          "id": "fb-287_32985",
+          "name": "T. Kaneko",
+          "goalShare": 0.08,
+          "expectedMinutes": 73,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-287_10474",
+          "name": "Matheus Sávio",
+          "goalShare": 0.08,
+          "expectedMinutes": 76,
+          "cardRate": 0.211,
+          "pos": "M"
+        },
+        {
+          "id": "fb-287_351537",
+          "name": "Y. Miyamoto",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-287_33914",
+          "name": "Y. Naganuma",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.071,
+          "pos": "M"
+        },
+        {
+          "id": "fb-287_8508",
+          "name": "T. Sekine",
+          "goalShare": 0.04,
+          "expectedMinutes": 62,
+          "cardRate": 0.067,
+          "pos": "D"
+        },
+        {
+          "id": "fb-287_33112",
+          "name": "K. Shibato",
+          "goalShare": 0.0,
+          "expectedMinutes": 61,
+          "cardRate": 0.214,
+          "pos": "M"
+        },
+        {
+          "id": "fb-287_33931",
+          "name": "H. Ishihara",
+          "goalShare": 0.0,
+          "expectedMinutes": 65,
+          "cardRate": 0.077,
+          "pos": "D"
+        },
+        {
+          "id": "fb-287_32940",
+          "name": "A. Onaiwu",
+          "goalShare": 0.0,
+          "expectedMinutes": 57,
+          "cardRate": 0.067,
+          "pos": "F"
+        },
+        {
+          "id": "fb-287_625861",
+          "name": "R. Hidano",
+          "goalShare": 0.16,
+          "expectedMinutes": 48,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-287_33101",
+          "name": "T. Ogiwara",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-287_2603",
+          "name": "S. Nakajima",
+          "goalShare": 0.0,
+          "expectedMinutes": 38,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-287_41961",
+          "name": "Danilo Boza",
+          "goalShare": 0.04,
+          "expectedMinutes": 76,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-287_288918",
+          "name": "H. Komori",
+          "goalShare": 0.12,
+          "expectedMinutes": 41,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-287_119662",
+          "name": "Y. Matsuo",
+          "goalShare": 0.04,
+          "expectedMinutes": 32,
+          "cardRate": 0.0,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "WLLDL",
+        "played": 20,
+        "goalsForAvg": 1.3,
+        "goalsAgainstAvg": 1.3,
+        "cleanSheetPct": 0.3,
+        "failedToScorePct": 0.25,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-288",
+      "attack": 1.042,
+      "defence": 1.123,
+      "cornersMean": 5.36,
+      "cornersSize": 104.46,
+      "cardsMean": 0.93,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-288_32882",
+          "name": "H. Fujii",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-288_32994",
+          "name": "T. Takamine",
+          "goalShare": 0.029,
+          "expectedMinutes": 90,
+          "cardRate": 0.158,
+          "pos": "M"
+        },
+        {
+          "id": "fb-288_33827",
+          "name": "K. Nakayama",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-288_319007",
+          "name": "Y. Kimura",
+          "goalShare": 0.265,
+          "expectedMinutes": 80,
+          "cardRate": 0.15,
+          "pos": "F"
+        },
+        {
+          "id": "fb-288_2589",
+          "name": "D. Schmidt",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.062,
+          "pos": "G"
+        },
+        {
+          "id": "fb-288_33043",
+          "name": "S. Inagaki",
+          "goalShare": 0.059,
+          "expectedMinutes": 90,
+          "cardRate": 0.067,
+          "pos": "M"
+        },
+        {
+          "id": "fb-288_33976",
+          "name": "Y. Yamagishi",
+          "goalShare": 0.294,
+          "expectedMinutes": 68,
+          "cardRate": 0.053,
+          "pos": "F"
+        },
+        {
+          "id": "fb-288_32894",
+          "name": "R. Izumi",
+          "goalShare": 0.029,
+          "expectedMinutes": 67,
+          "cardRate": 0.067,
+          "pos": "M"
+        },
+        {
+          "id": "fb-288_33427",
+          "name": "Y. Asano",
+          "goalShare": 0.059,
+          "expectedMinutes": 64,
+          "cardRate": 0.067,
+          "pos": "M"
+        },
+        {
+          "id": "fb-288_33038",
+          "name": "Y. Nogami",
+          "goalShare": 0.0,
+          "expectedMinutes": 55,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-288_33397",
+          "name": "T. Hara",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.083,
+          "pos": "D"
+        },
+        {
+          "id": "fb-288_33048",
+          "name": "T. Morishima",
+          "goalShare": 0.059,
+          "expectedMinutes": 73,
+          "cardRate": 0.091,
+          "pos": "F"
+        },
+        {
+          "id": "fb-288_268142",
+          "name": "H. Koda",
+          "goalShare": 0.059,
+          "expectedMinutes": 42,
+          "cardRate": 0.056,
+          "pos": "M"
+        },
+        {
+          "id": "fb-288_33667",
+          "name": "S. Tokumoto",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-288_107718",
+          "name": "Marcus Índio",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 2.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-288_304118",
+          "name": "Y. Sato",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-288_449199",
+          "name": "A. Pisano",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-288_32872",
+          "name": "K. Nagai",
+          "goalShare": 0.088,
+          "expectedMinutes": 30,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "WLLDL",
+        "played": 20,
+        "goalsForAvg": 1.8,
+        "goalsAgainstAvg": 1.8,
+        "cleanSheetPct": 0.25,
+        "failedToScorePct": 0.05,
+        "mostUsedFormation": "3-4-2-1"
+      }
+    },
+    {
+      "teamId": "fb-290",
+      "attack": 1.131,
+      "defence": 0.786,
+      "cornersMean": 5.64,
+      "cornersSize": 8.0,
+      "cardsMean": 1.21,
+      "cardsSize": 7.45,
+      "players": [
+        {
+          "id": "fb-290_8670",
+          "name": "N. Ueda",
+          "goalShare": 0.065,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-290_9550",
+          "name": "Léo Ceará",
+          "goalShare": 0.323,
+          "expectedMinutes": 87,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-290_455185",
+          "name": "K. Nono",
+          "goalShare": 0.065,
+          "expectedMinutes": 86,
+          "cardRate": 0.105,
+          "pos": "D"
+        },
+        {
+          "id": "fb-290_33089",
+          "name": "Y. Suzuki",
+          "goalShare": 0.194,
+          "expectedMinutes": 86,
+          "cardRate": 0.105,
+          "pos": "F"
+        },
+        {
+          "id": "fb-290_304782",
+          "name": "T. Hayakawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-290_33077",
+          "name": "K. Misao",
+          "goalShare": 0.032,
+          "expectedMinutes": 81,
+          "cardRate": 0.235,
+          "pos": "M"
+        },
+        {
+          "id": "fb-290_34418",
+          "name": "Kim Tae-Hyeon",
+          "goalShare": 0.032,
+          "expectedMinutes": 90,
+          "cardRate": 0.067,
+          "pos": "D"
+        },
+        {
+          "id": "fb-290_197972",
+          "name": "R. Araki",
+          "goalShare": 0.032,
+          "expectedMinutes": 57,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-290_33399",
+          "name": "Y. Higuchi",
+          "goalShare": 0.0,
+          "expectedMinutes": 59,
+          "cardRate": 0.133,
+          "pos": "M"
+        },
+        {
+          "id": "fb-290_2590",
+          "name": "K. Anzai",
+          "goalShare": 0.032,
+          "expectedMinutes": 72,
+          "cardRate": 0.091,
+          "pos": "D"
+        },
+        {
+          "id": "fb-290_2604",
+          "name": "G. Shibasaki",
+          "goalShare": 0.0,
+          "expectedMinutes": 53,
+          "cardRate": 0.067,
+          "pos": "M"
+        },
+        {
+          "id": "fb-290_61157",
+          "name": "A. Čavrić",
+          "goalShare": 0.065,
+          "expectedMinutes": 41,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-290_197973",
+          "name": "Y. Matsumura",
+          "goalShare": 0.0,
+          "expectedMinutes": 51,
+          "cardRate": 0.083,
+          "pos": "M"
+        },
+        {
+          "id": "fb-290_351529",
+          "name": "S. Mizoguchi",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-290_32969",
+          "name": "K. Chinen",
+          "goalShare": 0.0,
+          "expectedMinutes": 32,
+          "cardRate": 0.188,
+          "pos": "M"
+        },
+        {
+          "id": "fb-290_33070",
+          "name": "I. Sekigawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 76,
+          "cardRate": 0.333,
+          "pos": "D"
+        },
+        {
+          "id": "fb-290_639252",
+          "name": "H. Hayashu",
+          "goalShare": 0.032,
+          "expectedMinutes": 24,
+          "cardRate": 0.056,
+          "pos": "M"
+        },
+        {
+          "id": "fb-290_10042",
+          "name": "Élber",
+          "goalShare": 0.032,
+          "expectedMinutes": 60,
+          "cardRate": 0.0,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "WWWLW",
+        "played": 20,
+        "goalsForAvg": 1.7,
+        "goalsAgainstAvg": 0.8,
+        "cleanSheetPct": 0.6,
+        "failedToScorePct": 0.05,
+        "mostUsedFormation": "4-4-2"
+      }
+    },
+    {
+      "teamId": "fb-280",
+      "attack": 0.941,
+      "defence": 1.243,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-280_fw",
+          "name": "JUB Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-280_am",
+          "name": "JUB Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-280_wg",
+          "name": "JUB Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-280_df",
+          "name": "JUB Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-289",
+      "attack": 1.088,
+      "defence": 0.859,
+      "cornersMean": 5.23,
+      "cornersSize": 59.28,
+      "cardsMean": 1.38,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-289_25153",
+          "name": "Y. Ideguchi",
+          "goalShare": 0.033,
+          "expectedMinutes": 86,
+          "cardRate": 0.263,
+          "pos": "M"
+        },
+        {
+          "id": "fb-289_10165",
+          "name": "Matheus Thuler",
+          "goalShare": 0.067,
+          "expectedMinutes": 82,
+          "cardRate": 0.235,
+          "pos": "D"
+        },
+        {
+          "id": "fb-289_33362",
+          "name": "K. Nagato",
+          "goalShare": 0.1,
+          "expectedMinutes": 74,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-289_18905",
+          "name": "Y. Muto",
+          "goalShare": 0.133,
+          "expectedMinutes": 84,
+          "cardRate": 0.067,
+          "pos": "F"
+        },
+        {
+          "id": "fb-289_33230",
+          "name": "D. Maekawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-289_24872",
+          "name": "G. Sakai",
+          "goalShare": 0.067,
+          "expectedMinutes": 82,
+          "cardRate": 0.071,
+          "pos": "D"
+        },
+        {
+          "id": "fb-289_92046",
+          "name": "D. Sasaki",
+          "goalShare": 0.067,
+          "expectedMinutes": 79,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-289_33008",
+          "name": "R. Hirose",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-289_33241",
+          "name": "Y. Goke",
+          "goalShare": 0.033,
+          "expectedMinutes": 61,
+          "cardRate": 0.059,
+          "pos": "M"
+        },
+        {
+          "id": "fb-289_80534",
+          "name": "Caetano",
+          "goalShare": 0.0,
+          "expectedMinutes": 61,
+          "cardRate": 0.125,
+          "pos": "D"
+        },
+        {
+          "id": "fb-289_25330",
+          "name": "Y. Osako",
+          "goalShare": 0.133,
+          "expectedMinutes": 62,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-289_195738",
+          "name": "T. Yamakawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 76,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-289_33694",
+          "name": "Diego",
+          "goalShare": 0.033,
+          "expectedMinutes": 65,
+          "cardRate": 0.071,
+          "pos": "M"
+        },
+        {
+          "id": "fb-289_33556",
+          "name": "R. Komatsu",
+          "goalShare": 0.167,
+          "expectedMinutes": 50,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-289_33013",
+          "name": "T. Ohgihara",
+          "goalShare": 0.1,
+          "expectedMinutes": 82,
+          "cardRate": 0.25,
+          "pos": "M"
+        },
+        {
+          "id": "fb-289_41349",
+          "name": "S. Gonda",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-289_33424",
+          "name": "B. Nduka",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-289_304879",
+          "name": "Y. Kuwasaki",
+          "goalShare": 0.0,
+          "expectedMinutes": 62,
+          "cardRate": 0.0,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "WLWWL",
+        "played": 20,
+        "goalsForAvg": 1.7,
+        "goalsAgainstAvg": 1.4,
+        "cleanSheetPct": 0.3,
+        "failedToScorePct": 0.25,
+        "mostUsedFormation": "4-3-3"
+      }
+    },
+    {
+      "teamId": "fb-295",
+      "attack": 0.951,
+      "defence": 1.227,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-295_fw",
+          "name": "SAG Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-295_am",
+          "name": "SAG Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-295_wg",
+          "name": "SAG Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-295_df",
+          "name": "SAG Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-311",
+      "attack": 0.869,
+      "defence": 1.237,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-311_fw",
+          "name": "ALB Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-311_am",
+          "name": "ALB Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-311_wg",
+          "name": "ALB Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-311_df",
+          "name": "ALB Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-316",
+      "attack": 0.806,
+      "defence": 0.943,
+      "cornersMean": 4.4,
+      "cornersSize": 8.0,
+      "cardsMean": 2.4,
+      "cardsSize": 6.72,
+      "players": [
+        {
+          "id": "fb-316_91864",
+          "name": "Y. Maejima",
+          "goalShare": 0.05,
+          "expectedMinutes": 80,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-316_115609",
+          "name": "T. Oka",
+          "goalShare": 0.05,
+          "expectedMinutes": 84,
+          "cardRate": 0.263,
+          "pos": "D"
+        },
+        {
+          "id": "fb-316_119661",
+          "name": "T. Miki",
+          "goalShare": 0.1,
+          "expectedMinutes": 85,
+          "cardRate": 0.118,
+          "pos": "M"
+        },
+        {
+          "id": "fb-316_415189",
+          "name": "M. Shigemi",
+          "goalShare": 0.05,
+          "expectedMinutes": 68,
+          "cardRate": 0.222,
+          "pos": "F"
+        },
+        {
+          "id": "fb-316_369188",
+          "name": "Y. Tsujioka",
+          "goalShare": 0.05,
+          "expectedMinutes": 77,
+          "cardRate": 0.188,
+          "pos": "D"
+        },
+        {
+          "id": "fb-316_433907",
+          "name": "S. Usui",
+          "goalShare": 0.25,
+          "expectedMinutes": 70,
+          "cardRate": 0.062,
+          "pos": "F"
+        },
+        {
+          "id": "fb-316_33620",
+          "name": "K. Fujita",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.083,
+          "pos": "G"
+        },
+        {
+          "id": "fb-316_33079",
+          "name": "S. Nago",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.333,
+          "pos": "F"
+        },
+        {
+          "id": "fb-316_455835",
+          "name": "Y. Hashimoto",
+          "goalShare": 0.2,
+          "expectedMinutes": 62,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-316_34060",
+          "name": "M. Tashiro",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.25,
+          "pos": "D"
+        },
+        {
+          "id": "fb-316_33594",
+          "name": "T. Kamijima",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.083,
+          "pos": "D"
+        },
+        {
+          "id": "fb-316_265656",
+          "name": "K. Fujimoto",
+          "goalShare": 0.05,
+          "expectedMinutes": 55,
+          "cardRate": 0.059,
+          "pos": "F"
+        },
+        {
+          "id": "fb-316_33942",
+          "name": "Y. Kitajima",
+          "goalShare": 0.0,
+          "expectedMinutes": 40,
+          "cardRate": 0.105,
+          "pos": "M"
+        },
+        {
+          "id": "fb-316_33313",
+          "name": "K. Okuno",
+          "goalShare": 0.0,
+          "expectedMinutes": 44,
+          "cardRate": 0.133,
+          "pos": "M"
+        },
+        {
+          "id": "fb-316_33356",
+          "name": "Y. Obata",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-316_32952",
+          "name": "T. Nara",
+          "goalShare": 0.0,
+          "expectedMinutes": 76,
+          "cardRate": 0.5,
+          "pos": "D"
+        },
+        {
+          "id": "fb-316_360326",
+          "name": "Y. Michiwaki",
+          "goalShare": 0.05,
+          "expectedMinutes": 30,
+          "cardRate": 0.154,
+          "pos": "F"
+        },
+        {
+          "id": "fb-316_519156",
+          "name": "S. Sato",
+          "goalShare": 0.0,
+          "expectedMinutes": 32,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "WLLDW",
+        "played": 20,
+        "goalsForAvg": 1.3,
+        "goalsAgainstAvg": 1.7,
+        "cleanSheetPct": 0.1,
+        "failedToScorePct": 0.25,
+        "mostUsedFormation": "3-4-2-1"
+      }
+    },
+    {
+      "teamId": "fb-279",
+      "attack": 0.917,
+      "defence": 1.202,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-279_fw",
+          "name": "CON Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-279_am",
+          "name": "CON Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-279_wg",
+          "name": "CON Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-279_df",
+          "name": "CON Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-284",
+      "attack": 0.924,
+      "defence": 1.201,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-284_fw",
+          "name": "SHO Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-284_am",
+          "name": "SHO Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-284_wg",
+          "name": "SHO Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-284_df",
+          "name": "SHO Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-294",
+      "attack": 1.182,
+      "defence": 1.164,
+      "cornersMean": 4.43,
+      "cornersSize": 9.15,
+      "cardsMean": 0.86,
+      "cardsSize": 3.71,
+      "players": [
+        {
+          "id": "fb-294_289882",
+          "name": "R. Yamahara",
+          "goalShare": 0.062,
+          "expectedMinutes": 89,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-294_356370",
+          "name": "S. Miura",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.05,
+          "pos": "D"
+        },
+        {
+          "id": "fb-294_32967",
+          "name": "Y. Wakizaka",
+          "goalShare": 0.312,
+          "expectedMinutes": 87,
+          "cardRate": 0.105,
+          "pos": "M"
+        },
+        {
+          "id": "fb-294_268141",
+          "name": "K. Tachibanada",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.05,
+          "pos": "M"
+        },
+        {
+          "id": "fb-294_381078",
+          "name": "Y. Matsunagane",
+          "goalShare": 0.062,
+          "expectedMinutes": 89,
+          "cardRate": 0.062,
+          "pos": "D"
+        },
+        {
+          "id": "fb-294_24918",
+          "name": "S. Brodersen",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-294_32885",
+          "name": "Y. Maruyama",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.067,
+          "pos": "D"
+        },
+        {
+          "id": "fb-294_199156",
+          "name": "Y. Yamamoto",
+          "goalShare": 0.062,
+          "expectedMinutes": 66,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-294_24878",
+          "name": "T. Ito",
+          "goalShare": 0.062,
+          "expectedMinutes": 62,
+          "cardRate": 0.105,
+          "pos": "M"
+        },
+        {
+          "id": "fb-294_10425",
+          "name": "Marcinho",
+          "goalShare": 0.062,
+          "expectedMinutes": 51,
+          "cardRate": 0.1,
+          "pos": "F"
+        },
+        {
+          "id": "fb-294_26729",
+          "name": "L. Romanić",
+          "goalShare": 0.125,
+          "expectedMinutes": 41,
+          "cardRate": 0.053,
+          "pos": "F"
+        },
+        {
+          "id": "fb-294_206964",
+          "name": "S. Kawahara",
+          "goalShare": 0.062,
+          "expectedMinutes": 41,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-294_353589",
+          "name": "H. Taniguchi",
+          "goalShare": 0.0,
+          "expectedMinutes": 85,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-294_206955",
+          "name": "T. Miyagi",
+          "goalShare": 0.0,
+          "expectedMinutes": 38,
+          "cardRate": 0.077,
+          "pos": "F"
+        },
+        {
+          "id": "fb-294_47017",
+          "name": "L. Yamaguchi",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-294_351498",
+          "name": "A. Sasaki",
+          "goalShare": 0.0,
+          "expectedMinutes": 62,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-294_32861",
+          "name": "K. Konno",
+          "goalShare": 0.0,
+          "expectedMinutes": 45,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-294_639507",
+          "name": "Ryuki Osa",
+          "goalShare": 0.0,
+          "expectedMinutes": 28,
+          "cardRate": 0.0,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "LWWLL",
+        "played": 20,
+        "goalsForAvg": 1.4,
+        "goalsAgainstAvg": 1.6,
+        "cleanSheetPct": 0.15,
+        "failedToScorePct": 0.35,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-291",
+      "attack": 1.107,
+      "defence": 1.053,
+      "cornersMean": 4.8,
+      "cornersSize": 15.22,
+      "cardsMean": 1.67,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-291_182008",
+          "name": "S. Tanaka",
+          "goalShare": 0.129,
+          "expectedMinutes": 86,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_109332",
+          "name": "R. Inoue",
+          "goalShare": 0.065,
+          "expectedMinutes": 86,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-291_2588",
+          "name": "Kosuke Nakamura",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.059,
+          "pos": "G"
+        },
+        {
+          "id": "fb-291_2591",
+          "name": "S. Hatanaka",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-291_65",
+          "name": "Dion-Johan Cools",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.158,
+          "pos": "D"
+        },
+        {
+          "id": "fb-291_291138",
+          "name": "M. Shibayama",
+          "goalShare": 0.032,
+          "expectedMinutes": 68,
+          "cardRate": 0.053,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_356714",
+          "name": "N. Ishiwatari",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.118,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_153274",
+          "name": "A. Ohata",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.294,
+          "pos": "D"
+        },
+        {
+          "id": "fb-291_33185",
+          "name": "M. Nakajima",
+          "goalShare": 0.0,
+          "expectedMinutes": 63,
+          "cardRate": 0.105,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_199882",
+          "name": "S. Sakuragawa",
+          "goalShare": 0.258,
+          "expectedMinutes": 60,
+          "cardRate": 0.05,
+          "pos": "F"
+        },
+        {
+          "id": "fb-291_288011",
+          "name": "Thiago Andrade",
+          "goalShare": 0.194,
+          "expectedMinutes": 62,
+          "cardRate": 0.158,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_417626",
+          "name": "Y. Yokoyama",
+          "goalShare": 0.129,
+          "expectedMinutes": 46,
+          "cardRate": 0.056,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_109274",
+          "name": "H. Okuda",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.077,
+          "pos": "D"
+        },
+        {
+          "id": "fb-291_1991",
+          "name": "S. Kagawa",
+          "goalShare": 0.032,
+          "expectedMinutes": 40,
+          "cardRate": 0.062,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_33636",
+          "name": "S. Homma",
+          "goalShare": 0.065,
+          "expectedMinutes": 37,
+          "cardRate": 0.2,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_403458",
+          "name": "R. Sakata",
+          "goalShare": 0.032,
+          "expectedMinutes": 50,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_33940",
+          "name": "H. Kida",
+          "goalShare": 0.0,
+          "expectedMinutes": 64,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-291_32953",
+          "name": "K. Noborizato",
+          "goalShare": 0.032,
+          "expectedMinutes": 46,
+          "cardRate": 0.0,
+          "pos": "D"
+        }
+      ],
+      "seasonStats": {
+        "form": "WWWDW",
+        "played": 20,
+        "goalsForAvg": 1.8,
+        "goalsAgainstAvg": 1.2,
+        "cleanSheetPct": 0.25,
+        "failedToScorePct": 0.15,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-292",
+      "attack": 1.008,
+      "defence": 0.978,
+      "cornersMean": 4.93,
+      "cornersSize": 9.61,
+      "cardsMean": 1.29,
+      "cardsSize": 10.03,
+      "players": [
+        {
+          "id": "fb-292_2593",
+          "name": "S. Muroya",
+          "goalShare": 0.138,
+          "expectedMinutes": 89,
+          "cardRate": 0.15,
+          "pos": "D"
+        },
+        {
+          "id": "fb-292_369768",
+          "name": "K. Sato",
+          "goalShare": 0.172,
+          "expectedMinutes": 78,
+          "cardRate": 0.05,
+          "pos": "M"
+        },
+        {
+          "id": "fb-292_15795",
+          "name": "A. Scholz",
+          "goalShare": 0.034,
+          "expectedMinutes": 89,
+          "cardRate": 0.118,
+          "pos": "D"
+        },
+        {
+          "id": "fb-292_115608",
+          "name": "Kyota Tokiwa",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.05,
+          "pos": "M"
+        },
+        {
+          "id": "fb-292_422380",
+          "name": "H. Inamura",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.059,
+          "pos": "D"
+        },
+        {
+          "id": "fb-292_2892",
+          "name": "Kim Seung-Gyu",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-292_410840",
+          "name": "R. Sato",
+          "goalShare": 0.207,
+          "expectedMinutes": 69,
+          "cardRate": 0.105,
+          "pos": "M"
+        },
+        {
+          "id": "fb-292_288013",
+          "name": "Marcelo Ryan",
+          "goalShare": 0.207,
+          "expectedMinutes": 69,
+          "cardRate": 0.111,
+          "pos": "F"
+        },
+        {
+          "id": "fb-292_2599",
+          "name": "K. Hashimoto",
+          "goalShare": 0.0,
+          "expectedMinutes": 72,
+          "cardRate": 0.235,
+          "pos": "M"
+        },
+        {
+          "id": "fb-292_265828",
+          "name": "K. Hashimoto",
+          "goalShare": 0.0,
+          "expectedMinutes": 64,
+          "cardRate": 0.105,
+          "pos": "D"
+        },
+        {
+          "id": "fb-292_33017",
+          "name": "K. Endo",
+          "goalShare": 0.103,
+          "expectedMinutes": 59,
+          "cardRate": 0.15,
+          "pos": "M"
+        },
+        {
+          "id": "fb-292_317334",
+          "name": "M. Nagakura",
+          "goalShare": 0.069,
+          "expectedMinutes": 76,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-292_109383",
+          "name": "R. Omori",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.286,
+          "pos": "D"
+        },
+        {
+          "id": "fb-292_440",
+          "name": "Y. Nagatomo",
+          "goalShare": 0.0,
+          "expectedMinutes": 63,
+          "cardRate": 0.125,
+          "pos": "D"
+        },
+        {
+          "id": "fb-292_33310",
+          "name": "T. Ko",
+          "goalShare": 0.0,
+          "expectedMinutes": 51,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-292_33608",
+          "name": "K. Koizumi",
+          "goalShare": 0.0,
+          "expectedMinutes": 42,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-292_33027",
+          "name": "T. Nakagawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 24,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-292_354517",
+          "name": "H. Tanaka",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        }
+      ],
+      "seasonStats": {
+        "form": "WWLDL",
+        "played": 20,
+        "goalsForAvg": 1.8,
+        "goalsAgainstAvg": 1.2,
+        "cleanSheetPct": 0.2,
+        "failedToScorePct": 0.25,
+        "mostUsedFormation": "4-4-2"
+      }
+    },
+    {
+      "teamId": "fb-303",
+      "attack": 1.032,
+      "defence": 0.867,
+      "cornersMean": 4.31,
+      "cornersSize": 9.65,
+      "cardsMean": 1.38,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-303_33294",
+          "name": "K. Tani",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-303_2596",
+          "name": "G. Shōji",
+          "goalShare": 0.037,
+          "expectedMinutes": 82,
+          "cardRate": 0.158,
+          "pos": "D"
+        },
+        {
+          "id": "fb-303_109315",
+          "name": "D. Okamura",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.235,
+          "pos": "D"
+        },
+        {
+          "id": "fb-303_36920",
+          "name": "Y. Nakayama",
+          "goalShare": 0.074,
+          "expectedMinutes": 84,
+          "cardRate": 0.059,
+          "pos": "M"
+        },
+        {
+          "id": "fb-303_153268",
+          "name": "H. Nakamura",
+          "goalShare": 0.037,
+          "expectedMinutes": 82,
+          "cardRate": 0.118,
+          "pos": "M"
+        },
+        {
+          "id": "fb-303_403473",
+          "name": "K. Hayashi",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-303_10074",
+          "name": "Erik",
+          "goalShare": 0.296,
+          "expectedMinutes": 65,
+          "cardRate": 0.222,
+          "pos": "F"
+        },
+        {
+          "id": "fb-303_33432",
+          "name": "H. Mae",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.25,
+          "pos": "M"
+        },
+        {
+          "id": "fb-303_111266",
+          "name": "N. Lavi",
+          "goalShare": 0.0,
+          "expectedMinutes": 72,
+          "cardRate": 0.143,
+          "pos": "M"
+        },
+        {
+          "id": "fb-303_2908",
+          "name": "Na Sang-Ho",
+          "goalShare": 0.111,
+          "expectedMinutes": 54,
+          "cardRate": 0.056,
+          "pos": "F"
+        },
+        {
+          "id": "fb-303_296645",
+          "name": "T. Yengi",
+          "goalShare": 0.111,
+          "expectedMinutes": 64,
+          "cardRate": 0.067,
+          "pos": "F"
+        },
+        {
+          "id": "fb-303_32902",
+          "name": "Y. Soma",
+          "goalShare": 0.148,
+          "expectedMinutes": 83,
+          "cardRate": 0.091,
+          "pos": "F"
+        },
+        {
+          "id": "fb-303_36969",
+          "name": "I. Drešević",
+          "goalShare": 0.037,
+          "expectedMinutes": 64,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-303_33088",
+          "name": "R. Shirasaki",
+          "goalShare": 0.0,
+          "expectedMinutes": 57,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-303_109400",
+          "name": "S. Fujio",
+          "goalShare": 0.037,
+          "expectedMinutes": 36,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-303_455193",
+          "name": "H. Mochizuki",
+          "goalShare": 0.037,
+          "expectedMinutes": 60,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-303_639200",
+          "name": "Futa Tokumura",
+          "goalShare": 0.0,
+          "expectedMinutes": 52,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-303_33582",
+          "name": "K. Sento",
+          "goalShare": 0.0,
+          "expectedMinutes": 35,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "WLWDW",
+        "played": 20,
+        "goalsForAvg": 1.6,
+        "goalsAgainstAvg": 1.3,
+        "cleanSheetPct": 0.35,
+        "failedToScorePct": 0.1,
+        "mostUsedFormation": "3-4-2-1"
+      }
+    },
+    {
+      "teamId": "fb-293",
+      "attack": 1.094,
+      "defence": 1.017,
+      "cornersMean": 4.53,
+      "cornersSize": 20.17,
+      "cardsMean": 1.33,
+      "cardsSize": 1.96,
+      "players": [
+        {
+          "id": "fb-293_32886",
+          "name": "S. Nakatani",
+          "goalShare": 0.034,
+          "expectedMinutes": 90,
+          "cardRate": 0.053,
+          "pos": "D"
+        },
+        {
+          "id": "fb-293_2592",
+          "name": "G. Miura",
+          "goalShare": 0.034,
+          "expectedMinutes": 88,
+          "cardRate": 0.062,
+          "pos": "D"
+        },
+        {
+          "id": "fb-293_199795",
+          "name": "R. Yamashita",
+          "goalShare": 0.034,
+          "expectedMinutes": 73,
+          "cardRate": 0.056,
+          "pos": "M"
+        },
+        {
+          "id": "fb-293_33242",
+          "name": "R. Hatsuse",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.062,
+          "pos": "D"
+        },
+        {
+          "id": "fb-293_48077",
+          "name": "D. Hümmet",
+          "goalShare": 0.276,
+          "expectedMinutes": 70,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-293_319012",
+          "name": "R. Mito",
+          "goalShare": 0.034,
+          "expectedMinutes": 72,
+          "cardRate": 0.062,
+          "pos": "M"
+        },
+        {
+          "id": "fb-293_2587",
+          "name": "M. Higashiguchi",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-293_33710",
+          "name": "T. Suzuki",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.071,
+          "pos": "M"
+        },
+        {
+          "id": "fb-293_33714",
+          "name": "T. Kishimoto",
+          "goalShare": 0.034,
+          "expectedMinutes": 78,
+          "cardRate": 0.25,
+          "pos": "D"
+        },
+        {
+          "id": "fb-293_73856",
+          "name": "S. Abe",
+          "goalShare": 0.0,
+          "expectedMinutes": 65,
+          "cardRate": 0.143,
+          "pos": "M"
+        },
+        {
+          "id": "fb-293_367572",
+          "name": "H. Minamino",
+          "goalShare": 0.207,
+          "expectedMinutes": 48,
+          "cardRate": 0.059,
+          "pos": "F"
+        },
+        {
+          "id": "fb-293_33320",
+          "name": "R. Meshino",
+          "goalShare": 0.069,
+          "expectedMinutes": 48,
+          "cardRate": 0.133,
+          "pos": "F"
+        },
+        {
+          "id": "fb-293_44497",
+          "name": "I. Jebali",
+          "goalShare": 0.034,
+          "expectedMinutes": 62,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-293_64280",
+          "name": "R. Handa",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.1,
+          "pos": "D"
+        },
+        {
+          "id": "fb-293_423786",
+          "name": "R. Araki",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-293_33496",
+          "name": "K. Okunuki",
+          "goalShare": 0.034,
+          "expectedMinutes": 43,
+          "cardRate": 0.071,
+          "pos": "M"
+        },
+        {
+          "id": "fb-293_166701",
+          "name": "Welton Felipe",
+          "goalShare": 0.034,
+          "expectedMinutes": 46,
+          "cardRate": 0.091,
+          "pos": "F"
+        },
+        {
+          "id": "fb-293_628022",
+          "name": "Ginjiro Ikegaya",
+          "goalShare": 0.0,
+          "expectedMinutes": 62,
+          "cardRate": 0.0,
+          "pos": "D"
+        }
+      ],
+      "seasonStats": {
+        "form": "LLWDW",
+        "played": 20,
+        "goalsForAvg": 1.8,
+        "goalsAgainstAvg": 1.4,
+        "cleanSheetPct": 0.15,
+        "failedToScorePct": 0.2,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-281",
+      "attack": 1.04,
+      "defence": 0.949,
+      "cornersMean": 5.43,
+      "cornersSize": 29.8,
+      "cardsMean": 1.0,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-281_33595",
+          "name": "T. Koga",
+          "goalShare": 0.04,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-281_507610",
+          "name": "N. Nakagawa",
+          "goalShare": 0.08,
+          "expectedMinutes": 87,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-281_33672",
+          "name": "Y. Koizumi",
+          "goalShare": 0.12,
+          "expectedMinutes": 81,
+          "cardRate": 0.158,
+          "pos": "F"
+        },
+        {
+          "id": "fb-281_32910",
+          "name": "R. Kojima",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-281_318654",
+          "name": "T. Kubo",
+          "goalShare": 0.08,
+          "expectedMinutes": 82,
+          "cardRate": 0.059,
+          "pos": "M"
+        },
+        {
+          "id": "fb-281_33393",
+          "name": "H. Mitsumaru",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-281_33131",
+          "name": "D. Sugioka",
+          "goalShare": 0.04,
+          "expectedMinutes": 63,
+          "cardRate": 0.059,
+          "pos": "D"
+        },
+        {
+          "id": "fb-281_33615",
+          "name": "M. Hosoya",
+          "goalShare": 0.12,
+          "expectedMinutes": 52,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-281_206933",
+          "name": "W. Harada",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.154,
+          "pos": "D"
+        },
+        {
+          "id": "fb-281_552647",
+          "name": "Y. Yamanouchi",
+          "goalShare": 0.0,
+          "expectedMinutes": 58,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-281_33705",
+          "name": "Y. Konishi",
+          "goalShare": 0.0,
+          "expectedMinutes": 65,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-281_33610",
+          "name": "Y. Segawa",
+          "goalShare": 0.16,
+          "expectedMinutes": 44,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-281_304912",
+          "name": "Y. Komi",
+          "goalShare": 0.12,
+          "expectedMinutes": 61,
+          "cardRate": 0.071,
+          "pos": "M"
+        },
+        {
+          "id": "fb-281_33555",
+          "name": "Y. Kakita",
+          "goalShare": 0.12,
+          "expectedMinutes": 45,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-281_370130",
+          "name": "H. Yamauchi",
+          "goalShare": 0.04,
+          "expectedMinutes": 43,
+          "cardRate": 0.133,
+          "pos": "M"
+        },
+        {
+          "id": "fb-281_199913",
+          "name": "S. Baba",
+          "goalShare": 0.0,
+          "expectedMinutes": 43,
+          "cardRate": 0.077,
+          "pos": "D"
+        },
+        {
+          "id": "fb-281_33115",
+          "name": "K. Yuruki",
+          "goalShare": 0.04,
+          "expectedMinutes": 53,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-281_33642",
+          "name": "S. Toshima",
+          "goalShare": 0.0,
+          "expectedMinutes": 49,
+          "cardRate": 0.125,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "WWWWL",
+        "played": 20,
+        "goalsForAvg": 1.4,
+        "goalsAgainstAvg": 1.4,
+        "cleanSheetPct": 0.25,
+        "failedToScorePct": 0.4,
+        "mostUsedFormation": "3-4-2-1"
+      }
+    },
+    {
+      "teamId": "fb-302",
+      "attack": 1.035,
+      "defence": 1.046,
+      "cornersMean": 5.31,
+      "cornersSize": 8.0,
+      "cardsMean": 2.69,
+      "cardsSize": 8.31,
+      "players": [
+        {
+          "id": "fb-302_32920",
+          "name": "Y. Suzuki",
+          "goalShare": 0.045,
+          "expectedMinutes": 90,
+          "cardRate": 0.1,
+          "pos": "D"
+        },
+        {
+          "id": "fb-302_91871",
+          "name": "G. Ota",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-302_270984",
+          "name": "João Pedro",
+          "goalShare": 0.136,
+          "expectedMinutes": 85,
+          "cardRate": 0.444,
+          "pos": "M"
+        },
+        {
+          "id": "fb-302_518452",
+          "name": "S. Yoon",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-302_281380",
+          "name": "H. Sugai",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.222,
+          "pos": "D"
+        },
+        {
+          "id": "fb-302_351532",
+          "name": "K. Sato",
+          "goalShare": 0.045,
+          "expectedMinutes": 70,
+          "cardRate": 0.053,
+          "pos": "D"
+        },
+        {
+          "id": "fb-302_9704",
+          "name": "Henrique Trevisan",
+          "goalShare": 0.091,
+          "expectedMinutes": 78,
+          "cardRate": 0.4,
+          "pos": "D"
+        },
+        {
+          "id": "fb-302_9896",
+          "name": "Rafael Elias",
+          "goalShare": 0.273,
+          "expectedMinutes": 73,
+          "cardRate": 0.2,
+          "pos": "F"
+        },
+        {
+          "id": "fb-302_80315",
+          "name": "Marco Túlio",
+          "goalShare": 0.227,
+          "expectedMinutes": 84,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-302_225085",
+          "name": "S. Fukuda",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.154,
+          "pos": "D"
+        },
+        {
+          "id": "fb-302_24968",
+          "name": "M. Okugawa",
+          "goalShare": 0.045,
+          "expectedMinutes": 48,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-302_325727",
+          "name": "H. Arai",
+          "goalShare": 0.091,
+          "expectedMinutes": 52,
+          "cardRate": 0.188,
+          "pos": "F"
+        },
+        {
+          "id": "fb-302_33137",
+          "name": "T. Matsuda",
+          "goalShare": 0.0,
+          "expectedMinutes": 57,
+          "cardRate": 0.143,
+          "pos": "M"
+        },
+        {
+          "id": "fb-302_410014",
+          "name": "R. Nakano",
+          "goalShare": 0.0,
+          "expectedMinutes": 42,
+          "cardRate": 0.071,
+          "pos": "M"
+        },
+        {
+          "id": "fb-302_304790",
+          "name": "T. Hiraoka",
+          "goalShare": 0.0,
+          "expectedMinutes": 39,
+          "cardRate": 0.154,
+          "pos": "M"
+        },
+        {
+          "id": "fb-302_33400",
+          "name": "F. Honda",
+          "goalShare": 0.0,
+          "expectedMinutes": 37,
+          "cardRate": 0.077,
+          "pos": "M"
+        },
+        {
+          "id": "fb-302_226301",
+          "name": "H. Tawiah",
+          "goalShare": 0.0,
+          "expectedMinutes": 69,
+          "cardRate": 0.286,
+          "pos": "D"
+        },
+        {
+          "id": "fb-302_33076",
+          "name": "T. Hirato",
+          "goalShare": 0.0,
+          "expectedMinutes": 40,
+          "cardRate": 0.182,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "LLWLW",
+        "played": 20,
+        "goalsForAvg": 1.3,
+        "goalsAgainstAvg": 1.7,
+        "cleanSheetPct": 0.15,
+        "failedToScorePct": 0.3,
+        "mostUsedFormation": "4-3-3"
+      }
+    },
+    {
+      "teamId": "fb-306",
+      "attack": 0.816,
+      "defence": 1.01,
+      "cornersMean": 4.15,
+      "cornersSize": 8.68,
+      "cardsMean": 1.31,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-306_33799",
+          "name": "K. Morita",
+          "goalShare": 0.053,
+          "expectedMinutes": 84,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-306_153277",
+          "name": "K. Suzuki",
+          "goalShare": 0.0,
+          "expectedMinutes": 87,
+          "cardRate": 0.053,
+          "pos": "D"
+        },
+        {
+          "id": "fb-306_32860",
+          "name": "R. Hirakawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-306_197974",
+          "name": "I. Someno",
+          "goalShare": 0.211,
+          "expectedMinutes": 83,
+          "cardRate": 0.222,
+          "pos": "F"
+        },
+        {
+          "id": "fb-306_282282",
+          "name": "D. Fukazawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-306_404357",
+          "name": "R. Inoue",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.056,
+          "pos": "D"
+        },
+        {
+          "id": "fb-306_109385",
+          "name": "Y. Nagasawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 87,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-306_32898",
+          "name": "K. Miyahara",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.2,
+          "pos": "D"
+        },
+        {
+          "id": "fb-306_425765",
+          "name": "Y. Arai",
+          "goalShare": 0.053,
+          "expectedMinutes": 51,
+          "cardRate": 0.235,
+          "pos": "M"
+        },
+        {
+          "id": "fb-306_199915",
+          "name": "Y. Matsuhashi",
+          "goalShare": 0.053,
+          "expectedMinutes": 50,
+          "cardRate": 0.059,
+          "pos": "F"
+        },
+        {
+          "id": "fb-306_33839",
+          "name": "K. Saito",
+          "goalShare": 0.053,
+          "expectedMinutes": 45,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-306_304783",
+          "name": "N. Hayashi",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-306_507700",
+          "name": "Y. Uchida",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.273,
+          "pos": "M"
+        },
+        {
+          "id": "fb-306_33308",
+          "name": "Y. Fukuda",
+          "goalShare": 0.158,
+          "expectedMinutes": 57,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-306_80392",
+          "name": "Matheus Vidotto",
+          "goalShare": 0.0,
+          "expectedMinutes": 85,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-306_385243",
+          "name": "T. Yoshida",
+          "goalShare": 0.211,
+          "expectedMinutes": 47,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-306_422684",
+          "name": "R. Shirai",
+          "goalShare": 0.053,
+          "expectedMinutes": 36,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-306_409625",
+          "name": "I. Kumatoriya",
+          "goalShare": 0.053,
+          "expectedMinutes": 42,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "LWLDL",
+        "played": 20,
+        "goalsForAvg": 1.3,
+        "goalsAgainstAvg": 1.6,
+        "cleanSheetPct": 0.25,
+        "failedToScorePct": 0.25,
+        "mostUsedFormation": "3-4-2-1"
+      }
+    },
+    {
+      "teamId": "fb-296",
+      "attack": 1.104,
+      "defence": 1.106,
+      "cornersMean": 4.21,
+      "cornersSize": 8.0,
+      "cardsMean": 0.93,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-296_351542",
+          "name": "R. Yamane",
+          "goalShare": 0.062,
+          "expectedMinutes": 87,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-296_353587",
+          "name": "R. Kato",
+          "goalShare": 0.031,
+          "expectedMinutes": 87,
+          "cardRate": 0.05,
+          "pos": "D"
+        },
+        {
+          "id": "fb-296_457157",
+          "name": "T. Inoue",
+          "goalShare": 0.062,
+          "expectedMinutes": 85,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-296_352457",
+          "name": "K. Tanimura",
+          "goalShare": 0.312,
+          "expectedMinutes": 78,
+          "cardRate": 0.105,
+          "pos": "F"
+        },
+        {
+          "id": "fb-296_13209",
+          "name": "J. Quiñónes",
+          "goalShare": 0.031,
+          "expectedMinutes": 79,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-296_33804",
+          "name": "K. Watanabe",
+          "goalShare": 0.031,
+          "expectedMinutes": 77,
+          "cardRate": 0.059,
+          "pos": "M"
+        },
+        {
+          "id": "fb-296_38777",
+          "name": "J. Croux",
+          "goalShare": 0.031,
+          "expectedMinutes": 60,
+          "cardRate": 0.05,
+          "pos": "M"
+        },
+        {
+          "id": "fb-296_284784",
+          "name": "R. Tsunoda",
+          "goalShare": 0.0,
+          "expectedMinutes": 87,
+          "cardRate": 0.077,
+          "pos": "D"
+        },
+        {
+          "id": "fb-296_33016",
+          "name": "J. Amano",
+          "goalShare": 0.188,
+          "expectedMinutes": 58,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-296_33004",
+          "name": "Park Il-Gyu",
+          "goalShare": 0.0,
+          "expectedMinutes": 78,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-296_318365",
+          "name": "T. Kondo",
+          "goalShare": 0.031,
+          "expectedMinutes": 48,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-296_41686",
+          "name": "Yuri Araújo",
+          "goalShare": 0.094,
+          "expectedMinutes": 61,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-296_369476",
+          "name": "R. Kimura",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-296_146585",
+          "name": "D. Tono",
+          "goalShare": 0.094,
+          "expectedMinutes": 67,
+          "cardRate": 0.143,
+          "pos": "M"
+        },
+        {
+          "id": "fb-296_24939",
+          "name": "R. Miyaichi",
+          "goalShare": 0.0,
+          "expectedMinutes": 33,
+          "cardRate": 0.071,
+          "pos": "M"
+        },
+        {
+          "id": "fb-296_369713",
+          "name": "K. Suwama",
+          "goalShare": 0.0,
+          "expectedMinutes": 64,
+          "cardRate": 0.143,
+          "pos": "D"
+        },
+        {
+          "id": "fb-296_529335",
+          "name": "S. Kanta",
+          "goalShare": 0.0,
+          "expectedMinutes": 58,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-296_403477",
+          "name": "T. Kimura",
+          "goalShare": 0.0,
+          "expectedMinutes": 40,
+          "cardRate": 0.1,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "LLWDW",
+        "played": 20,
+        "goalsForAvg": 1.6,
+        "goalsAgainstAvg": 1.6,
+        "cleanSheetPct": 0.2,
+        "failedToScorePct": 0.35,
+        "mostUsedFormation": null
+      }
+    },
+    {
+      "teamId": "fb-307",
+      "attack": 0.78,
+      "defence": 1.029,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-307_fw",
+          "name": "YOK Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-307_am",
+          "name": "YOK Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-307_wg",
+          "name": "YOK Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-307_df",
+          "name": "YOK Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-310",
+      "attack": 0.91,
+      "defence": 1.015,
+      "cornersMean": 5.29,
+      "cornersSize": 6.97,
+      "cardsMean": 1.43,
+      "cardsSize": 30.95,
+      "players": [
+        {
+          "id": "fb-310_33337",
+          "name": "Y. Tatsuta",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-310_33605",
+          "name": "A. Esaka",
+          "goalShare": 0.115,
+          "expectedMinutes": 78,
+          "cardRate": 0.05,
+          "pos": "F"
+        },
+        {
+          "id": "fb-310_352453",
+          "name": "E. Miyamoto",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-310_32992",
+          "name": "K. Shirai",
+          "goalShare": 0.077,
+          "expectedMinutes": 74,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-310_33192",
+          "name": "T. Yamane",
+          "goalShare": 0.077,
+          "expectedMinutes": 69,
+          "cardRate": 0.111,
+          "pos": "M"
+        },
+        {
+          "id": "fb-310_304791",
+          "name": "H. Omori",
+          "goalShare": 0.038,
+          "expectedMinutes": 87,
+          "cardRate": 0.286,
+          "pos": "D"
+        },
+        {
+          "id": "fb-310_546899",
+          "name": "K. Ogura",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.188,
+          "pos": "M"
+        },
+        {
+          "id": "fb-310_24838",
+          "name": "L. Moser",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-310_550711",
+          "name": "T. Kimura",
+          "goalShare": 0.115,
+          "expectedMinutes": 57,
+          "cardRate": 0.111,
+          "pos": "F"
+        },
+        {
+          "id": "fb-310_27076",
+          "name": "Lucao",
+          "goalShare": 0.077,
+          "expectedMinutes": 50,
+          "cardRate": 0.056,
+          "pos": "F"
+        },
+        {
+          "id": "fb-310_33602",
+          "name": "D. Tagami",
+          "goalShare": 0.038,
+          "expectedMinutes": 82,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-310_33276",
+          "name": "M. Matsumoto",
+          "goalShare": 0.077,
+          "expectedMinutes": 47,
+          "cardRate": 0.062,
+          "pos": "M"
+        },
+        {
+          "id": "fb-310_353582",
+          "name": "T. Hamada",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-310_67875",
+          "name": "Y. Suzuki",
+          "goalShare": 0.038,
+          "expectedMinutes": 80,
+          "cardRate": 0.222,
+          "pos": "D"
+        },
+        {
+          "id": "fb-310_309809",
+          "name": "K. Kudo",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.125,
+          "pos": "D"
+        },
+        {
+          "id": "fb-310_318170",
+          "name": "Werik Popó",
+          "goalShare": 0.115,
+          "expectedMinutes": 39,
+          "cardRate": 0.067,
+          "pos": "F"
+        },
+        {
+          "id": "fb-310_33588",
+          "name": "K. Ichimi",
+          "goalShare": 0.0,
+          "expectedMinutes": 42,
+          "cardRate": 0.143,
+          "pos": "F"
+        },
+        {
+          "id": "fb-310_153323",
+          "name": "K. Kawano",
+          "goalShare": 0.077,
+          "expectedMinutes": 34,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "WWLDW",
+        "played": 20,
+        "goalsForAvg": 1.5,
+        "goalsAgainstAvg": 1.5,
+        "cleanSheetPct": 0.3,
+        "failedToScorePct": 0.05,
+        "mostUsedFormation": "3-4-2-1"
+      }
+    },
+    {
+      "teamId": "fb-283",
+      "attack": 0.876,
+      "defence": 1.055,
+      "cornersMean": 4.73,
+      "cornersSize": 10.94,
+      "cardsMean": 1.0,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-283_99186",
+          "name": "Oh Se-Hun",
+          "goalShare": 0.389,
+          "expectedMinutes": 86,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-283_199891",
+          "name": "J. Sumiyoshi",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.333,
+          "pos": "D"
+        },
+        {
+          "id": "fb-283_32888",
+          "name": "Y. Yoshida",
+          "goalShare": 0.056,
+          "expectedMinutes": 78,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-283_33328",
+          "name": "T. Umeda",
+          "goalShare": 0.0,
+          "expectedMinutes": 87,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-283_351084",
+          "name": "Z. Uno",
+          "goalShare": 0.056,
+          "expectedMinutes": 67,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-283_33562",
+          "name": "Y. Honda",
+          "goalShare": 0.0,
+          "expectedMinutes": 73,
+          "cardRate": 0.067,
+          "pos": "D"
+        },
+        {
+          "id": "fb-283_9617",
+          "name": "Capixaba",
+          "goalShare": 0.056,
+          "expectedMinutes": 70,
+          "cardRate": 0.071,
+          "pos": "F"
+        },
+        {
+          "id": "fb-283_119269",
+          "name": "Mateus Brunetti",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.083,
+          "pos": "D"
+        },
+        {
+          "id": "fb-283_33821",
+          "name": "K. Kitazume",
+          "goalShare": 0.056,
+          "expectedMinutes": 67,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-283_32926",
+          "name": "K. Kozuka",
+          "goalShare": 0.056,
+          "expectedMinutes": 53,
+          "cardRate": 0.176,
+          "pos": "M"
+        },
+        {
+          "id": "fb-283_495502",
+          "name": "Y. Shimamoto",
+          "goalShare": 0.167,
+          "expectedMinutes": 69,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-283_146509",
+          "name": "Park Seung-Wook",
+          "goalShare": 0.0,
+          "expectedMinutes": 71,
+          "cardRate": 0.091,
+          "pos": "D"
+        },
+        {
+          "id": "fb-283_33354",
+          "name": "K. Kitagawa",
+          "goalShare": 0.111,
+          "expectedMinutes": 74,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-283_33061",
+          "name": "Y. Oki",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-283_351019",
+          "name": "K. Chiba",
+          "goalShare": 0.0,
+          "expectedMinutes": 39,
+          "cardRate": 0.067,
+          "pos": "F"
+        },
+        {
+          "id": "fb-283_206967",
+          "name": "T. Takahashi",
+          "goalShare": 0.0,
+          "expectedMinutes": 37,
+          "cardRate": 0.133,
+          "pos": "F"
+        },
+        {
+          "id": "fb-283_199845",
+          "name": "K. Matsuzaki",
+          "goalShare": 0.0,
+          "expectedMinutes": 45,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-283_143657",
+          "name": "O. Badamassi",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.125,
+          "pos": "D"
+        }
+      ],
+      "seasonStats": {
+        "form": "WLLDL",
+        "played": 20,
+        "goalsForAvg": 1.2,
+        "goalsAgainstAvg": 1.5,
+        "cleanSheetPct": 0.1,
+        "failedToScorePct": 0.3,
+        "mostUsedFormation": "4-3-3"
+      }
+    },
+    {
+      "teamId": "fb-285",
+      "attack": 0.891,
+      "defence": 1.135,
+      "cornersMean": 3.93,
+      "cornersSize": 3.73,
+      "cardsMean": 1.14,
+      "cardsSize": 3.5,
+      "players": [
+        {
+          "id": "fb-285_2606",
+          "name": "H. Yamaguchi",
+          "goalShare": 0.045,
+          "expectedMinutes": 85,
+          "cardRate": 0.05,
+          "pos": "M"
+        },
+        {
+          "id": "fb-285_201060",
+          "name": "M. Hasegawa",
+          "goalShare": 0.045,
+          "expectedMinutes": 78,
+          "cardRate": 0.105,
+          "pos": "F"
+        },
+        {
+          "id": "fb-285_33771",
+          "name": "H. Onaga",
+          "goalShare": 0.0,
+          "expectedMinutes": 73,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-285_33533",
+          "name": "M. Goto",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-285_33775",
+          "name": "S. Yoneda",
+          "goalShare": 0.0,
+          "expectedMinutes": 71,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-285_9396",
+          "name": "Matheus Jesus",
+          "goalShare": 0.318,
+          "expectedMinutes": 75,
+          "cardRate": 0.056,
+          "pos": "M"
+        },
+        {
+          "id": "fb-285_33755",
+          "name": "Y. Egawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 81,
+          "cardRate": 0.083,
+          "pos": "D"
+        },
+        {
+          "id": "fb-285_41218",
+          "name": "Thiago Santana",
+          "goalShare": 0.273,
+          "expectedMinutes": 64,
+          "cardRate": 0.2,
+          "pos": "F"
+        },
+        {
+          "id": "fb-285_201068",
+          "name": "M. Sekiguchi",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-285_33197",
+          "name": "Eduardo",
+          "goalShare": 0.045,
+          "expectedMinutes": 69,
+          "cardRate": 0.077,
+          "pos": "D"
+        },
+        {
+          "id": "fb-285_33364",
+          "name": "H. Teruyama",
+          "goalShare": 0.0,
+          "expectedMinutes": 63,
+          "cardRate": 0.077,
+          "pos": "D"
+        },
+        {
+          "id": "fb-285_9987",
+          "name": "Diego Pituca",
+          "goalShare": 0.0,
+          "expectedMinutes": 45,
+          "cardRate": 0.176,
+          "pos": "M"
+        },
+        {
+          "id": "fb-285_106843",
+          "name": "R. Yamada",
+          "goalShare": 0.0,
+          "expectedMinutes": 61,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-285_32980",
+          "name": "R. Shindo",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.25,
+          "pos": "D"
+        },
+        {
+          "id": "fb-285_32621",
+          "name": "N. Campbell",
+          "goalShare": 0.091,
+          "expectedMinutes": 42,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-285_32998",
+          "name": "Y. Iwasaki",
+          "goalShare": 0.045,
+          "expectedMinutes": 50,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-285_488416",
+          "name": "T. Matsumoto",
+          "goalShare": 0.0,
+          "expectedMinutes": 44,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-285_33153",
+          "name": "R. Yamasaki",
+          "goalShare": 0.091,
+          "expectedMinutes": 28,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "LWLWW",
+        "played": 20,
+        "goalsForAvg": 1.2,
+        "goalsAgainstAvg": 1.5,
+        "cleanSheetPct": 0.25,
+        "failedToScorePct": 0.25,
+        "mostUsedFormation": "3-4-2-1"
+      }
+    },
+    {
+      "teamId": "fb-301",
+      "attack": 0.89,
+      "defence": 1.24,
+      "cornersMean": 4.64,
+      "cornersSize": 6.25,
+      "cardsMean": 1.5,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-301_109379",
+          "name": "T. Kawano",
+          "goalShare": 0.0,
+          "expectedMinutes": 89,
+          "cardRate": 0.105,
+          "pos": "D"
+        },
+        {
+          "id": "fb-301_33464",
+          "name": "I. Takahashi",
+          "goalShare": 0.048,
+          "expectedMinutes": 90,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-301_33991",
+          "name": "T. Mae",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-301_33979",
+          "name": "D. Ishikawa",
+          "goalShare": 0.143,
+          "expectedMinutes": 80,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-301_199300",
+          "name": "T. Tsukui",
+          "goalShare": 0.095,
+          "expectedMinutes": 70,
+          "cardRate": 0.053,
+          "pos": "M"
+        },
+        {
+          "id": "fb-301_130228",
+          "name": "Z. Issaka",
+          "goalShare": 0.048,
+          "expectedMinutes": 64,
+          "cardRate": 0.105,
+          "pos": "M"
+        },
+        {
+          "id": "fb-301_417568",
+          "name": "R. Kuboniwa",
+          "goalShare": 0.048,
+          "expectedMinutes": 83,
+          "cardRate": 0.214,
+          "pos": "D"
+        },
+        {
+          "id": "fb-301_352446",
+          "name": "M. Hidaka",
+          "goalShare": 0.095,
+          "expectedMinutes": 76,
+          "cardRate": 0.067,
+          "pos": "D"
+        },
+        {
+          "id": "fb-301_33607",
+          "name": "Y. Kobayashi",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.143,
+          "pos": "M"
+        },
+        {
+          "id": "fb-301_33776",
+          "name": "H. Goya",
+          "goalShare": 0.238,
+          "expectedMinutes": 48,
+          "cardRate": 0.105,
+          "pos": "F"
+        },
+        {
+          "id": "fb-301_33560",
+          "name": "T. Wakahara",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-301_555884",
+          "name": "J. Suarez",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-301_604393",
+          "name": "M. Himeno",
+          "goalShare": 0.048,
+          "expectedMinutes": 41,
+          "cardRate": 0.111,
+          "pos": "M"
+        },
+        {
+          "id": "fb-301_48414",
+          "name": "Carlinhos Júnior",
+          "goalShare": 0.095,
+          "expectedMinutes": 60,
+          "cardRate": 0.167,
+          "pos": "F"
+        },
+        {
+          "id": "fb-301_54359",
+          "name": "Dudu",
+          "goalShare": 0.0,
+          "expectedMinutes": 51,
+          "cardRate": 0.091,
+          "pos": "M"
+        },
+        {
+          "id": "fb-301_33251",
+          "name": "T. Yasui",
+          "goalShare": 0.095,
+          "expectedMinutes": 42,
+          "cardRate": 0.091,
+          "pos": "M"
+        },
+        {
+          "id": "fb-301_33103",
+          "name": "D. Suzuki",
+          "goalShare": 0.0,
+          "expectedMinutes": 78,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-301_33862",
+          "name": "K. Toriumi",
+          "goalShare": 0.0,
+          "expectedMinutes": 76,
+          "cardRate": 0.2,
+          "pos": "D"
+        }
+      ],
+      "seasonStats": {
+        "form": "LLLDL",
+        "played": 20,
+        "goalsForAvg": 1.1,
+        "goalsAgainstAvg": 1.9,
+        "cleanSheetPct": 0.05,
+        "failedToScorePct": 0.35,
+        "mostUsedFormation": "4-4-2"
+      }
+    },
+    {
+      "teamId": "fb-305",
+      "attack": 0.858,
+      "defence": 1.255,
+      "cornersMean": 4.0,
+      "cornersSize": 8.0,
+      "cardsMean": 2.14,
+      "cardsSize": 6.06,
+      "players": [
+        {
+          "id": "fb-305_509262",
+          "name": "K. Itakura",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.05,
+          "pos": "D"
+        },
+        {
+          "id": "fb-305_304787",
+          "name": "K. Nishikawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.053,
+          "pos": "G"
+        },
+        {
+          "id": "fb-305_354515",
+          "name": "S. Omori",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.211,
+          "pos": "D"
+        },
+        {
+          "id": "fb-305_304919",
+          "name": "K. Osaki",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.059,
+          "pos": "M"
+        },
+        {
+          "id": "fb-305_350849",
+          "name": "T. Semba",
+          "goalShare": 0.056,
+          "expectedMinutes": 72,
+          "cardRate": 0.053,
+          "pos": "M"
+        },
+        {
+          "id": "fb-305_226300",
+          "name": "T. Mase",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.118,
+          "pos": "D"
+        },
+        {
+          "id": "fb-305_33650",
+          "name": "A. Watanabe",
+          "goalShare": 0.222,
+          "expectedMinutes": 72,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-305_33332",
+          "name": "T. Iida",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-305_509265",
+          "name": "K. Tada",
+          "goalShare": 0.111,
+          "expectedMinutes": 59,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-305_304939",
+          "name": "Y. Torikai",
+          "goalShare": 0.111,
+          "expectedMinutes": 71,
+          "cardRate": 0.077,
+          "pos": "F"
+        },
+        {
+          "id": "fb-305_238554",
+          "name": "Danilo Cardoso",
+          "goalShare": 0.056,
+          "expectedMinutes": 63,
+          "cardRate": 0.357,
+          "pos": "D"
+        },
+        {
+          "id": "fb-305_16200",
+          "name": "Matheus Leiria",
+          "goalShare": 0.056,
+          "expectedMinutes": 55,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-305_470409",
+          "name": "H. Yamamoto",
+          "goalShare": 0.056,
+          "expectedMinutes": 39,
+          "cardRate": 0.056,
+          "pos": "M"
+        },
+        {
+          "id": "fb-305_304796",
+          "name": "C. Kato",
+          "goalShare": 0.167,
+          "expectedMinutes": 69,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-305_109197",
+          "name": "M. Arai",
+          "goalShare": 0.0,
+          "expectedMinutes": 53,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-305_555843",
+          "name": "M. Fofana",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.143,
+          "pos": "D"
+        },
+        {
+          "id": "fb-305_457167",
+          "name": "T. Ushizawa",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.143,
+          "pos": "D"
+        },
+        {
+          "id": "fb-305_268147",
+          "name": "R. Nemoto",
+          "goalShare": 0.0,
+          "expectedMinutes": 33,
+          "cardRate": 0.182,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "LLLLL",
+        "played": 20,
+        "goalsForAvg": 1.2,
+        "goalsAgainstAvg": 2.1,
+        "cleanSheetPct": 0.1,
+        "failedToScorePct": 0.3,
+        "mostUsedFormation": "4-4-2"
+      }
+    }
+  ]
+}

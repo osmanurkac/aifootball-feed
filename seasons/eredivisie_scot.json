@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "league": "Scottish Premiership",
+  "sport": "football",
+  "topFinishLabel": "Top 4",
+  "recordLabel": "Pts",
+  "entries": [
+    {
+      "teamId": "fb-247",
+      "title": 0.704,
+      "lastWeek": 0.704,
+      "topFinish": 0.999,
+      "relegation": 0.0,
+      "record": "31"
+    },
+    {
+      "teamId": "fb-257",
+      "title": 0.281,
+      "lastWeek": 0.281,
+      "topFinish": 0.991,
+      "relegation": 0.0,
+      "record": "27"
+    },
+    {
+      "teamId": "fb-254",
+      "title": 0.01,
+      "lastWeek": 0.01,
+      "topFinish": 0.739,
+      "relegation": 0.011,
+      "record": "20"
+    },
+    {
+      "teamId": "fb-1389",
+      "title": 0.004,
+      "lastWeek": 0.004,
+      "topFinish": 0.542,
+      "relegation": 0.036,
+      "record": "21"
+    },
+    {
+      "teamId": "fb-256",
+      "title": 0.001,
+      "lastWeek": 0.001,
+      "topFinish": 0.107,
+      "relegation": 0.248,
+      "record": "13"
+    },
+    {
+      "teamId": "fb-253",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.163,
+      "relegation": 0.189,
+      "record": "17"
+    },
+    {
+      "teamId": "fb-1386",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.148,
+      "relegation": 0.199,
+      "record": "17"
+    },
+    {
+      "teamId": "fb-258",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.066,
+      "relegation": 0.353,
+      "record": "17"
+    },
+    {
+      "teamId": "fb-251",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.038,
+      "relegation": 0.465,
+      "record": "14"
+    },
+    {
+      "teamId": "fb-249",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.176,
+      "relegation": 0.174,
+      "record": "11"
+    },
+    {
+      "teamId": "fb-252",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.025,
+      "relegation": 0.548,
+      "record": "11"
+    },
+    {
+      "teamId": "fb-250",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.006,
+      "relegation": 0.778,
+      "record": "9"
+    }
+  ]
+}

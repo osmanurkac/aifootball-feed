@@ -1,0 +1,2212 @@
+{
+  "schemaVersion": 1,
+  "league": "Scottish Premiership",
+  "leagueAverageGoals": 1.141,
+  "homeAdvantage": 1.269,
+  "rho": -0.11,
+  "firstHalfGoalShare": 0.45,
+  "teams": [
+    {
+      "teamId": "fb-254",
+      "attack": 1.186,
+      "defence": 0.934,
+      "cornersMean": 6.25,
+      "cornersSize": 16.85,
+      "cardsMean": 1.83,
+      "cardsSize": 24.65,
+      "players": [
+        {
+          "id": "fb-254_38811",
+          "name": "B. Reus",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-254_141994",
+          "name": "Cláudio Braga",
+          "goalShare": 0.24,
+          "expectedMinutes": 81,
+          "cardRate": 0.083,
+          "pos": "F"
+        },
+        {
+          "id": "fb-254_431652",
+          "name": "J. Altena",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.182,
+          "pos": "D"
+        },
+        {
+          "id": "fb-254_45128",
+          "name": "J. McCart",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.182,
+          "pos": "D"
+        },
+        {
+          "id": "fb-254_125694",
+          "name": "J. McPake",
+          "goalShare": 0.12,
+          "expectedMinutes": 80,
+          "cardRate": 0.091,
+          "pos": "F"
+        },
+        {
+          "id": "fb-254_538503",
+          "name": "L. Mendy",
+          "goalShare": 0.12,
+          "expectedMinutes": 76,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-254_45155",
+          "name": "C. Miller",
+          "goalShare": 0.2,
+          "expectedMinutes": 63,
+          "cardRate": 0.182,
+          "pos": "M"
+        },
+        {
+          "id": "fb-254_503078",
+          "name": "S. Kerjota",
+          "goalShare": 0.04,
+          "expectedMinutes": 53,
+          "cardRate": 0.25,
+          "pos": "M"
+        },
+        {
+          "id": "fb-254_44781",
+          "name": "S. Findlay",
+          "goalShare": 0.0,
+          "expectedMinutes": 71,
+          "cardRate": 0.125,
+          "pos": "D"
+        },
+        {
+          "id": "fb-254_418942",
+          "name": "J. Wilson",
+          "goalShare": 0.12,
+          "expectedMinutes": 48,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-254_28934",
+          "name": "T. Magnússon",
+          "goalShare": 0.0,
+          "expectedMinutes": 55,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-254_138903",
+          "name": "O. McEntee",
+          "goalShare": 0.04,
+          "expectedMinutes": 69,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-254_154800",
+          "name": "M. Fagan-Walcott",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.2,
+          "pos": "D"
+        },
+        {
+          "id": "fb-254_138258",
+          "name": "H. Milne",
+          "goalShare": 0.0,
+          "expectedMinutes": 61,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-254_19412",
+          "name": "S. Kingsley",
+          "goalShare": 0.04,
+          "expectedMinutes": 69,
+          "cardRate": 0.2,
+          "pos": "D"
+        },
+        {
+          "id": "fb-254_45220",
+          "name": "B. Spittal",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-254_57454",
+          "name": "C. Borchgrevink",
+          "goalShare": 0.0,
+          "expectedMinutes": 47,
+          "cardRate": 0.2,
+          "pos": "D"
+        },
+        {
+          "id": "fb-254_191415",
+          "name": "S. Guendouz",
+          "goalShare": 0.04,
+          "expectedMinutes": 24,
+          "cardRate": 0.125,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "WLWDL",
+        "played": 12,
+        "goalsForAvg": 2.2,
+        "goalsAgainstAvg": 1.8,
+        "cleanSheetPct": 0.25,
+        "failedToScorePct": 0.0,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-257",
+      "attack": 1.349,
+      "defence": 0.873,
+      "cornersMean": 7.17,
+      "cornersSize": 27.12,
+      "cardsMean": 1.83,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-257_14268",
+          "name": "I. Pandur",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-257_322882",
+          "name": "E. Fernandez",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-257_392387",
+          "name": "O. Makhanya",
+          "goalShare": 0.05,
+          "expectedMinutes": 90,
+          "cardRate": 0.091,
+          "pos": "D"
+        },
+        {
+          "id": "fb-257_2120",
+          "name": "N. Raskin",
+          "goalShare": 0.05,
+          "expectedMinutes": 86,
+          "cardRate": 0.3,
+          "pos": "M"
+        },
+        {
+          "id": "fb-257_19990",
+          "name": "D. Sterling",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.4,
+          "pos": "D"
+        },
+        {
+          "id": "fb-257_45211",
+          "name": "J. Penrice",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.1,
+          "pos": "D"
+        },
+        {
+          "id": "fb-257_19910",
+          "name": "D. Neil",
+          "goalShare": 0.05,
+          "expectedMinutes": 82,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-257_280305",
+          "name": "R. Naderi",
+          "goalShare": 0.3,
+          "expectedMinutes": 72,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-257_336563",
+          "name": "D. Gassama",
+          "goalShare": 0.0,
+          "expectedMinutes": 61,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-257_397941",
+          "name": "Minsu Kim",
+          "goalShare": 0.0,
+          "expectedMinutes": 72,
+          "cardRate": 0.2,
+          "pos": "F"
+        },
+        {
+          "id": "fb-257_311016",
+          "name": "K. Kelsy",
+          "goalShare": 0.2,
+          "expectedMinutes": 63,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-257_433272",
+          "name": "Findlay Curtis",
+          "goalShare": 0.0,
+          "expectedMinutes": 40,
+          "cardRate": 0.091,
+          "pos": "M"
+        },
+        {
+          "id": "fb-257_45175",
+          "name": "L. Shankland",
+          "goalShare": 0.15,
+          "expectedMinutes": 73,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-257_334879",
+          "name": "B. Bouanani",
+          "goalShare": 0.05,
+          "expectedMinutes": 51,
+          "cardRate": 0.429,
+          "pos": "M"
+        },
+        {
+          "id": "fb-257_6832",
+          "name": "C. Devlin",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-257_162159",
+          "name": "T. Rommens",
+          "goalShare": 0.0,
+          "expectedMinutes": 49,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-257_199638",
+          "name": "M. Diomandé",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-257_342320",
+          "name": "K. Nedeljković",
+          "goalShare": 0.0,
+          "expectedMinutes": 41,
+          "cardRate": 0.333,
+          "pos": "D"
+        }
+      ],
+      "seasonStats": {
+        "form": "WDWDW",
+        "played": 12,
+        "goalsForAvg": 1.8,
+        "goalsAgainstAvg": 0.8,
+        "cleanSheetPct": 0.5,
+        "failedToScorePct": 0.0,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-256",
+      "attack": 1.003,
+      "defence": 0.984,
+      "cornersMean": 5.46,
+      "cornersSize": 26.14,
+      "cardsMean": 1.77,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-256_94360",
+          "name": "A. Paulsen",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-256_154804",
+          "name": "M. Emmanuel",
+          "goalShare": 0.0,
+          "expectedMinutes": 85,
+          "cardRate": 0.154,
+          "pos": "M"
+        },
+        {
+          "id": "fb-256_169335",
+          "name": "M. Moormann",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.308,
+          "pos": "D"
+        },
+        {
+          "id": "fb-256_284216",
+          "name": "T. Sparrow",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.308,
+          "pos": "D"
+        },
+        {
+          "id": "fb-256_7582",
+          "name": "L. Fadinger",
+          "goalShare": 0.2,
+          "expectedMinutes": 80,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-256_204033",
+          "name": "J. Hodge",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.182,
+          "pos": "M"
+        },
+        {
+          "id": "fb-256_278116",
+          "name": "Tawanda Jethro Maswanhise",
+          "goalShare": 0.133,
+          "expectedMinutes": 71,
+          "cardRate": 0.077,
+          "pos": "F"
+        },
+        {
+          "id": "fb-256_237054",
+          "name": "I. Said",
+          "goalShare": 0.133,
+          "expectedMinutes": 70,
+          "cardRate": 0.167,
+          "pos": "F"
+        },
+        {
+          "id": "fb-256_274582",
+          "name": "J. Girdwood-Reich",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-256_379046",
+          "name": "S. Palmer-Houlden",
+          "goalShare": 0.133,
+          "expectedMinutes": 62,
+          "cardRate": 0.091,
+          "pos": "F"
+        },
+        {
+          "id": "fb-256_138423",
+          "name": "A. Lowry",
+          "goalShare": 0.2,
+          "expectedMinutes": 67,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-256_308815",
+          "name": "J. Kanga",
+          "goalShare": 0.067,
+          "expectedMinutes": 43,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-256_20143",
+          "name": "R. Charles-Cook",
+          "goalShare": 0.067,
+          "expectedMinutes": 41,
+          "cardRate": 0.111,
+          "pos": "F"
+        },
+        {
+          "id": "fb-256_70335",
+          "name": "D. Levitt",
+          "goalShare": 0.067,
+          "expectedMinutes": 42,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-256_370974",
+          "name": "Jamie Knight-Lebel",
+          "goalShare": 0.0,
+          "expectedMinutes": 48,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-256_374104",
+          "name": "W. Vogt",
+          "goalShare": 0.0,
+          "expectedMinutes": 43,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-256_44783",
+          "name": "S. O&apos;Donnell",
+          "goalShare": 0.0,
+          "expectedMinutes": 42,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-256_304770",
+          "name": "O. Priestman",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.25,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "LLDWD",
+        "played": 13,
+        "goalsForAvg": 1.2,
+        "goalsAgainstAvg": 1.6,
+        "cleanSheetPct": 0.231,
+        "failedToScorePct": 0.385,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-902",
+      "attack": 0.847,
+      "defence": 1.205,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-902_fw",
+          "name": "ROS Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-902_am",
+          "name": "ROS Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-902_wg",
+          "name": "ROS Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-902_df",
+          "name": "ROS Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1386",
+      "attack": 0.954,
+      "defence": 1.088,
+      "cornersMean": 6.5,
+      "cornersSize": 5.7,
+      "cardsMean": 2.33,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-1386_19782",
+          "name": "J. Walton",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.083,
+          "pos": "G"
+        },
+        {
+          "id": "fb-1386_284419",
+          "name": "M. Forbes",
+          "goalShare": 0.059,
+          "expectedMinutes": 90,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1386_288851",
+          "name": "B. Esselink",
+          "goalShare": 0.0,
+          "expectedMinutes": 88,
+          "cardRate": 0.083,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1386_153636",
+          "name": "J. Rawlins",
+          "goalShare": 0.0,
+          "expectedMinutes": 88,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1386_138215",
+          "name": "D. Tait",
+          "goalShare": 0.059,
+          "expectedMinutes": 84,
+          "cardRate": 0.455,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1386_158688",
+          "name": "J. Randall",
+          "goalShare": 0.176,
+          "expectedMinutes": 71,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1386_422929",
+          "name": "D. Bennie",
+          "goalShare": 0.059,
+          "expectedMinutes": 56,
+          "cardRate": 0.25,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1386_395878",
+          "name": "K. Ciubotaru",
+          "goalShare": 0.059,
+          "expectedMinutes": 82,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1386_318717",
+          "name": "Z. Sapsford",
+          "goalShare": 0.176,
+          "expectedMinutes": 55,
+          "cardRate": 0.273,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1386_284295",
+          "name": "Zidane Iqbal",
+          "goalShare": 0.059,
+          "expectedMinutes": 78,
+          "cardRate": 0.286,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1386_64314",
+          "name": "L. Cameron",
+          "goalShare": 0.118,
+          "expectedMinutes": 78,
+          "cardRate": 0.143,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1386_204042",
+          "name": "W. Ferry",
+          "goalShare": 0.059,
+          "expectedMinutes": 74,
+          "cardRate": 0.333,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1386_17897",
+          "name": "Panutche Camará",
+          "goalShare": 0.0,
+          "expectedMinutes": 45,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1386_296508",
+          "name": "L. Rose",
+          "goalShare": 0.059,
+          "expectedMinutes": 30,
+          "cardRate": 0.167,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1386_281323",
+          "name": "I. Metsoko",
+          "goalShare": 0.0,
+          "expectedMinutes": 43,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1386_508266",
+          "name": "Abdoulaye Yoro",
+          "goalShare": 0.0,
+          "expectedMinutes": 30,
+          "cardRate": 0.2,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1386_14594",
+          "name": "V. Ševelj",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.667,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1386_434275",
+          "name": "E. Agyei",
+          "goalShare": 0.059,
+          "expectedMinutes": 60,
+          "cardRate": 0.25,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "WDWDD",
+        "played": 12,
+        "goalsForAvg": 1.4,
+        "goalsAgainstAvg": 1.4,
+        "cleanSheetPct": 0.25,
+        "failedToScorePct": 0.25,
+        "mostUsedFormation": "4-3-3"
+      }
+    },
+    {
+      "teamId": "fb-253",
+      "attack": 0.979,
+      "defence": 1.182,
+      "cornersMean": 5.08,
+      "cornersSize": 16.72,
+      "cardsMean": 1.58,
+      "cardsSize": 7.88,
+      "players": [
+        {
+          "id": "fb-253_20242",
+          "name": "E. Hamilton",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.333,
+          "pos": "M"
+        },
+        {
+          "id": "fb-253_138850",
+          "name": "R. Astley",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-253_284554",
+          "name": "O. Goodman",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.083,
+          "pos": "G"
+        },
+        {
+          "id": "fb-253_44904",
+          "name": "D. Wright",
+          "goalShare": 0.056,
+          "expectedMinutes": 83,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-253_382163",
+          "name": "O. Bevan",
+          "goalShare": 0.111,
+          "expectedMinutes": 90,
+          "cardRate": 0.091,
+          "pos": "D"
+        },
+        {
+          "id": "fb-253_45172",
+          "name": "A. Forrest",
+          "goalShare": 0.0,
+          "expectedMinutes": 65,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-253_395233",
+          "name": "J. Bevan",
+          "goalShare": 0.111,
+          "expectedMinutes": 63,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-253_161920",
+          "name": "B. Fink",
+          "goalShare": 0.222,
+          "expectedMinutes": 63,
+          "cardRate": 0.1,
+          "pos": "D"
+        },
+        {
+          "id": "fb-253_273758",
+          "name": "I. Samuels",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.143,
+          "pos": "D"
+        },
+        {
+          "id": "fb-253_330641",
+          "name": "J. Westley",
+          "goalShare": 0.222,
+          "expectedMinutes": 67,
+          "cardRate": 0.111,
+          "pos": "F"
+        },
+        {
+          "id": "fb-253_284423",
+          "name": "R. Finnigan",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.25,
+          "pos": "M"
+        },
+        {
+          "id": "fb-253_440037",
+          "name": "A. Hay",
+          "goalShare": 0.167,
+          "expectedMinutes": 72,
+          "cardRate": 0.286,
+          "pos": "F"
+        },
+        {
+          "id": "fb-253_278086",
+          "name": "I. Odutayo",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-253_223290",
+          "name": "C. Jones",
+          "goalShare": 0.056,
+          "expectedMinutes": 74,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-253_135529",
+          "name": "C. Reilly",
+          "goalShare": 0.056,
+          "expectedMinutes": 37,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-253_64316",
+          "name": "F. Robertson",
+          "goalShare": 0.0,
+          "expectedMinutes": 38,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-253_343583",
+          "name": "B. Wales",
+          "goalShare": 0.0,
+          "expectedMinutes": 37,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-253_46266",
+          "name": "S. Murray",
+          "goalShare": 0.0,
+          "expectedMinutes": 62,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "WDLWL",
+        "played": 12,
+        "goalsForAvg": 1.5,
+        "goalsAgainstAvg": 1.3,
+        "cleanSheetPct": 0.167,
+        "failedToScorePct": 0.083,
+        "mostUsedFormation": "4-4-2"
+      }
+    },
+    {
+      "teamId": "fb-251",
+      "attack": 0.812,
+      "defence": 1.081,
+      "cornersMean": 4.23,
+      "cornersSize": 18.62,
+      "cardsMean": 3.0,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-251_196489",
+          "name": "J. Chapman",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-251_44965",
+          "name": "A. Gogić",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.308,
+          "pos": "D"
+        },
+        {
+          "id": "fb-251_19317",
+          "name": "D. John",
+          "goalShare": 0.091,
+          "expectedMinutes": 84,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-251_366629",
+          "name": "R. Carr",
+          "goalShare": 0.0,
+          "expectedMinutes": 81,
+          "cardRate": 0.5,
+          "pos": "M"
+        },
+        {
+          "id": "fb-251_135525",
+          "name": "C. Ramsay",
+          "goalShare": 0.091,
+          "expectedMinutes": 84,
+          "cardRate": 0.273,
+          "pos": "D"
+        },
+        {
+          "id": "fb-251_292901",
+          "name": "Henry Fieldson",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.1,
+          "pos": "D"
+        },
+        {
+          "id": "fb-251_384577",
+          "name": "P. Nsio",
+          "goalShare": 0.091,
+          "expectedMinutes": 82,
+          "cardRate": 0.3,
+          "pos": "M"
+        },
+        {
+          "id": "fb-251_270357",
+          "name": "K. Phillips",
+          "goalShare": 0.273,
+          "expectedMinutes": 87,
+          "cardRate": 0.444,
+          "pos": "M"
+        },
+        {
+          "id": "fb-251_407033",
+          "name": "Ismeal Kabia",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.111,
+          "pos": "M"
+        },
+        {
+          "id": "fb-251_409797",
+          "name": "Eseosa Sule",
+          "goalShare": 0.182,
+          "expectedMinutes": 46,
+          "cardRate": 0.154,
+          "pos": "F"
+        },
+        {
+          "id": "fb-251_45055",
+          "name": "M. Fraser",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.25,
+          "pos": "D"
+        },
+        {
+          "id": "fb-251_45107",
+          "name": "C. Mochrie",
+          "goalShare": 0.0,
+          "expectedMinutes": 51,
+          "cardRate": 0.182,
+          "pos": "M"
+        },
+        {
+          "id": "fb-251_326921",
+          "name": "F. Taylor",
+          "goalShare": 0.091,
+          "expectedMinutes": 53,
+          "cardRate": 0.2,
+          "pos": "M"
+        },
+        {
+          "id": "fb-251_20000",
+          "name": "L. Thomas",
+          "goalShare": 0.0,
+          "expectedMinutes": 38,
+          "cardRate": 0.154,
+          "pos": "M"
+        },
+        {
+          "id": "fb-251_185993",
+          "name": "Samu",
+          "goalShare": 0.091,
+          "expectedMinutes": 50,
+          "cardRate": 0.25,
+          "pos": "M"
+        },
+        {
+          "id": "fb-251_274225",
+          "name": "J. Young",
+          "goalShare": 0.0,
+          "expectedMinutes": 28,
+          "cardRate": 0.154,
+          "pos": "F"
+        },
+        {
+          "id": "fb-251_203780",
+          "name": "N. Agrafiotis",
+          "goalShare": 0.091,
+          "expectedMinutes": 67,
+          "cardRate": 0.25,
+          "pos": "F"
+        },
+        {
+          "id": "fb-251_129710",
+          "name": "J. Richardson",
+          "goalShare": 0.0,
+          "expectedMinutes": 51,
+          "cardRate": 0.2,
+          "pos": "D"
+        }
+      ],
+      "seasonStats": {
+        "form": "LWDLL",
+        "played": 13,
+        "goalsForAvg": 0.9,
+        "goalsAgainstAvg": 1.7,
+        "cleanSheetPct": 0.231,
+        "failedToScorePct": 0.385,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-249",
+      "attack": 1.08,
+      "defence": 0.952,
+      "cornersMean": 6.17,
+      "cornersSize": 6.99,
+      "cardsMean": 1.5,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-249_7745",
+          "name": "R. Sallinger",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-249_44893",
+          "name": "J. Kerr",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-249_64315",
+          "name": "J. Mulligan",
+          "goalShare": 0.0,
+          "expectedMinutes": 89,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-249_19068",
+          "name": "F. Passlack",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.083,
+          "pos": "M"
+        },
+        {
+          "id": "fb-249_345326",
+          "name": "M. Chaiwa",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-249_382928",
+          "name": "A. Mayor",
+          "goalShare": 0.067,
+          "expectedMinutes": 80,
+          "cardRate": 0.111,
+          "pos": "M"
+        },
+        {
+          "id": "fb-249_415392",
+          "name": "O. Elding",
+          "goalShare": 0.133,
+          "expectedMinutes": 66,
+          "cardRate": 0.111,
+          "pos": "F"
+        },
+        {
+          "id": "fb-249_44843",
+          "name": "M. Boyle",
+          "goalShare": 0.2,
+          "expectedMinutes": 65,
+          "cardRate": 0.111,
+          "pos": "F"
+        },
+        {
+          "id": "fb-249_69243",
+          "name": "J. McGrath",
+          "goalShare": 0.067,
+          "expectedMinutes": 71,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-249_306338",
+          "name": "M. Ivezić",
+          "goalShare": 0.067,
+          "expectedMinutes": 90,
+          "cardRate": 0.4,
+          "pos": "D"
+        },
+        {
+          "id": "fb-249_351338",
+          "name": "N. Lowe",
+          "goalShare": 0.067,
+          "expectedMinutes": 54,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-249_152948",
+          "name": "C. Wright",
+          "goalShare": 0.2,
+          "expectedMinutes": 53,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-249_19066",
+          "name": "G. Hanley",
+          "goalShare": 0.0,
+          "expectedMinutes": 70,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-249_123675",
+          "name": "T. Klidje",
+          "goalShare": 0.067,
+          "expectedMinutes": 37,
+          "cardRate": 0.1,
+          "pos": "F"
+        },
+        {
+          "id": "fb-249_45180",
+          "name": "J. Iredale",
+          "goalShare": 0.0,
+          "expectedMinutes": 74,
+          "cardRate": 0.2,
+          "pos": "D"
+        },
+        {
+          "id": "fb-249_316161",
+          "name": "A. Šuto",
+          "goalShare": 0.0,
+          "expectedMinutes": 31,
+          "cardRate": 0.1,
+          "pos": "F"
+        },
+        {
+          "id": "fb-249_82990",
+          "name": "J. Obita",
+          "goalShare": 0.0,
+          "expectedMinutes": 75,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-249_19668",
+          "name": "J. Newell",
+          "goalShare": 0.0,
+          "expectedMinutes": 52,
+          "cardRate": 0.0,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "LLLDW",
+        "played": 12,
+        "goalsForAvg": 1.3,
+        "goalsAgainstAvg": 1.4,
+        "cleanSheetPct": 0.083,
+        "failedToScorePct": 0.167,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-247",
+      "attack": 1.478,
+      "defence": 0.806,
+      "cornersMean": 9.38,
+      "cornersSize": 2289.85,
+      "cardsMean": 1.69,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-247_1129",
+          "name": "C. McGregor",
+          "goalShare": 0.0,
+          "expectedMinutes": 88,
+          "cardRate": 0.083,
+          "pos": "M"
+        },
+        {
+          "id": "fb-247_451314",
+          "name": "Colby Donovan",
+          "goalShare": 0.0,
+          "expectedMinutes": 77,
+          "cardRate": 0.308,
+          "pos": "D"
+        },
+        {
+          "id": "fb-247_69450",
+          "name": "L. Scales",
+          "goalShare": 0.111,
+          "expectedMinutes": 90,
+          "cardRate": 0.182,
+          "pos": "D"
+        },
+        {
+          "id": "fb-247_48002",
+          "name": "B. Nygren",
+          "goalShare": 0.222,
+          "expectedMinutes": 72,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-247_454968",
+          "name": "C. Durán",
+          "goalShare": 0.259,
+          "expectedMinutes": 69,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-247_328035",
+          "name": "M. Baur",
+          "goalShare": 0.074,
+          "expectedMinutes": 82,
+          "cardRate": 0.182,
+          "pos": "M"
+        },
+        {
+          "id": "fb-247_1117",
+          "name": "K. Tierney",
+          "goalShare": 0.037,
+          "expectedMinutes": 74,
+          "cardRate": 0.182,
+          "pos": "D"
+        },
+        {
+          "id": "fb-247_19314",
+          "name": "C. Carter-Vickers",
+          "goalShare": 0.0,
+          "expectedMinutes": 82,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-247_169291",
+          "name": "V. Sinisalo",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-247_15704",
+          "name": "K. Høgh",
+          "goalShare": 0.111,
+          "expectedMinutes": 61,
+          "cardRate": 0.2,
+          "pos": "F"
+        },
+        {
+          "id": "fb-247_50737",
+          "name": "A. Trusty",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-247_20844",
+          "name": "H. Hassan",
+          "goalShare": 0.0,
+          "expectedMinutes": 54,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-247_311820",
+          "name": "D. Murray",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-247_19143",
+          "name": "S. Johnstone",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-247_304958",
+          "name": "Yang Hyun-Jun",
+          "goalShare": 0.074,
+          "expectedMinutes": 70,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-247_57518",
+          "name": "S. Tounekti",
+          "goalShare": 0.0,
+          "expectedMinutes": 28,
+          "cardRate": 0.111,
+          "pos": "F"
+        },
+        {
+          "id": "fb-247_297",
+          "name": "A. Oxlade-Chamberlain",
+          "goalShare": 0.0,
+          "expectedMinutes": 42,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-247_339172",
+          "name": "C. Osmand",
+          "goalShare": 0.074,
+          "expectedMinutes": 38,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "WWDLW",
+        "played": 13,
+        "goalsForAvg": 2.2,
+        "goalsAgainstAvg": 0.8,
+        "cleanSheetPct": 0.385,
+        "failedToScorePct": 0.154,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-250",
+      "attack": 0.939,
+      "defence": 1.264,
+      "cornersMean": 5.15,
+      "cornersSize": 82.87,
+      "cardsMean": 2.54,
+      "cardsSize": 8.0,
+      "players": [
+        {
+          "id": "fb-250_282133",
+          "name": "J. Hugill",
+          "goalShare": 0.182,
+          "expectedMinutes": 89,
+          "cardRate": 0.231,
+          "pos": "F"
+        },
+        {
+          "id": "fb-250_44973",
+          "name": "G. Stanger",
+          "goalShare": 0.091,
+          "expectedMinutes": 89,
+          "cardRate": 0.231,
+          "pos": "D"
+        },
+        {
+          "id": "fb-250_17693",
+          "name": "T. Lowery",
+          "goalShare": 0.0,
+          "expectedMinutes": 88,
+          "cardRate": 0.154,
+          "pos": "M"
+        },
+        {
+          "id": "fb-250_60378",
+          "name": "M. Schjønning-Larsen",
+          "goalShare": 0.091,
+          "expectedMinutes": 83,
+          "cardRate": 0.154,
+          "pos": "D"
+        },
+        {
+          "id": "fb-250_45199",
+          "name": "G. Kiltie",
+          "goalShare": 0.273,
+          "expectedMinutes": 83,
+          "cardRate": 0.077,
+          "pos": "M"
+        },
+        {
+          "id": "fb-250_467176",
+          "name": "C. McCarthy",
+          "goalShare": 0.091,
+          "expectedMinutes": 89,
+          "cardRate": 0.364,
+          "pos": "D"
+        },
+        {
+          "id": "fb-250_1466",
+          "name": "T. John-Jules",
+          "goalShare": 0.091,
+          "expectedMinutes": 64,
+          "cardRate": 0.231,
+          "pos": "F"
+        },
+        {
+          "id": "fb-250_44858",
+          "name": "J. Brandon",
+          "goalShare": 0.0,
+          "expectedMinutes": 63,
+          "cardRate": 0.308,
+          "pos": "D"
+        },
+        {
+          "id": "fb-250_44791",
+          "name": "A. Tshibola",
+          "goalShare": 0.0,
+          "expectedMinutes": 71,
+          "cardRate": 0.182,
+          "pos": "M"
+        },
+        {
+          "id": "fb-250_278154",
+          "name": "E. Ring",
+          "goalShare": 0.0,
+          "expectedMinutes": 68,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-250_19883",
+          "name": "M. Stryjek",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-250_104758",
+          "name": "C. Ferrie",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-250_237133",
+          "name": "D. Daniels",
+          "goalShare": 0.091,
+          "expectedMinutes": 30,
+          "cardRate": 0.1,
+          "pos": "F"
+        },
+        {
+          "id": "fb-250_26507",
+          "name": "N. Mantl",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-250_343577",
+          "name": "B. Rice",
+          "goalShare": 0.0,
+          "expectedMinutes": 36,
+          "cardRate": 0.286,
+          "pos": "M"
+        },
+        {
+          "id": "fb-250_17377",
+          "name": "M. O&apos;Hara",
+          "goalShare": 0.0,
+          "expectedMinutes": 30,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-250_142204",
+          "name": "N. Cleșcenco",
+          "goalShare": 0.091,
+          "expectedMinutes": 32,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-250_127606",
+          "name": "R. Deas",
+          "goalShare": 0.0,
+          "expectedMinutes": 53,
+          "cardRate": 0.0,
+          "pos": "D"
+        }
+      ],
+      "seasonStats": {
+        "form": "WLLDL",
+        "played": 13,
+        "goalsForAvg": 1.0,
+        "goalsAgainstAvg": 2.2,
+        "cleanSheetPct": 0.154,
+        "failedToScorePct": 0.385,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-258",
+      "attack": 0.877,
+      "defence": 1.177,
+      "cornersMean": 3.08,
+      "cornersSize": 8.0,
+      "cardsMean": 1.69,
+      "cardsSize": 74.46,
+      "players": [
+        {
+          "id": "fb-258_154814",
+          "name": "C. Diabate",
+          "goalShare": 0.071,
+          "expectedMinutes": 87,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-258_138798",
+          "name": "R. McAlear",
+          "goalShare": 0.0,
+          "expectedMinutes": 85,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-258_333213",
+          "name": "T. Steward",
+          "goalShare": 0.0,
+          "expectedMinutes": 84,
+          "cardRate": 0.083,
+          "pos": "G"
+        },
+        {
+          "id": "fb-258_20081",
+          "name": "J. Holt",
+          "goalShare": 0.0,
+          "expectedMinutes": 73,
+          "cardRate": 0.154,
+          "pos": "M"
+        },
+        {
+          "id": "fb-258_524307",
+          "name": "J. Fowler",
+          "goalShare": 0.429,
+          "expectedMinutes": 63,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-258_45158",
+          "name": "L. Smith",
+          "goalShare": 0.0,
+          "expectedMinutes": 89,
+          "cardRate": 0.111,
+          "pos": "D"
+        },
+        {
+          "id": "fb-258_326936",
+          "name": "T. Steven",
+          "goalShare": 0.071,
+          "expectedMinutes": 60,
+          "cardRate": 0.273,
+          "pos": "F"
+        },
+        {
+          "id": "fb-258_45111",
+          "name": "S. Stanton",
+          "goalShare": 0.0,
+          "expectedMinutes": 66,
+          "cardRate": 0.1,
+          "pos": "M"
+        },
+        {
+          "id": "fb-258_365518",
+          "name": "J. Cotterill",
+          "goalShare": 0.071,
+          "expectedMinutes": 69,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-258_269521",
+          "name": "E. Alić",
+          "goalShare": 0.071,
+          "expectedMinutes": 77,
+          "cardRate": 0.143,
+          "pos": "D"
+        },
+        {
+          "id": "fb-258_138416",
+          "name": "D. Finlayson",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-258_386501",
+          "name": "Z. Mitchell",
+          "goalShare": 0.0,
+          "expectedMinutes": 88,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-258_138524",
+          "name": "R. Paton",
+          "goalShare": 0.071,
+          "expectedMinutes": 58,
+          "cardRate": 0.111,
+          "pos": "M"
+        },
+        {
+          "id": "fb-258_104735",
+          "name": "J. Gullan",
+          "goalShare": 0.0,
+          "expectedMinutes": 56,
+          "cardRate": 0.111,
+          "pos": "M"
+        },
+        {
+          "id": "fb-258_143032",
+          "name": "E. Alıç",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.25,
+          "pos": null
+        },
+        {
+          "id": "fb-258_45252",
+          "name": "M. Todd",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-258_138845",
+          "name": "M. Foulds",
+          "goalShare": 0.0,
+          "expectedMinutes": 79,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-258_280328",
+          "name": "D. Schmidt",
+          "goalShare": 0.071,
+          "expectedMinutes": 38,
+          "cardRate": 0.0,
+          "pos": "F"
+        }
+      ],
+      "seasonStats": {
+        "form": "DLDDW",
+        "played": 13,
+        "goalsForAvg": 1.3,
+        "goalsAgainstAvg": 1.5,
+        "cleanSheetPct": 0.077,
+        "failedToScorePct": 0.231,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-252",
+      "attack": 0.865,
+      "defence": 1.095,
+      "cornersMean": 6.0,
+      "cornersSize": 9.43,
+      "cardsMean": 2.42,
+      "cardsSize": 14.83,
+      "players": [
+        {
+          "id": "fb-252_1141",
+          "name": "M. Müller",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.083,
+          "pos": "G"
+        },
+        {
+          "id": "fb-252_108465",
+          "name": "N. Guinness-Walker",
+          "goalShare": 0.083,
+          "expectedMinutes": 86,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-252_97896",
+          "name": "K. Nisbet",
+          "goalShare": 0.333,
+          "expectedMinutes": 80,
+          "cardRate": 0.167,
+          "pos": "F"
+        },
+        {
+          "id": "fb-252_44921",
+          "name": "C. Cadden",
+          "goalShare": 0.0,
+          "expectedMinutes": 85,
+          "cardRate": 0.182,
+          "pos": "D"
+        },
+        {
+          "id": "fb-252_57248",
+          "name": "A. Aremu",
+          "goalShare": 0.0,
+          "expectedMinutes": 63,
+          "cardRate": 0.25,
+          "pos": "M"
+        },
+        {
+          "id": "fb-252_231195",
+          "name": "T. Olusanya",
+          "goalShare": 0.0,
+          "expectedMinutes": 59,
+          "cardRate": 0.091,
+          "pos": "M"
+        },
+        {
+          "id": "fb-252_18945",
+          "name": "S. Armstrong",
+          "goalShare": 0.0,
+          "expectedMinutes": 54,
+          "cardRate": 0.167,
+          "pos": "M"
+        },
+        {
+          "id": "fb-252_61178",
+          "name": "C. Ronan",
+          "goalShare": 0.167,
+          "expectedMinutes": 66,
+          "cardRate": 0.111,
+          "pos": "M"
+        },
+        {
+          "id": "fb-252_161806",
+          "name": "G. Molloy",
+          "goalShare": 0.083,
+          "expectedMinutes": 70,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-252_125695",
+          "name": "L. Mayo",
+          "goalShare": 0.083,
+          "expectedMinutes": 80,
+          "cardRate": 0.714,
+          "pos": "D"
+        },
+        {
+          "id": "fb-252_18068",
+          "name": "D. Happe",
+          "goalShare": 0.0,
+          "expectedMinutes": 67,
+          "cardRate": 0.375,
+          "pos": "D"
+        },
+        {
+          "id": "fb-252_45010",
+          "name": "B. Lyons",
+          "goalShare": 0.083,
+          "expectedMinutes": 82,
+          "cardRate": 0.333,
+          "pos": "M"
+        },
+        {
+          "id": "fb-252_37253",
+          "name": "M. Knoester",
+          "goalShare": 0.0,
+          "expectedMinutes": 80,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-252_321860",
+          "name": "J. Milne",
+          "goalShare": 0.0,
+          "expectedMinutes": 57,
+          "cardRate": 0.25,
+          "pos": "D"
+        },
+        {
+          "id": "fb-252_303519",
+          "name": "A. Mouloua",
+          "goalShare": 0.167,
+          "expectedMinutes": 35,
+          "cardRate": 0.182,
+          "pos": "F"
+        },
+        {
+          "id": "fb-252_388510",
+          "name": "Tony Yogane",
+          "goalShare": 0.0,
+          "expectedMinutes": 49,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-252_44982",
+          "name": "L. Smith",
+          "goalShare": 0.0,
+          "expectedMinutes": 47,
+          "cardRate": 0.0,
+          "pos": "F"
+        },
+        {
+          "id": "fb-252_379662",
+          "name": "F. Marshall",
+          "goalShare": 0.0,
+          "expectedMinutes": 43,
+          "cardRate": 0.143,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "LWLLL",
+        "played": 12,
+        "goalsForAvg": 1.0,
+        "goalsAgainstAvg": 1.5,
+        "cleanSheetPct": 0.167,
+        "failedToScorePct": 0.583,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-901",
+      "attack": 0.855,
+      "defence": 1.149,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-901_fw",
+          "name": "PAR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-901_am",
+          "name": "PAR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-901_wg",
+          "name": "PAR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-901_df",
+          "name": "PAR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1387",
+      "attack": 0.865,
+      "defence": 1.185,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1387_fw",
+          "name": "AYR Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1387_am",
+          "name": "AYR Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1387_wg",
+          "name": "AYR Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1387_df",
+          "name": "AYR Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-255",
+      "attack": 0.888,
+      "defence": 1.275,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-255_fw",
+          "name": "LIV Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-255_am",
+          "name": "LIV Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-255_wg",
+          "name": "LIV Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-255_df",
+          "name": "LIV Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-1389",
+      "attack": 1.017,
+      "defence": 1.061,
+      "cornersMean": 4.38,
+      "cornersSize": 10.27,
+      "cardsMean": 2.15,
+      "cardsSize": 2.81,
+      "players": [
+        {
+          "id": "fb-1389_1104",
+          "name": "S. Bain",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.0,
+          "pos": "G"
+        },
+        {
+          "id": "fb-1389_98074",
+          "name": "L. Henderson",
+          "goalShare": 0.062,
+          "expectedMinutes": 87,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1389_441035",
+          "name": "Finley Frank Barbrook",
+          "goalShare": 0.062,
+          "expectedMinutes": 84,
+          "cardRate": 0.25,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1389_6885",
+          "name": "R. Strain",
+          "goalShare": 0.0,
+          "expectedMinutes": 83,
+          "cardRate": 0.167,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1389_196140",
+          "name": "L. Neilson",
+          "goalShare": 0.0,
+          "expectedMinutes": 90,
+          "cardRate": 0.091,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1389_44818",
+          "name": "E. Ross",
+          "goalShare": 0.125,
+          "expectedMinutes": 74,
+          "cardRate": 0.077,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1389_104754",
+          "name": "B. Spencer",
+          "goalShare": 0.0,
+          "expectedMinutes": 86,
+          "cardRate": 0.273,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1389_138380",
+          "name": "L. McCann",
+          "goalShare": 0.0,
+          "expectedMinutes": 72,
+          "cardRate": 0.091,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1389_458452",
+          "name": "J. Murrell",
+          "goalShare": 0.438,
+          "expectedMinutes": 72,
+          "cardRate": 0.091,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1389_401398",
+          "name": "Owen Eames",
+          "goalShare": 0.125,
+          "expectedMinutes": 80,
+          "cardRate": 0.444,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1389_341326",
+          "name": "B. Krauhaus",
+          "goalShare": 0.125,
+          "expectedMinutes": 66,
+          "cardRate": 0.3,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1389_215803",
+          "name": "D. Meļņiks",
+          "goalShare": 0.0,
+          "expectedMinutes": 55,
+          "cardRate": 0.091,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1389_44895",
+          "name": "S. Tanser",
+          "goalShare": 0.062,
+          "expectedMinutes": 57,
+          "cardRate": 0.0,
+          "pos": "D"
+        },
+        {
+          "id": "fb-1389_45209",
+          "name": "J. McMillan",
+          "goalShare": 0.0,
+          "expectedMinutes": 38,
+          "cardRate": 0.0,
+          "pos": "M"
+        },
+        {
+          "id": "fb-1389_313360",
+          "name": "C. Fodrey",
+          "goalShare": 0.0,
+          "expectedMinutes": 25,
+          "cardRate": 0.2,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1389_328104",
+          "name": "Ben Parkinson",
+          "goalShare": 0.0,
+          "expectedMinutes": 27,
+          "cardRate": 0.222,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1389_401091",
+          "name": "A. Doherty",
+          "goalShare": 0.0,
+          "expectedMinutes": 34,
+          "cardRate": 0.167,
+          "pos": "F"
+        },
+        {
+          "id": "fb-1389_326950",
+          "name": "F. Yeats",
+          "goalShare": 0.0,
+          "expectedMinutes": 31,
+          "cardRate": 0.167,
+          "pos": "M"
+        }
+      ],
+      "seasonStats": {
+        "form": "WWWWW",
+        "played": 13,
+        "goalsForAvg": 1.5,
+        "goalsAgainstAvg": 1.1,
+        "cleanSheetPct": 0.308,
+        "failedToScorePct": 0.154,
+        "mostUsedFormation": "4-2-3-1"
+      }
+    },
+    {
+      "teamId": "fb-1388",
+      "attack": 0.865,
+      "defence": 1.159,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-1388_fw",
+          "name": "DUN Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-1388_am",
+          "name": "DUN Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-1388_wg",
+          "name": "DUN Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-1388_df",
+          "name": "DUN Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    },
+    {
+      "teamId": "fb-4249",
+      "attack": 0.859,
+      "defence": 1.177,
+      "cornersMean": 5.5,
+      "cornersSize": 13.75,
+      "cardsMean": 2.0,
+      "cardsSize": 6.67,
+      "players": [
+        {
+          "id": "fb-4249_fw",
+          "name": "ARB Forward",
+          "goalShare": 0.25,
+          "expectedMinutes": 82,
+          "cardRate": 0.1
+        },
+        {
+          "id": "fb-4249_am",
+          "name": "ARB Playmaker",
+          "goalShare": 0.17,
+          "expectedMinutes": 85,
+          "cardRate": 0.15
+        },
+        {
+          "id": "fb-4249_wg",
+          "name": "ARB Winger",
+          "goalShare": 0.14,
+          "expectedMinutes": 78,
+          "cardRate": 0.12
+        },
+        {
+          "id": "fb-4249_df",
+          "name": "ARB Defender",
+          "goalShare": 0.06,
+          "expectedMinutes": 90,
+          "cardRate": 0.2
+        }
+      ]
+    }
+  ]
+}
