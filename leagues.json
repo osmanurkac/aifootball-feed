@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "leagues": [
+    {
+      "slug": "premier_league",
+      "name": "Premier League",
+      "sport": "football"
+    },
+    {
+      "slug": "laliga",
+      "name": "LaLiga",
+      "sport": "football"
+    },
+    {
+      "slug": "serie_a",
+      "name": "Serie A",
+      "sport": "football"
+    },
+    {
+      "slug": "bundesliga",
+      "name": "Bundesliga",
+      "sport": "football"
+    },
+    {
+      "slug": "ligue_1",
+      "name": "Ligue 1",
+      "sport": "football"
+    },
+    {
+      "slug": "super_lig",
+      "name": "Süper Lig",
+      "sport": "football"
+    },
+    {
+      "slug": "champions_league",
+      "name": "Champions League",
+      "sport": "football"
+    },
+    {
+      "slug": "europa_league",
+      "name": "Europa League",
+      "sport": "football"
+    },
+    {
+      "slug": "conference_league",
+      "name": "Conference League",
+      "sport": "football"
+    },
+    {
+      "slug": "eredivisie",
+      "name": "Eredivisie",
+      "sport": "football"
+    },
+    {
+      "slug": "primeira_liga",
+      "name": "Primeira Liga",
+      "sport": "football"
+    },
+    {
+      "slug": "championship",
+      "name": "Championship",
+      "sport": "football"
+    },
+    {
+      "slug": "brasileirao",
+      "name": "Brasileirão",
+      "sport": "football"
+    },
+    {
+      "slug": "liga_profesional",
+      "name": "Liga Profesional",
+      "sport": "football"
+    },
+    {
+      "slug": "liga_mx",
+      "name": "Liga MX",
+      "sport": "football"
+    },
+    {
+      "slug": "mls",
+      "name": "MLS",
+      "sport": "football"
+    },
+    {
+      "slug": "saudi_pro_league",
+      "name": "Saudi Pro League",
+      "sport": "football"
+    },
+    {
+      "slug": "efl_1lig",
+      "name": "TFF 1. Lig",
+      "sport": "football"
+    },
+    {
+      "slug": "jupiler",
+      "name": "Pro League",
+      "sport": "football"
+    },
+    {
+      "slug": "eredivisie_scot",
+      "name": "Scottish Premiership",
+      "sport": "football"
+    },
+    {
+      "slug": "super_league_gr",
+      "name": "Super League",
+      "sport": "football"
+    },
+    {
+      "slug": "j1_league",
+      "name": "J1 League",
+      "sport": "football"
+    },
+    {
+      "slug": "turkiye_kupasi",
+      "name": "Türkiye Kupası",
+      "sport": "football"
+    },
+    {
+      "slug": "fa_cup",
+      "name": "FA Cup",
+      "sport": "football"
+    },
+    {
+      "slug": "efl_cup",
+      "name": "EFL Cup",
+      "sport": "football"
+    },
+    {
+      "slug": "copa_del_rey",
+      "name": "Copa del Rey",
+      "sport": "football"
+    },
+    {
+      "slug": "coppa_italia",
+      "name": "Coppa Italia",
+      "sport": "football"
+    },
+    {
+      "slug": "dfb_pokal",
+      "name": "DFB-Pokal",
+      "sport": "football"
+    }
+  ]
+}
