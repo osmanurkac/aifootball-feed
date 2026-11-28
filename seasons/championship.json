@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "league": "Championship",
+  "sport": "football",
+  "topFinishLabel": "Top 4",
+  "recordLabel": "Pts",
+  "entries": [
+    {
+      "teamId": "fb-70",
+      "title": 0.313,
+      "lastWeek": 0.313,
+      "topFinish": 0.721,
+      "relegation": 0.0,
+      "record": "35"
+    },
+    {
+      "teamId": "fb-41",
+      "title": 0.222,
+      "lastWeek": 0.222,
+      "topFinish": 0.647,
+      "relegation": 0.0,
+      "record": "31"
+    },
+    {
+      "teamId": "fb-54",
+      "title": 0.109,
+      "lastWeek": 0.109,
+      "topFinish": 0.463,
+      "relegation": 0.0,
+      "record": "32"
+    },
+    {
+      "teamId": "fb-39",
+      "title": 0.093,
+      "lastWeek": 0.093,
+      "topFinish": 0.425,
+      "relegation": 0.0,
+      "record": "35"
+    },
+    {
+      "teamId": "fb-75",
+      "title": 0.072,
+      "lastWeek": 0.072,
+      "topFinish": 0.383,
+      "relegation": 0.001,
+      "record": "35"
+    },
+    {
+      "teamId": "fb-60",
+      "title": 0.07,
+      "lastWeek": 0.07,
+      "topFinish": 0.377,
+      "relegation": 0.0,
+      "record": "32"
+    },
+    {
+      "teamId": "fb-62",
+      "title": 0.027,
+      "lastWeek": 0.027,
+      "topFinish": 0.182,
+      "relegation": 0.004,
+      "record": "26"
+    },
+    {
+      "teamId": "fb-71",
+      "title": 0.026,
+      "lastWeek": 0.026,
+      "topFinish": 0.189,
+      "relegation": 0.005,
+      "record": "26"
+    },
+    {
+      "teamId": "fb-76",
+      "title": 0.023,
+      "lastWeek": 0.023,
+      "topFinish": 0.187,
+      "relegation": 0.005,
+      "record": "27"
+    },
+    {
+      "teamId": "fb-72",
+      "title": 0.017,
+      "lastWeek": 0.017,
+      "topFinish": 0.131,
+      "relegation": 0.007,
+      "record": "28"
+    },
+    {
+      "teamId": "fb-67",
+      "title": 0.011,
+      "lastWeek": 0.011,
+      "topFinish": 0.097,
+      "relegation": 0.009,
+      "record": "28"
+    },
+    {
+      "teamId": "fb-48",
+      "title": 0.008,
+      "lastWeek": 0.008,
+      "topFinish": 0.068,
+      "relegation": 0.019,
+      "record": "24"
+    },
+    {
+      "teamId": "fb-1355",
+      "title": 0.005,
+      "lastWeek": 0.005,
+      "topFinish": 0.049,
+      "relegation": 0.02,
+      "record": "26"
+    },
+    {
+      "teamId": "fb-1837",
+      "title": 0.004,
+      "lastWeek": 0.004,
+      "topFinish": 0.045,
+      "relegation": 0.03,
+      "record": "22"
+    },
+    {
+      "teamId": "fb-58",
+      "title": 0.001,
+      "lastWeek": 0.001,
+      "topFinish": 0.017,
+      "relegation": 0.075,
+      "record": "18"
+    },
+    {
+      "teamId": "fb-1335",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.003,
+      "relegation": 0.177,
+      "record": "20"
+    },
+    {
+      "teamId": "fb-56",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.009,
+      "relegation": 0.114,
+      "record": "19"
+    },
+    {
+      "teamId": "fb-43",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.003,
+      "relegation": 0.225,
+      "record": "18"
+    },
+    {
+      "teamId": "fb-68",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.002,
+      "relegation": 0.312,
+      "record": "18"
+    },
+    {
+      "teamId": "fb-1379",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.457,
+      "record": "16"
+    },
+    {
+      "teamId": "fb-38",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.001,
+      "relegation": 0.394,
+      "record": "15"
+    },
+    {
+      "teamId": "fb-59",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.448,
+      "record": "13"
+    },
+    {
+      "teamId": "fb-44",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.003,
+      "relegation": 0.202,
+      "record": "11"
+    },
+    {
+      "teamId": "fb-69",
+      "title": 0.0,
+      "lastWeek": 0.0,
+      "topFinish": 0.0,
+      "relegation": 0.496,
+      "record": "10"
+    }
+  ]
+}
